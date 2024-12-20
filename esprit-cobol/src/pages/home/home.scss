@@ -1,0 +1,66 @@
+/* Header */
+header {
+	text-align: center;
+	padding: 20px;
+	background-color: #161b22;
+	border-bottom: 2px solid #58a6ff;
+}
+
+header h1 {
+	font-size: 3rem;
+	color: #58a6ff;
+}
+
+header p {
+	font-size: 1.2rem;
+	color: #8b949e;
+}
+
+/* Section principale */
+main {
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+section {
+	margin: 20px 0;
+	text-align: center;
+}
+
+section h2 {
+	font-size: 2rem;
+	color: #58a6ff;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+ul li {
+	background-color: #21262d;
+	margin: 5px 0;
+	padding: 10px;
+	border: 1px solid #58a6ff;
+	border-radius: 5px;
+}
+
+/* Bouton */
+button {
+	margin-top: 20px;
+	padding: 10px 20px;
+	font-size: 1rem;
+	color: #0d1117;
+	background-color: #58a6ff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: transform 0.3s, background-color 0.3s;
+}
+
+button:hover {
+	transform: scale(1.1);
+	background-color: #1f6feb;
+}

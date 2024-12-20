@@ -1,0 +1,70 @@
+src/
+├── assets/
+│   ├── img/         # Pour les images
+│   │   └── picture1.jpg
+│   │   └── picture2.png
+│   │   └── picture3.svg
+│   │   └── picture4.webp
+│   ├── logo/        # Pour les logos
+│   │   └── cobol-logo1.svg
+│   │   └── cobol-logo2.png
+│   ├── data/        # Pour les fichiers JSON et autres données
+│   │   └── data.json
+│   ├── divers/      # Pour les fichiers divers
+│   │   └── example.txt
+│   │   └── example.nfo
+│   ├── documents/   # Pour les documents
+│   │   └── example.doc
+│   │   └── example.pdf
+│   ├── code/        # Pour les fichiers de code
+│   │   └── exampleCode1.cob
+│   │   └── exampleCode2.cbl
+│   │   └── exampleCode3.cpy
+│   ├── exercices/        # Pour les fichiers d'exercices
+│   │   └── exercice1.cob
+│   │   └── exercice2.cbl
+│   │   └── exercice3.cpy
+├── components/
+│   ├── navbar/
+│   │   ├── Navbar.jsx
+│   │   ├── navbar.scss
+│   ├── header/
+│   │   ├── Header.jsx
+│   │   ├── header.scss
+│   ├── footer/
+│   │   ├── Footer.jsx
+│   │   ├── footer.scss
+├── pages/
+│   ├── home/
+│   │   ├── Home.jsx
+│   │   ├── home.scss
+│   ├── history/
+│   │   ├── History.jsx
+│   │   ├── history.scss
+│   ├── bases/
+│   │   ├── Bases.jsx
+│   │   ├── bases.scss
+│   ├── exampleCode/
+│   │   ├── ExampleCode.jsx
+│   │   ├── exampleCode.scss
+│   ├── tutorials/
+│   │   ├── Tutorials.jsx
+│   │   ├── tutorials.scss
+│   ├── exercices/
+│   │   ├── Exercices.jsx
+│   │   ├── exercices.scss
+│   ├── liens/
+│   │   ├── Liens.jsx
+│   │   ├── liens.scss
+│   ├── contact/
+│   │   ├── Contact.jsx
+│   │   ├── contact.scss
+│   ├── error404/
+│   │   ├── Error404.jsx
+│   │   ├── error404.scss
+├── styles/
+│   ├── _variables.scss
+│   ├── _mixins.scss
+│   ├── _root.scss
+│   ├── main.scss
+├── App.jsx

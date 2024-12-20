@@ -1,2 +1,5 @@
-# cobol_fr
-Traduction de différent éléents d'apprentissage du Cobol en français
+# esprit_cobol
+
+Traduction de différent éléments d'apprentissage du Cobol en français
+
+Esprit COBOL
