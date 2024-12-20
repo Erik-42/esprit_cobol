@@ -1,7 +1,29 @@
 import React from "react";
 import "./history.scss";
+import historyData from "../../assets/data/history.json";
+import Button from "../../components/elements/button/button";
 
 export default function Hystory() {
+	document.addEventListener("DOMContentLoaded", () => {
+		const learnMoreButton = document.getElementById("learnMore");
+
+		learnMoreButton.addEventListener("click", () => {
+			alert(
+				"Bienvenue dans le monde COBOL : Un langage intemporel pour des solutions fiables !"
+			);
+		});
+
+		// Animation dynamique au chargement
+		const headerTitle = document.querySelector("header h1");
+		headerTitle.style.opacity = "0";
+		headerTitle.style.transform = "translateY(-50px)";
+
+		setTimeout(() => {
+			headerTitle.style.transition = "opacity 1s, transform 1s";
+			headerTitle.style.opacity = "1";
+			headerTitle.style.transform = "translateY(0)";
+		}, 300);
+	});
 	return (
 		<>
 			<section id='histoire'>
@@ -24,6 +46,26 @@ export default function Hystory() {
 					Exemple : COBOL est un langage structuré et verbeux. Voici une syntaxe
 					typique.
 				</p>
+			</section>
+			<section className='sections'>
+				{historyData.map((history) => (
+					<div key={history.id} className='history'>
+						<h2>{history.title}</h2>
+						<p>{history.description}</p>
+					</div>
+				))}
+			</section>
+			<section className='NavBtn'>
+				<Button
+					label='Retour'
+					className='prevBtn'
+					onClick={() => console.log("Vers la page précédente")}
+				/>
+				<Button
+					label='Suite'
+					className='nextBtn'
+					onClick={() => console.log("Vers la page suivante")}
+				/>
 			</section>
 		</>
 	);

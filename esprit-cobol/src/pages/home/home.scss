@@ -6,9 +6,10 @@ header {
 	border-bottom: 2px solid #58a6ff;
 }
 
-header h1 {
+main h1 {
 	font-size: 3rem;
 	color: #58a6ff;
+	text-shadow: 0 0 10px #58a6ff, 0 0 20px #58a6ff, 0 0 30px #58a6ff;
 }
 
 header p {
@@ -22,6 +23,7 @@ main {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	text-align: center;
 }
 
 section {

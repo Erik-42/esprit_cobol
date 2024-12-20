@@ -12,7 +12,7 @@ const Navbar = () => (
 				<Link to='/history'>Histoire du COBOL</Link>
 			</li>
 			<li>
-				<Link to='/base'>Pourquoi et Comment ?</Link>
+				<Link to='/bases'>Les bases</Link>
 			</li>
 			<li>
 				<Link to='/exampleCode'>Exemples</Link>

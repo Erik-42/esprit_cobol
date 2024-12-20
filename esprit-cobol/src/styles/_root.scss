@@ -1,11 +1,23 @@
 * {
-	max-width: 1440px;
+	// max-width: 1440px;
+	// display: flex;
+	// flex-direction: column;
 }
 
+html,
 body {
 	font-family: "Courier New", Courier, monospace;
 	margin: 0;
 	padding: 0;
 	background-color: #282c34;
 	color: #c9d1d9;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.app-container {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
 }

@@ -1,0 +1,32 @@
+[
+	{
+		"id": 1,
+		"title": "Histoire du COBOL",
+		"description": "Découvrez les origines du COBOL."
+	},
+	{
+		"id": 2,
+		"title": "Pourquoi et comment ?",
+		"description": "Pourquoi COBOL est toujours pertinent."
+	},
+	{
+		"id": 3,
+		"title": "À quoi ça ressemble ?",
+		"description": "Explorez la syntaxe unique du COBOL."
+	},
+	{
+		"id": 4,
+		"title": "Exemples",
+		"description": "Des exemples concrets de programmes COBOL."
+	},
+	{
+		"id": 5,
+		"title": "Les bases",
+		"description": "Apprenez les fondations du COBOL."
+	},
+	{
+		"id": 6,
+		"title": "Tutoriels",
+		"description": "Développez vos compétences avec nos tutoriels."
+	}
+]
