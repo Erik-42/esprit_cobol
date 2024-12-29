@@ -16,21 +16,23 @@ import "./styles/main.scss";
 function App() {
 	return (
 		<Router>
-			<Navbar />
-			<div className='app-container'>
-				<Routes>
-					<Route path='/' element={<Home />} />
-					<Route path='/history' element={<History />} />
-					<Route path='/bases' element={<Bases />} />
-					<Route path='/exampleCode' element={<ExampleCode />} />
-					<Route path='/tutorials' element={<Tutorials />} />
-					<Route path='/exercices' element={<Exercices />} />
-					<Route path='/liens' element={<Liens />} />
-					<Route path='/contact' element={<Contact />} />
-					<Route path='*' element={<Error404 />} />
-				</Routes>
+			<div className='app-wrapper'>
+				<Navbar />
+				<div className='app-container'>
+					<Routes>
+						<Route path='/' element={<Home />} />
+						<Route path='/history' element={<History />} />
+						<Route path='/bases' element={<Bases />} />
+						<Route path='/exampleCode' element={<ExampleCode />} />
+						<Route path='/tutorials' element={<Tutorials />} />
+						<Route path='/exercices' element={<Exercices />} />
+						<Route path='/liens' element={<Liens />} />
+						<Route path='/contact' element={<Contact />} />
+						<Route path='*' element={<Error404 />} />
+					</Routes>
+				</div>
+				<Footer />
 			</div>
-			<Footer />
 		</Router>
 	);
 }

@@ -1,17 +1,29 @@
 section {
 	margin: 20px 0;
 	text-align: center;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
 }
 
 section h2 {
 	font-size: 2rem;
 	color: #58a6ff;
 }
-
+section h3 {
+	font-size: 1.5rem;
+	color: #d6e9ff;
+}
+section p {
+	font-size: 1rem;
+	color: #0077ff;
+	margin: 0 5rem;
+	text-align: left;
+}
 .NavBtn {
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
-	margin: 0 1rem;
+	margin: 2rem;
 	flex-wrap: wrap;
 }

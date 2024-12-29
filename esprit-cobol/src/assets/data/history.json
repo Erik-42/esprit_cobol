@@ -1,32 +1,62 @@
 [
 	{
 		"id": 1,
+
 		"title": "Histoire du COBOL",
-		"description": "Découvrez les origines du COBOL."
+
+		"subTitle": "Découvrez les origines du COBOL.",
+
+		"intro": "Cobol est un langage de programmation créé en 1959. Son nom est l’acronyme de COmmon Business Oriented Language qui révèle sa vocation originelle : être un langage commun pour la programmation d'applications de gestion. Aujourd'hui, il est surtout utilisé dans les secteurs de la banque, des assurances, des grandes administrations.",
+
+		"article": "Le Cobol a officiellement le 18 septembre 1959 par le Short Range Committee, un des trois comités proposés à une rencontre au Pentagone en mai 1959 organisée par Charles Phillips du département de la défense des États-Unis. Le comité a été formé pour recommander une approche à court terme pour un langage commun, indépendant des constructeurs, pour les applications de gestion de l'administration américaine. Il était constitué de membres représentant six constructeurs d'ordinateurs et trois agences gouvernementales. Les six constructeurs informatiques étaient Burroughs Corporation, IBM, Minneapolis-Honeywell, RCA, Sperry Rand, et Sylvania Electric Products. Les trois agences du gouvernement étaient le US Air Force, le David Taylor Model Basin, et l’Institut national des standards.",
+
+		"conclusions": "Ce comité était présidé par un membre du NBS. Des comités à moyen et long terme ont également été proposés au Pentagone. En revanche, même si le premier a été fondé, il n'a jamais été opérationnel, et le dernier n'a jamais été fondé. En fin de compte, un sous-comité du Short Range Committee a été formé avec six membres : William Selden et Gertrude Tierney de IBM ; Howard Bromberg et Howard Discount de RCA ; Vernon Reeves et Jean E. Sammet de Sylvania Electric Products. Ce sous-comité a terminé les spécifications de Cobol fin 1959. Elles étaient largement inspirées par le langage FLOW-MATIC inventé par Grace Hopper, surnommée « la mère du langage Cobol », et par le langage COMTRAN d'IBM, inventé par Bob Bemer. ",
+
+		"fin": "Ce langage ayant été conçu aux débuts de l'informatique, sa relative complexité rebute nombre de programmeurs de notre époque, ce qui lui a valu deux interprétations ironiques de son acronyme : Compiles Only Because Of Luck (fonctionne uniquement par chance) et Completely Obsolete Business Oriented Language (Langage orienté gestion complètement obsolète)."
 	},
 	{
 		"id": 2,
 		"title": "Pourquoi et comment ?",
-		"description": "Pourquoi COBOL est toujours pertinent."
+		"subTitle": "",
+		"intro": "Pourquoi COBOL est toujours pertinent.",
+		"article": "",
+		"conclusions": "",
+		"fin": ""
 	},
 	{
 		"id": 3,
 		"title": "À quoi ça ressemble ?",
-		"description": "Explorez la syntaxe unique du COBOL."
+		"subTitle": "",
+		"intro": "Explorez la syntaxe unique du COBOL.",
+		"article": "",
+		"conclusions": "",
+		"fin": ""
 	},
 	{
 		"id": 4,
 		"title": "Exemples",
-		"description": "Des exemples concrets de programmes COBOL."
+		"subTitle": "",
+		"intro": "Des exemples concrets de programmes COBOL.",
+		"article": "",
+		"conclusions": "",
+		"fin": ""
 	},
 	{
 		"id": 5,
 		"title": "Les bases",
-		"description": "Apprenez les fondations du COBOL."
+		"subTitle": "",
+		"intro": "Apprenez les fondations du COBOL.",
+		"article": "",
+		"conclusions": "",
+		"fin": ""
 	},
 	{
 		"id": 6,
 		"title": "Tutoriels",
-		"description": "Développez vos compétences avec nos tutoriels."
+		"subTitle": "",
+		"intro": "Développez vos compétences avec nos tutoriels.",
+		"article": "",
+		"conclusions": "",
+		"fin": ""
 	}
 ]

@@ -1,7 +1,3 @@
-# esprit_cobol
-
-Traduction de différent éléments d'apprentissage du Cobol en français
-
 <div align="center">
 </div>
 <a name="readme-top"></a>
@@ -11,7 +7,7 @@ Traduction de différent éléments d'apprentissage du Cobol en français
 <div align="center">
   <h1>Esprit-COBOL</h1>
   <a href="https://github.com/Erik-42">
-    <img src="./src//assets/logos/screenshot.png" alt="Logo Esprit-COBOL" width="300">
+    <img src="./esprit-cobol//src/assets/img/code-complete.80474fa5.gif" alt="Logo Esprit-COBOL" width="300">
   </a>
 </div>
 
@@ -36,10 +32,10 @@ Traduction de différent éléments d'apprentissage du Cobol en français
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Issues][issues-shield]][issues-url]
-[![wakatime](https://wakatime.com/badge/user/f84d00d8-fee3-4ca3-803d-3daa3c7053a5/project/a8dd128a-59b7-4d94-8afc-10df58fdce60.svg)](https://wakatime.com/badge/user/f84d00d8-fee3-4ca3-803d-3daa3c7053a5/project/a8dd128a-59b7-4d94-8afc-10df58fdce60)
-
-Repo
 [![wakatime](https://wakatime.com/badge/github/Erik-42/esprit_cobol.svg)](https://wakatime.com/badge/github/Erik-42/esprit_cobol)
+
+Project
+[![wakatime](https://wakatime.com/badge/user/f84d00d8-fee3-4ca3-803d-3daa3c7053a5/project/a8dd128a-59b7-4d94-8afc-10df58fdce60.svg)](https://wakatime.com/badge/user/f84d00d8-fee3-4ca3-803d-3daa3c7053a5/project/a8dd128a-59b7-4d94-8afc-10df58fdce60)
 
 </div>
 
@@ -136,24 +132,24 @@ Contactez moi: mesen.erik@gmail.com
 [github badge-url]: https://github.com/Erik-42
 [github repo-shield]: https://img.shields.io/badge/Repositories-63-blue
 [github repo-url]: https://github.com/Erik-42/Erik-42?tab=repositories
-[github repo file count (file type)-shield]: https://img.shields.io/github/directory-file-count/Erik-42/esprit-cobol
-[github repo file count (file type)-url]: https://github.com/directory-file-count/Erik-42/esprit-cobol
+[github repo file count (file type)-shield]: https://img.shields.io/github/directory-file-count/Erik-42/cobol_fr
+[github repo file count (file type)-url]: https://github.com/directory-file-count/Erik-42/cobol_fr
 [github followers-shield]: https://img.shields.io/github/followers/Erik-42
 [github followers-url]: https://github.com/followers/Erik-42
 [github all releases-shield]: https://github.com/Erik-42/esprit-cobol/total
 [github all releases-url]: https://github.com/Erik-42/esprit-cobol/releases
-[github repo size-shield]: https://img.shields.io/github/repo-size/Erik-42/esprit-cobol
-[github repo size-url]: https://github.com/Erik-42/esprit-cobol
-[contributors-shield]: https://img.shields.io/github/contributors/Erik-42/esprit-cobol
-[contributors-url]: https://github.com/Erik-42/esprit-cobol/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Erik-42/esprit-cobol
-[forks-url]: https://github.com/Erik-42/esprit-cobol/forks
+[github repo size-shield]: https://img.shields.io/github/repo-size/Erik-42/cobol_fr
+[github repo size-url]: https://github.com/Erik-42/cobol_fr
+[contributors-shield]: https://img.shields.io/github/contributors/Erik-42/cobol_fr
+[contributors-url]: https://github.com/Erik-42/cobol_fr/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Erik-42/cobol_fr
+[forks-url]: https://github.com/Erik-42/cobol_fr/forks
 [stars-shield]: https://img.shields.io/github/stars/Erik-42
 [stars-url]: https://github.com/Erik-42?tab=stars
-[issues-shield]: https://img.shields.io/github/issues-raw/Erik-42/esprit-cobol
-[issues-url]: https://github.com/Erik-42/esprit-cobol/issues
-[license-shield]: https://img.shields.io/github/license/Erik-42/esprit-cobol
-[license-url]: https://github.com/Erik-42/esprit-cobol/blob/master/LICENSE.txt
+[issues-shield]: https://img.shields.io/github/issues-raw/Erik-42/cobol_fr
+[issues-url]: https://github.com/Erik-42/cobol_fr/issues
+[license-shield]: https://img.shields.io/github/license/Erik-42/cobol_fr
+[license-url]: https://github.com/Erik-42/cobol_fr/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/erik-mesen/
 [html-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
