@@ -1,77 +1,7 @@
-// import React from "react";
-// import "./history.scss";
-// import historyData from "../../assets/data/history.json";
-// import Button from "../../components/elements/button/button";
-
-// export default function Hystory() {
-// 	document.addEventListener("DOMContentLoaded", () => {
-// 		const learnMoreButton = document.getElementById("learnMore");
-
-// 		learnMoreButton.addEventListener("click", () => {
-// 			alert(
-// 				"Bienvenue dans le monde COBOL : Un langage intemporel pour des solutions fiables !"
-// 			);
-// 		});
-
-// 		// Animation dynamique au chargement
-// 		const headerTitle = document.querySelector("header h1");
-// 		headerTitle.style.opacity = "0";
-// 		headerTitle.style.transform = "translateY(-50px)";
-
-// 		setTimeout(() => {
-// 			headerTitle.style.transition = "opacity 1s, transform 1s";
-// 			headerTitle.style.opacity = "1";
-// 			headerTitle.style.transform = "translateY(0)";
-// 		}, 300);
-// 	});
-// 	return (
-// 		<>
-// 			<section id='histoire'>
-// 				<h2>Histoire du COBOL</h2>
-// 				<p>
-// 					Le COBOL a vu le jour en 1959 pour répondre aux besoins des
-// 					entreprises en gestion informatique.
-// 				</p>
-// 			</section>
-// 			<section id='pourquoi-comment'>
-// 				<h2>Pourquoi et comment ?</h2>
-// 				<p>
-// 					Découvrez pourquoi COBOL reste pertinent et comment il continue d’être
-// 					utilisé dans des systèmes critiques.
-// 				</p>
-// 			</section>
-// 			<section id='ressemble'>
-// 				<h2>À quoi ça ressemble ?</h2>
-// 				<p>
-// 					Exemple : COBOL est un langage structuré et verbeux. Voici une syntaxe
-// 					typique.
-// 				</p>
-// 			</section>
-// 			<section className='sections'>
-// 				{historyData.map((history) => (
-// 					<div key={history.id} className='history'>
-// 						<h2>{history.title}</h2>
-// 						<p>{history.description}</p>
-// 					</div>
-// 				))}
-// 			</section>
-// 			<section className='NavBtn'>
-// 				<Button
-// 					label='Retour'
-// 					className='prevBtn'
-// 					onClick={() => console.log("Vers la page précédente")}
-// 				/>
-// 				<Button
-// 					label='Suite'
-// 					className='nextBtn'
-// 					onClick={() => console.log("Vers la page suivante")}
-// 				/>
-// 			</section>
-// 		</>
-// 	);
-// }
-
 import React, { useState } from "react";
+import ReactMarkdown from "react-markdown";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "./history.scss";
 import historyData from "../../assets/data/history.json";
 import Button from "../../components/elements/button/button";
@@ -79,37 +9,85 @@ import Button from "../../components/elements/button/button";
 export default function History() {
 	const [currentIndex, setCurrentIndex] = useState(0);
 
-	const goToPrevious = () => {
-		if (currentIndex > 0) {
-			setCurrentIndex(currentIndex - 1);
-		}
-	};
-
-	const goToNext = () => {
+	const handleNext = () => {
 		if (currentIndex < historyData.length - 1) {
 			setCurrentIndex(currentIndex + 1);
 		}
 	};
 
-	return (
-		<>
-			<section id='histoire'>
-				<h2>{historyData[currentIndex].title}</h2>
-				<h3>{historyData[currentIndex].subTitle}</h3>
-				<p>{historyData[currentIndex].intro}</p>
-				<p>{historyData[currentIndex].article}</p>
-				<p>{historyData[currentIndex].conclusions}</p>
-				<p>{historyData[currentIndex].fin}</p>
-			</section>
+	const handlePrev = () => {
+		if (currentIndex > 0) {
+			setCurrentIndex(currentIndex - 1);
+		}
+	};
 
-			<section className='NavBtn'>
-				{currentIndex > 0 && (
-					<Button label='Retour' className='prevBtn' onClick={goToPrevious} />
+	const { title, subTitle, intro, article, conclusions, fin } =
+		historyData[currentIndex];
+
+	// Fonction pour gérer les blocs de code dans ReactMarkdown
+	const renderCodeBlock = {
+		code({ node, inline, className, children, ...props }) {
+			const match = /language-(\w+)/.exec(className || "");
+			return !inline && match ? (
+				<SyntaxHighlighter
+					style={darcula}
+					language={match[1]}
+					PreTag='div'
+					{...props}>
+					{String(children).replace(/\n$/, "")}
+				</SyntaxHighlighter>
+			) : (
+				<code className={className} {...props}>
+					{children}
+				</code>
+			);
+		},
+	};
+
+	return (
+		<div className='history-container'>
+			<header>
+				<h1>{title}</h1>
+			</header>
+			<section className='histoire'>
+				{subTitle && <h2>{subTitle}</h2>}
+
+				{/* Rend l'introduction en Markdown */}
+				{intro && (
+					<ReactMarkdown components={renderCodeBlock}>{intro}</ReactMarkdown>
 				)}
-				{currentIndex < historyData.length - 1 && (
-					<Button label='Suite' className='nextBtn' onClick={goToNext} />
+
+				{/* Rend l'article en Markdown */}
+				{article && (
+					<ReactMarkdown components={renderCodeBlock}>{article}</ReactMarkdown>
+				)}
+
+				{/* Rend les conclusions en Markdown */}
+				{conclusions && (
+					<ReactMarkdown components={renderCodeBlock}>
+						{conclusions}
+					</ReactMarkdown>
+				)}
+
+				{/* Rend la fin en Markdown */}
+				{fin && (
+					<ReactMarkdown components={renderCodeBlock}>{fin}</ReactMarkdown>
 				)}
 			</section>
-		</>
+			<section className='NavBtn'>
+				<Button
+					label='Précédent'
+					className='prevBtn'
+					onClick={handlePrev}
+					disabled={currentIndex === 0}
+				/>
+				<Button
+					label='Suivant'
+					className='nextBtn'
+					onClick={handleNext}
+					disabled={currentIndex === historyData.length - 1}
+				/>
+			</section>
+		</div>
 	);
 }

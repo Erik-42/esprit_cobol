@@ -1,0 +1,22 @@
+Accueil/
+├── Histoire de COBOL/
+│   ├── les origines du COBOL/
+│   ├── Le standards du COBOL/
+│   ├── la syntaxe du COBOL/
+│   ├── l'évolution du COBOL/
+├── Les bases COBOL/
+│   ├── les composant de base du code/
+│   ├── la structure du code/
+│   ├── les variables/
+│   ├── les éléments avancés du code/
+├── Exemples de programmes en COBOL/
+│   ├── un programme simple de base (Hello World)/
+│   ├── un programme utilisant une variable simple/
+│   ├── un programme utilisant les fonctions de bases/
+│   ├── un programme avancé pour interagir avec des bases de données/
+├── Tutoriels de COBOL/
+│   ├── créer pas à pas votre premier programme simple, en COBOL/
+│   ├── créer pas à pas un programme simple pour gérer une base de données/
+│   ├── création et maintenance pas à pas d'un programme avancé pour gérer une base de données/
+├── Contact/
+├── ├

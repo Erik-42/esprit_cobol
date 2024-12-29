@@ -1,62 +1,39 @@
 [
 	{
 		"id": 1,
-
-		"title": "Histoire du COBOL",
-
-		"subTitle": "Découvrez les origines du COBOL.",
-
-		"intro": "Cobol est un langage de programmation créé en 1959. Son nom est l’acronyme de COmmon Business Oriented Language qui révèle sa vocation originelle : être un langage commun pour la programmation d'applications de gestion. Aujourd'hui, il est surtout utilisé dans les secteurs de la banque, des assurances, des grandes administrations.",
-
-		"article": "Le Cobol a officiellement le 18 septembre 1959 par le Short Range Committee, un des trois comités proposés à une rencontre au Pentagone en mai 1959 organisée par Charles Phillips du département de la défense des États-Unis. Le comité a été formé pour recommander une approche à court terme pour un langage commun, indépendant des constructeurs, pour les applications de gestion de l'administration américaine. Il était constitué de membres représentant six constructeurs d'ordinateurs et trois agences gouvernementales. Les six constructeurs informatiques étaient Burroughs Corporation, IBM, Minneapolis-Honeywell, RCA, Sperry Rand, et Sylvania Electric Products. Les trois agences du gouvernement étaient le US Air Force, le David Taylor Model Basin, et l’Institut national des standards.",
-
-		"conclusions": "Ce comité était présidé par un membre du NBS. Des comités à moyen et long terme ont également été proposés au Pentagone. En revanche, même si le premier a été fondé, il n'a jamais été opérationnel, et le dernier n'a jamais été fondé. En fin de compte, un sous-comité du Short Range Committee a été formé avec six membres : William Selden et Gertrude Tierney de IBM ; Howard Bromberg et Howard Discount de RCA ; Vernon Reeves et Jean E. Sammet de Sylvania Electric Products. Ce sous-comité a terminé les spécifications de Cobol fin 1959. Elles étaient largement inspirées par le langage FLOW-MATIC inventé par Grace Hopper, surnommée « la mère du langage Cobol », et par le langage COMTRAN d'IBM, inventé par Bob Bemer. ",
-
-		"fin": "Ce langage ayant été conçu aux débuts de l'informatique, sa relative complexité rebute nombre de programmeurs de notre époque, ce qui lui a valu deux interprétations ironiques de son acronyme : Compiles Only Because Of Luck (fonctionne uniquement par chance) et Completely Obsolete Business Oriented Language (Langage orienté gestion complètement obsolète)."
+		"title": "les origines du COBOL",
+		"subTitle": "Un langage légendaire",
+		"intro": "Le COBOL (Common Business Oriented Language) a été créé en 1959 pour répondre aux besoins de gestion et de traitement des données dans les entreprises. Il s'est démarqué comme l'un des premiers langages de programmation destinés à être compréhensibles par les non-techniciens grâce à sa syntaxe proche de l'anglais.",
+		"article": "Le développement initial du COBOL a été supervisé par le comité CODASYL, et ses premières spécifications, appelées COBOL 60, ont été publiées en janvier 1960. Conçu en moins de six mois, il s’est rapidement imposé comme un standard dans les systèmes de gestion des entreprises.\n\n### Évolutions majeures\n1. **Cobol-68 (1968)** : Ajout de fonctionnalités comme la gestion des tables et des accès aléatoires.\n2. **Cobol-74 (1974)** : Amélioration des capacités pour les entreprises.\n3. **Cobol-85 (1985)** : Introduction de la programmation structurée avec des mots-clés tels que `END-IF` et gestion des programmes imbriqués.\n4. **Cobol 2002** : Adoption de fonctionnalités modernes, notamment la programmation orientée objet, le support de l'Unicode et du XML, et la gestion de mémoire dynamique.",
+		"conclusions": "Malgré son âge, le COBOL reste largement utilisé, en particulier dans les secteurs critiques comme les banques et les administrations. Ses révisions successives, standardisées par l'ANSI et l'ISO, ont permis au langage de s'adapter aux besoins modernes.",
+		"fin": "L'histoire du COBOL est celle d'une incroyable longévité, témoignant de la robustesse et de la pertinence de son design pour les applications métiers."
 	},
 	{
 		"id": 2,
-		"title": "Pourquoi et comment ?",
-		"subTitle": "",
-		"intro": "Pourquoi COBOL est toujours pertinent.",
-		"article": "",
-		"conclusions": "",
-		"fin": ""
+		"title": "Les spécifications techniques du COBOL",
+		"subTitle": "Fonctionnement et évolutions du langage",
+		"intro": "Le COBOL (Common Business-Oriented Language) est un langage de programmation développé pour les besoins du traitement des données d'entreprise. Dès sa création, il a été conçu pour être facile à comprendre et à utiliser, même par des non-programmeurs. Ses spécifications techniques ont évolué au fil des révisions pour s'adapter aux avancées technologiques et aux nouvelles exigences des entreprises.",
+		"article": "Le COBOL a introduit un certain nombre de spécifications techniques majeures pour gérer efficacement les données :\n\n- **Structure des programmes COBOL** : Un programme COBOL est divisé en quatre divisions principales : la `Identification Division`, la `Environment Division`, la `Data Division` et la `Procedure Division`. Chaque division a un rôle précis : décrire les métadonnées, définir l'environnement d'exécution, déclarer les structures de données et définir les instructions du programme.\n\n- **Le traitement des données** : COBOL utilise des types de données simples mais puissants, comme les entiers, les chaînes de caractères et les nombres à virgule fixe. Le langage est également capable de gérer de grandes quantités de données grâce à des structures de fichiers et des tables.\n\n- **Les instructions et le contrôle de flux** : COBOL utilise des instructions comme `IF`, `PERFORM`, `GOTO` et `EVALUATE` pour contrôler le flux d'exécution du programme. Il met l'accent sur la clarté et la lisibilité, ce qui le rend très adapté pour la maintenance à long terme.\n\n- **Les révisions techniques** : Les révisions du COBOL ont ajouté des fonctionnalités comme la gestion des fichiers séquentiels et aléatoires (Cobol-68), l'introduction de la programmation structurée (Cobol-85), et la prise en charge de la programmation orientée objet (Cobol-2002). Ces révisions ont permis de moderniser le langage tout en préservant sa compatibilité avec les systèmes existants.",
+		"conclusions": "Les spécifications techniques du COBOL ont permis à ce langage de rester un outil clé pour les entreprises traitant de grandes quantités de données, particulièrement dans les secteurs financiers, bancaires et gouvernementaux. Son évolution constante garantit sa pertinence dans un environnement informatique moderne.",
+		"fin": "Ainsi, le COBOL continue d'évoluer pour répondre aux besoins du marché tout en maintenant sa robustesse et sa stabilité pour le traitement des données critiques."
 	},
 	{
 		"id": 3,
-		"title": "À quoi ça ressemble ?",
-		"subTitle": "",
-		"intro": "Explorez la syntaxe unique du COBOL.",
-		"article": "",
-		"conclusions": "",
-		"fin": ""
+		"title": "La syntaxe du COBOL",
+		"subTitle": "Comprendre les éléments de base du langage",
+		"intro": "Le COBOL est un langage de programmation conçu pour être lisible et facile à comprendre. Sa syntaxe est fortement structurée, ce qui permet aux programmeurs de maintenir facilement le code à long terme. Voici un résumé des principaux éléments de la syntaxe COBOL.",
+		"article": "### Structure d'un programme COBOL\nUn programme COBOL est divisé en plusieurs sections qui doivent être rédigées dans un ordre spécifique :\n\n1. **Identification Division** : Cette division contient des informations sur le programme, telles que son nom.\n2. **Environment Division** : Décrit l'environnement d'exécution, comme les périphériques d'entrée et de sortie.\n3. **Data Division** : Déclare les variables, les types de données, et les fichiers utilisés dans le programme.\n4. **Procedure Division** : Contient les instructions réelles qui exécutent la logique du programme.\n\n### La structure des instructions COBOL\nLes instructions COBOL sont généralement longues et lisibles. Chaque instruction commence par un mot-clé suivi de paramètres ou d'expressions. Les éléments principaux incluent :\n\n- **Identification des variables** : Dans la `Data Division`, les variables sont déclarées avec une syntaxe claire, qui définit les types et les longueurs de données. Par exemple :\n  `01 client-name PIC X(30).` Cette déclaration signifie que la variable `client-name` est une chaîne de 30 caractères (X).\n\n- **Les verbes** : Les verbes dans COBOL sont des mots-clés qui spécifient l'action à réaliser. Par exemple, `DISPLAY` pour afficher une valeur à l'écran, `ACCEPT` pour saisir une valeur utilisateur, `ADD` pour effectuer une addition, etc.\n\n- **Les clauses conditionnelles et de boucle** : COBOL utilise des structures conditionnelles comme `IF`, `ELSE`, et `EVALUATE` (qui fonctionne comme un `switch` en d'autres langages). Les boucles sont réalisées avec des verbes comme `PERFORM` et `GOTO` pour répéter des instructions ou sauter à une autre partie du programme.\n\n- **Les commentaires** : Les commentaires sont insérés dans le code COBOL à l'aide de l'instruction `*`, qui indique que tout le texte suivant sur la ligne est un commentaire, ce qui permet de documenter le code.\n\n### Exemples de syntaxe\nVoici un exemple simple de syntaxe COBOL qui affiche un message à l'écran :\n```\n   IDENTIFICATION DIVISION.\n   PROGRAM-ID. HelloWorld.\n   PROCEDURE DIVISION.\n       DISPLAY 'Bonjour, COBOL !'.\n       STOP RUN.\n```\nCe programme affiche la chaîne `Bonjour, COBOL !` à l'utilisateur.",
+		"conclusions": "La syntaxe du COBOL est axée sur la lisibilité, avec des déclarations explicites et un langage proche de l'anglais. Cela permet de faciliter la compréhension et la maintenance du code, même par des personnes non familières avec la programmation.",
+		"fin": "Ainsi, bien que la syntaxe du COBOL puisse sembler verbeuse, elle a été conçue pour assurer la clarté et l'efficacité, en particulier pour les programmes complexes dans les secteurs financiers et gouvernementaux."
 	},
+
 	{
 		"id": 4,
-		"title": "Exemples",
-		"subTitle": "",
-		"intro": "Des exemples concrets de programmes COBOL.",
-		"article": "",
-		"conclusions": "",
-		"fin": ""
-	},
-	{
-		"id": 5,
-		"title": "Les bases",
-		"subTitle": "",
-		"intro": "Apprenez les fondations du COBOL.",
-		"article": "",
-		"conclusions": "",
-		"fin": ""
-	},
-	{
-		"id": 6,
-		"title": "Tutoriels",
-		"subTitle": "",
-		"intro": "Développez vos compétences avec nos tutoriels.",
-		"article": "",
-		"conclusions": "",
-		"fin": ""
+		"title": "L'évolution et l'utilisation actuelle du COBOL",
+		"subTitle": "Un langage durable dans un monde moderne",
+		"intro": "Le COBOL (Common Business-Oriented Language) a été conçu dans les années 1950 pour répondre aux besoins des applications commerciales. Bien que considéré comme obsolète par certains, il reste largement utilisé, notamment dans les grandes entreprises et les institutions financières. Voici un aperçu de son évolution et de son utilisation actuelle.",
+		"article": "### L'évolution du COBOL\n1. **Origines (1959-1960)** : COBOL a été créé en réponse à la nécessité d'un langage de programmation standardisé pour les applications commerciales, grâce à un comité dirigé par la Défense américaine. Il a été conçu pour être un langage simple et accessible, avec des instructions proches du langage naturel.\n\n2. **Révisions (1968-1985)** : COBOL a connu plusieurs révisions majeures, avec l'ajout de nouvelles fonctionnalités comme la gestion des tables (COBOL-68) et la programmation structurée (COBOL-85), facilitant ainsi la maintenance des programmes.\n\n3. **Adoption de la programmation orientée objet (2002)** : En 2002, la norme COBOL a été mise à jour pour inclure la programmation orientée objet, supportant des concepts modernes comme les classes et l'héritage, ce qui a permis au langage de rester pertinent dans un contexte technologique en évolution.\n\n### Utilisation actuelle du COBOL\nBien que le COBOL ait été largement supplanté par des langages plus modernes, il est toujours utilisé dans plusieurs secteurs clés, notamment :\n\n- **Secteur financier** : Les banques et autres institutions financières s'appuient sur des systèmes COBOL pour traiter des milliards de transactions financières quotidiennes.\n- **Gouvernement** : De nombreux systèmes gouvernementaux, y compris ceux utilisés pour la gestion des impôts et des prestations sociales, fonctionnent toujours en COBOL.\n- **Assurance** : Les compagnies d'assurance utilisent encore des applications COBOL pour gérer les polices et les réclamations.\n\n### Pourquoi COBOL persiste-t-il ?\n- **Stabilité et fiabilité** : Les systèmes COBOL sont très stables et fiables. Beaucoup d'entre eux ont été perfectionnés au fil des décennies et continuent de fonctionner sans faille.\n- **Maintenance coûteuse mais nécessaire** : Bien que coûteuse, la maintenance des systèmes COBOL reste plus rentable à court terme que de réécrire tout le code dans un autre langage.\n- **Manque de remplaçants** : Le nombre de programmeurs COBOL est en déclin, ce qui rend difficile la mise à jour et le maintien des systèmes. Cependant, des efforts sont faits pour former de nouvelles générations de programmeurs à COBOL.",
+		"conclusions": "Le COBOL, malgré son âge, reste un pilier dans certains secteurs où la fiabilité et la performance sont cruciales. Si de nombreux experts prédisent la disparition du COBOL, il semble que le langage ait encore de nombreuses années devant lui en raison de sa résilience dans les infrastructures critiques.",
+		"fin": "Ainsi, le COBOL est un langage qui, bien qu'en déclin, continue de jouer un rôle clé dans l'infrastructure technologique mondiale. Son évolution continue de refléter les besoins d'une informatique d'entreprise exigeante et pérenne."
 	}
 ]

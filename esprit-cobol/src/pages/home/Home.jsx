@@ -1,6 +1,6 @@
 import React from "react";
 import "./home.scss";
-import Bases from "../bases/Bases";
+import History from "../history/History";
 
 const Home = () => {
 	return (
@@ -25,7 +25,7 @@ const Home = () => {
 					<li>Adaptable même après 60 ans</li>
 				</ul>
 			</section>
-			<a className='btnLearnMore' href={Bases}>
+			<a className='btnLearnMore' href={History}>
 				<button id='learnMore'>En savoir plus</button>
 			</a>
 		</main>
