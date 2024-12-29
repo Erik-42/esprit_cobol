@@ -28,15 +28,20 @@ export default function Logiciels() {
 				"Une solution professionnelle pour le développement COBOL moderne, intégrée à Visual Studio et Eclipse.",
 			link: "https://www.microfocus.com/en-us/products/visual-cobol/overview",
 		},
+		{
+			name: "COBOL Extension for VS Code",
+			description:
+				"Une extension pour Visual Studio Code offrant des fonctionnalités comme la coloration syntaxique et la complétion de code pour le langage COBOL.",
+			link: "https://marketplace.visualstudio.com/items?itemName=bitlang.cobol",
+		},
 	];
 
 	return (
 		<div className='logiciels-container'>
 			<header>
-				<h1>Logiciels COBOL</h1>
+				<h1>IDE pour le COBOL</h1>
 				<p>
-					Trouvez ici les outils nécessaires pour le développement et la
-					maintenance de programmes en COBOL.
+					Les outils nécessaires pour le développement de programmes en COBOL.
 				</p>
 			</header>
 			<section className='logiciels-list'>

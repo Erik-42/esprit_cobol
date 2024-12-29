@@ -4,7 +4,7 @@ import Footer from "./components/layouts/footer/Footer";
 import Home from "./pages/home/Home";
 import History from "./pages/history/History";
 import Bases from "./pages/bases/Bases";
-import ExampleCode from "./pages/exampleCode/ExampleCode";
+import Instructions from "./pages/InstructionsCode/Instructions";
 import Logiciels from "./pages/logiciels/logiciels";
 import Tutorials from "./pages/tutorials/Tutorials";
 import Exercices from "./pages/exercices/Exercices";
@@ -24,9 +24,8 @@ function App() {
 						<Route path='/' element={<Home />} />
 						<Route path='/history' element={<History />} />
 						<Route path='/bases' element={<Bases />} />
-						<Route path='/exampleCode' element={<ExampleCode />} />
+						<Route path='/instructions' element={<Instructions />} />
 						<Route path='/logiciels' element={<Logiciels />} />
-
 						<Route path='/tutorials' element={<Tutorials />} />
 						<Route path='/exercices' element={<Exercices />} />
 						<Route path='/liens' element={<Liens />} />
