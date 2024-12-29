@@ -1,0 +1,68 @@
+.logiciels-container {
+	padding: 20px;
+	background-color: #282c34;
+
+	header {
+		text-align: center;
+		margin-bottom: 20px;
+		h2 {
+			font-size: 1.5em;
+			margin-bottom: 10px;
+		}
+
+		h3 {
+			font-size: 1.2em;
+			color: #58a6ff;
+		}
+
+		h4 {
+			font-size: 1.1em;
+			margin-top: 15px;
+		}
+
+		p {
+			line-height: 1.6;
+		}
+	}
+
+	.logiciels-list {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 20px;
+
+		.logiciel-card {
+			background: #21262d;
+			padding: 20px;
+			border: 1px solid #ddd;
+			border-radius: 8px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			text-align: center;
+
+			h2 {
+				font-size: 1.5rem;
+				color: #58a6ff;
+				margin-bottom: 10px;
+			}
+
+			p {
+				font-size: 1rem;
+				color: #666;
+				margin-bottom: 20px;
+			}
+
+			.download-btn {
+				background-color: #007bff;
+				color: #fff;
+				border: none;
+				padding: 10px 20px;
+				border-radius: 5px;
+				cursor: pointer;
+				text-decoration: none;
+				position: relative;
+				&:hover {
+					background-color: #0056b3;
+				}
+			}
+		}
+	}
+}

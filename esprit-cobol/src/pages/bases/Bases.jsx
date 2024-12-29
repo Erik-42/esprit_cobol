@@ -74,7 +74,7 @@ export default function Bases() {
 					<ReactMarkdown components={renderCodeBlock}>{fin}</ReactMarkdown>
 				)}
 			</section>
-			<section className='NavBtn'>
+			<section className='NavBasesBtn'>
 				<Button
 					label='Précédent'
 					className='prevBtn'

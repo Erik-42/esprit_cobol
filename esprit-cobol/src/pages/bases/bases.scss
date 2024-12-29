@@ -1,0 +1,45 @@
+.base-container {
+	padding: 20px;
+	font-family: Arial, sans-serif;
+	width: 85%;
+	header h1 {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	.base {
+		padding: 20px;
+		border-radius: 5px;
+		margin-bottom: 20px;
+		text-align: left;
+		h2 {
+			font-size: 1.5em;
+			margin-bottom: 10px;
+		}
+
+		h3 {
+			font-size: 1.2em;
+			color: #58a6ff;
+		}
+
+		h4 {
+			font-size: 1.1em;
+			margin-top: 15px;
+		}
+
+		p {
+			line-height: 1.6;
+		}
+	}
+
+	.NavBasesBtn {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+
+		button:disabled {
+			opacity: 0.5;
+			cursor: not-allowed;
+		}
+	}
+}

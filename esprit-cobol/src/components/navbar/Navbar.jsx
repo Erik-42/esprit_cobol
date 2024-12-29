@@ -18,6 +18,9 @@ const Navbar = () => (
 				<Link to='/exampleCode'>Exemples</Link>
 			</li>
 			<li>
+				<Link to='/logiciels'>Les logiciels</Link>
+			</li>
+			<li>
 				<Link to='/tutorials'>Tutoriels</Link>
 			</li>
 			<li>

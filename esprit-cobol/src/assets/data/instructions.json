@@ -1,0 +1,62 @@
+[
+	{
+		"id": 1,
+		"title": "IDENTIFICATION DIVISION",
+		"description": "Déclare la section d'identification du programme, contenant des informations comme le nom du programme."
+	},
+	{
+		"id": 2,
+		"title": "ENVIRONMENT DIVISION",
+		"description": "Définit l'environnement d'exécution du programme, comme les fichiers et dispositifs d'entrée/sortie."
+	},
+	{
+		"id": 3,
+		"title": "DATA DIVISION",
+		"description": "Permet de déclarer les variables et structures de données utilisées dans le programme."
+	},
+	{
+		"id": 4,
+		"title": "PROCEDURE DIVISION",
+		"description": "Contient le code exécutable du programme, organisé en paragraphes ou sections."
+	},
+	{
+		"id": 5,
+		"title": "ACCEPT",
+		"description": "Lit des données provenant d'une source comme le clavier ou un fichier."
+	},
+	{
+		"id": 6,
+		"title": "DISPLAY",
+		"description": "Affiche des données ou messages à l'écran ou dans un fichier de sortie."
+	},
+	{
+		"id": 7,
+		"title": "MOVE",
+		"description": "Copie une valeur dans une variable ou un champ spécifié."
+	},
+	{
+		"id": 8,
+		"title": "PERFORM",
+		"description": "Exécute un paragraphe ou une boucle spécifiée."
+	},
+	{
+		"id": 9,
+		"title": "IF",
+		"description": "Permet d'effectuer des tests conditionnels pour le contrôle du flux du programme."
+	},
+	{
+		"id": 10,
+		"title": "WRITE",
+		"description": "Écrit une ligne ou un enregistrement dans un fichier de sortie."
+	},
+	{
+		"id": 11,
+		"title": "READ",
+		"description": "Lit une ligne ou un enregistrement depuis un fichier."
+	},
+	{
+		"id": 12,
+		"title": "STOP RUN",
+		"description": "Met fin à l'exécution du programme COBOL."
+	}
+]
