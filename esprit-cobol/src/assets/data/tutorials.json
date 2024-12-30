@@ -1,0 +1,35 @@
+[
+	{
+		"id": 1,
+		"title": "Introduction au COBOL",
+		"description": "Apprenez les bases du COBOL dans ce tutoriel.",
+		"link": "../../pages/tutorials/exercice1/exercice1.jsx",
+		"image": "../img/exercices/exercice1/perform_add.gif",
+		"intro": "Le COBOL est un langage de programmation ancien mais encore largement utilisé...",
+		"article": "Dans cet article, nous explorerons les bases du COBOL...",
+		"conclusions": "Le COBOL reste une compétence très recherchée sur le marché...",
+		"fin": "Pour aller plus loin, consultez la documentation officielle..."
+	},
+	{
+		"id": 2,
+		"title": "Variables et types de données en COBOL",
+		"description": "Découvrez comment déclarer et utiliser des variables en COBOL.",
+		"link": "../../pages/tutorials/exercice2/exercice2.jsx",
+		"image": "../exercices/exercice2/mom_03-01.png",
+		"intro": "Les variables sont au cœur de toute programmation...",
+		"article": "Nous allons aborder la déclaration des variables, leurs types...",
+		"conclusions": "Une bonne gestion des variables est cruciale pour des programmes efficaces...",
+		"fin": "Consultez le guide complet des types de données en COBOL..."
+	},
+	{
+		"id": 3,
+		"title": "Variables et types de données en COBOL",
+		"description": "Découvrez comment déclarer et utiliser des variables en COBOL.",
+		"link": "../../pages/tutorials/exercice3/exercice3.jsx",
+		"image": "../exercices/exercice3/mom_03-02-1.png",
+		"intro": "Les variables sont au cœur de toute programmation...",
+		"article": "Nous allons aborder la déclaration des variables, leurs types...",
+		"conclusions": "Une bonne gestion des variables est cruciale pour des programmes efficaces...",
+		"fin": "Consultez le guide complet des types de données en COBOL..."
+	}
+]

@@ -9,14 +9,14 @@ Accueil/
 │   ├── la structure du code/
 │   ├── les variables/
 │   ├── les éléments avancés du code/
-│   ├── Le code en COBOL/
-│   │   └── les instructions en COBOL
-│   │   └── les verbes en COBOL
-│   │   └── les variables en COBOL
-│   │   └── les conditions et boucles en COBOL
-│   │   └── les contrôle de flux en COBOL
-│   │   └── le reste des éléments en COBOL
-├── Exemples de programmes en COBOL/
+├── Le code en COBOL/
+│   ├── les instructions en COBOL
+│   ├── les verbes en COBOL
+│   ├── les variables en COBOL
+│   ├── les conditions et boucles en COBOL
+│   ├── les contrôle de flux en COBOL
+│   ├── le reste des éléments en COBOL
+├── Les logiciels pour le COBOL/
 │   ├── un programme simple de base (Hello World)/
 │   ├── un programme utilisant une variable simple/
 │   ├── un programme utilisant les fonctions de bases/
