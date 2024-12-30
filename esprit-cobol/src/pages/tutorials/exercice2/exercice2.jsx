@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
-import "./exercice1.scss";
+import "./exercice2.scss";
 import Button from "../../../components/elements/button/button";
 import tutorialsData from "../../../assets/data/tutorials.json"; // Si vous utilisez un fichier JSON pour les tutoriels
 
-export default function Exercice1() {
+export default function Exercice2() {
 	const [currentIndex, setCurrentIndex] = useState(0);
 
 	// Fonction pour naviguer vers le tutoriel suivant
@@ -50,13 +50,13 @@ export default function Exercice1() {
 	return (
 		<div className='exercice-container'>
 			<header>
-				<h1>Exercice 1{title}</h1>
+				<h1>Exercice 2{title}</h1>
 				<p>{description}</p>
 			</header>
 
 			<section className='exercice-content'>
 				<div className='code-section'>
-					<h3>Exemple de code COBOLlll :</h3>
+					<h3>Exemple de code COBOL 2 :</h3>
 					<SyntaxHighlighter language='cobol' style={darcula}>
 						{codeExample}
 					</SyntaxHighlighter>
