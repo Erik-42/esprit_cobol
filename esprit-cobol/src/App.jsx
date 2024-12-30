@@ -7,7 +7,6 @@ import Bases from "./pages/bases/Bases";
 import Instructions from "./pages/InstructionsCode/Instructions";
 import Logiciels from "./pages/logiciels/logiciels";
 import Tutorials from "./pages/tutorials/Tutorials";
-// import Exercices from "./pages/exercices/Exercices";
 import Liens from "./pages/liens/Liens";
 import Contact from "./pages/contact/Contact";
 import Error404 from "./pages/error404/Error404";
@@ -34,8 +33,6 @@ function App() {
 						{/* <Route path='/tutorial/exercice2' element={<Exercice2 />} />
 						<Route path='/tutorial/exercice3' element={<Exercice3 />} /> */}
 						<Route path='/tutorial/:id' element={<TutorialDetails />} />
-						{/* <Route path='/exercise/:id' element={<ExercisePage />} /> */}
-						{/* <Route path='/exercices' element={<Exercices />} /> */}
 						<Route path='/liens' element={<Liens />} />
 						<Route path='/contact' element={<Contact />} />
 						<Route path='*' element={<Error404 />} />
