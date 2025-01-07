@@ -1,5 +1,3 @@
-// tutorialDetails.scss
-
 .tutorial-details-container {
 	padding: 20px;
 	font-family: Arial, sans-serif;
@@ -72,5 +70,20 @@
 		&:active {
 			background-color: #00408d;
 		}
+	}
+}
+.exercise-section {
+	margin-top: 20px;
+
+	.exercise-content {
+		margin-top: 15px;
+		padding: 15px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		background-color: #f9f9f9;
+	}
+
+	h3 {
+		margin-bottom: 10px;
 	}
 }

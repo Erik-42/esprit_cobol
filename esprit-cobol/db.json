@@ -1,0 +1,31 @@
+{
+	"exercices": [
+		{
+			"id": 1,
+			"image": "exercices/exercice1/perform_add.gif",
+			"title": "Introduction au COBOL",
+			"description": "Apprenez les bases du COBOL dans ce tutoriel.",
+			"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. HelloWorld.\nPROCEDURE DIVISION.\n    DISPLAY 'Hello, COBOL World!'.\n    STOP RUN.",
+			"codeExplicite": "esprit-cobol/src/pages/tutorials/exercice1/exercice1.md",
+			"link": "/tutorial/exercice1"
+		},
+		{
+			"id": 2,
+			"image": "exercices/exercice2/mom_03-01.png",
+			"title": "Introduction aux variables COBOL",
+			"description": "Découvrez comment déclarer et utiliser des variables en COBOL.",
+			"codeExample": "DATA DIVISION.\nWORKING-STORAGE SECTION.\n01 MY-VARIABLE PIC 9(4) VALUE 100.",
+			"codeExplicite": "esprit-cobol/src/pages/tutorials/exercice1/exercice1.md",
+			"link": "/tutorial/exercice2"
+		},
+		{
+			"id": 3,
+			"image": "exercices/exercice3/mom_03-02-1.png",
+			"title": "Variables et types de données en COBOL",
+			"description": "Découvrez comment déclarer et utiliser des variables en COBOL.",
+			"codeExample": "DATA DIVISION.\nWORKING-STORAGE SECTION.\n01 MY-VARIABLE PIC 9(4) VALUE 100.",
+			"codeExplicite": "esprit-cobol/src/pages/tutorials/exercice1/exercice1.md",
+			"link": "/tutorial/exercice3"
+		}
+	]
+}

@@ -1,8 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./home.scss";
-import History from "../history/History";
 
 const Home = () => {
+	const navigate = useNavigate();
+
+	const handleLearnMoreClick = () => {
+		navigate("/history");
+	};
+
 	return (
 		<main>
 			<h1>Bienvenue sur Esprit-COBOL</h1>
@@ -25,9 +31,13 @@ const Home = () => {
 					<li>Adaptable même après 60 ans</li>
 				</ul>
 			</section>
-			<a className='btnLearnMore' href={History}>
-				<button id='learnMore'>En savoir plus</button>
-			</a>
+
+			<button
+				id='learnMore'
+				className='btnLearnMore'
+				onClick={handleLearnMoreClick}>
+				En savoir plus
+			</button>
 		</main>
 	);
 };

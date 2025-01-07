@@ -1,38 +1,44 @@
-import React, { useEffect, Suspense } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import tutorialsData from "../../assets/data/tutorials.json";
 import "./tutorialDetails.scss";
 
-// Fonction pour charger dynamiquement les exercices
-const loadExerciseComponent = (id) => {
-	try {
-		return React.lazy(() =>
-			import(`../pages/tutorials/exercice${id}/exercice${id}.jsx`)
-		);
-	} catch (error) {
-		console.error("Erreur lors du chargement de l'exercice :", error);
-		return null;
-	}
-};
-
 export default function TutorialDetails() {
-	const { id } = useParams(); // Récupère l'id depuis l'URL
-	const navigate = useNavigate(); // Hook pour rediriger vers une autre page
-	const tutorial = tutorialsData.find((item) => item.id === parseInt(id)); // Trouve le tutoriel correspondant
+	const { id } = useParams();
+	const navigate = useNavigate();
+	const tutorial = tutorialsData.find((item) => item.id === parseInt(id));
+	const [exerciseData, setExerciseData] = useState(null);
+	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState(null);
 
-	// Charge dynamiquement l'exercice
-	const ExerciseComponent = loadExerciseComponent(id);
-
-	// Redirection si le tutoriel n'existe pas
 	useEffect(() => {
 		if (!tutorial) {
-			navigate("/not-found"); // Redirige vers une route inexistante
+			navigate("/not-found");
+			return;
 		}
-	}, [tutorial, navigate]);
 
-	// Évite tout rendu avant la redirection
+		const fetchExerciseData = async () => {
+			try {
+				const response = await fetch(
+					`http://localhost:5000/exercises?id=${id}`
+				);
+				if (!response.ok) {
+					throw new Error("Erreur lors du chargement de l'exercice.");
+				}
+				const data = await response.json();
+				setExerciseData(data[0]); // On suppose que l'ID correspond à un seul exercice
+			} catch (err) {
+				setError(err.message);
+			} finally {
+				setLoading(false);
+			}
+		};
+
+		fetchExerciseData();
+	}, [id, navigate, tutorial]);
+
 	if (!tutorial) {
 		return null;
 	}
@@ -45,20 +51,34 @@ export default function TutorialDetails() {
 			</header>
 			<section className='tutorial-content'>
 				<div className='code-example'>
-					<h3>Exemple de code :</h3>
+					<h3>Le code</h3>
 					<SyntaxHighlighter language='cobol' style={darcula}>
 						{tutorial.codeExample}
 					</SyntaxHighlighter>
 				</div>
+				<div className='code-explicite'>
+					<h3>L'explication</h3>
+					<SyntaxHighlighter language='cobol' style={darcula}>
+						{tutorial.codeExplicite}
+					</SyntaxHighlighter>
+				</div>
 				<div className='exercise-section'>
-					<h3>Exercice associé :</h3>
-					<Suspense fallback={<div>Chargement de l'exercice...</div>}>
-						{ExerciseComponent ? (
-							<ExerciseComponent />
-						) : (
-							<div>Exercice introuvable pour ce tutoriel.</div>
-						)}
-					</Suspense>
+					<h3>L'exercice</h3>
+					{loading ? (
+						<div>Chargement de l'exercice...</div>
+					) : error ? (
+						<div className='error-message'>{error}</div>
+					) : exerciseData ? (
+						<div className='exercise-content'>
+							<h4>{exerciseData.title}</h4>
+							<p>{exerciseData.instructions}</p>
+							<SyntaxHighlighter language='cobol' style={darcula}>
+								{exerciseData.codeExample}
+							</SyntaxHighlighter>
+						</div>
+					) : (
+						<div>Exercice introuvable pour ce tutoriel.</div>
+					)}
 				</div>
 			</section>
 		</div>

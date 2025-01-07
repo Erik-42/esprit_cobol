@@ -4,9 +4,9 @@ import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "./tutorials.scss";
-import tutorialsData from "../../assets/data/tutorials.json";
+import tutorialsData from "../../../db.json"; // Nouveau chemin pour db.json
 import Button from "../../components/elements/button/button";
-import images from "../../assets/imagesImport";
+import images from "../utils/imagesImport";
 
 export default function Tutorials() {
 	const renderCodeBlock = {
@@ -36,10 +36,10 @@ export default function Tutorials() {
 			</header>
 
 			<section className='tutorials-cards'>
-				{tutorialsData.map((tutorial, index) => (
+				{tutorialsData.exercices.map((tutorial, index) => (
 					<div key={index} className='tutorial-card'>
 						<img
-							src={images[tutorial.image]}
+							src={images[`exercice${tutorial.id}`]} // Utilisation de l'ID pour référencer l'image
 							alt={`Capture d'écran de ${tutorial.title}`}
 							className='tutorial-image'
 						/>
@@ -53,12 +53,6 @@ export default function Tutorials() {
 								rel='noopener noreferrer'>
 								<Button label='Voir le tutoriel' className='view-btn' />
 							</Link>
-							{/* <Link
-								to={tutorial.link}
-								target='_blank'
-								rel='noopener noreferrer'>
-								<Button label='Voir le tutoriel' className='view-btn' />
-							</Link> */}
 						</div>
 					</div>
 				))}
