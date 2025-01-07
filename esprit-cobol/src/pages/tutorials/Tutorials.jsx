@@ -36,7 +36,7 @@ export default function Tutorials() {
 			</header>
 
 			<section className='tutorials-cards'>
-				{tutorialsData.exercices.map((tutorial, index) => (
+				{tutorialsData.tutorials.map((tutorial, index) => (
 					<div key={index} className='tutorial-card'>
 						<img
 							src={images[`exercice${tutorial.id}`]} // Utilisation de l'ID pour référencer l'image

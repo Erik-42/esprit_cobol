@@ -2,27 +2,38 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
-import tutorialsData from "../../assets/data/tutorials.json";
+import tutorialsData from "../../../db.json"; // Nouveau chemin pour db.json
 import "./tutorialDetails.scss";
 
 export default function TutorialDetails() {
 	const { id } = useParams();
 	const navigate = useNavigate();
-	const tutorial = tutorialsData.find((item) => item.id === parseInt(id));
+	const [tutorial, setTutorial] = useState(null); // État pour stocker le tutoriel
 	const [exerciseData, setExerciseData] = useState(null);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
 
+	// Charger le tutoriel correspondant à l'ID
 	useEffect(() => {
-		if (!tutorial) {
+		const foundTutorial = tutorialsData.tutorials.find(
+			(item) => item.id === parseInt(id)
+		);
+
+		if (!foundTutorial) {
 			navigate("/not-found");
-			return;
+		} else {
+			setTutorial(foundTutorial);
 		}
+	}, [id, navigate]);
+
+	// Charger les données de l'exercice
+	useEffect(() => {
+		if (!tutorial) return;
 
 		const fetchExerciseData = async () => {
 			try {
 				const response = await fetch(
-					`http://localhost:5000/exercises?id=${id}`
+					`http://localhost:5000/tutorials?id=${id}`
 				);
 				if (!response.ok) {
 					throw new Error("Erreur lors du chargement de l'exercice.");
@@ -37,7 +48,7 @@ export default function TutorialDetails() {
 		};
 
 		fetchExerciseData();
-	}, [id, navigate, tutorial]);
+	}, [id, tutorial]);
 
 	if (!tutorial) {
 		return null;
