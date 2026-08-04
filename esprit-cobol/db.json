@@ -155,6 +155,45 @@
 				"instructions": "Écrivez RapportBatch : lisez ventes.txt (code article + montant), écrivez chaque ligne dans rapport.txt, calculez le nombre de ventes et le total, ajoutez un pied de page. Affichez une confirmation console. Bonus : calculez aussi la moyenne.",
 				"codeExample": "OPEN INPUT FICHIER-IN.\nOPEN OUTPUT FICHIER-OUT.\nPERFORM UNTIL WS-EOF = 'O'\n   READ FICHIER-IN\n      AT END MOVE 'O' TO WS-EOF\n      NOT AT END\n         ADD 1 TO WS-NB\n         ADD MONTANT TO WS-TOTAL\n         WRITE LIGNE-RAPPORT\n   END-READ\nEND-PERFORM.\nDIVIDE WS-TOTAL BY WS-NB GIVING WS-MOYENNE.\nCLOSE FICHIER-IN FICHIER-OUT."
 			}
+		},
+		{
+			"id": 13,
+			"image": "exercices/exercice13/preview.png",
+			"title": "Installer GnuCOBOL et compiler",
+			"description": "Installez le compilateur, créez un .cob, compilez avec cobc et lancez l'exécutable.",
+			"codeExample": "cobc -x HelloCompile.cob -o HelloCompile\n./HelloCompile",
+			"link": "/tutorial/13",
+			"exercise": {
+				"title": "Exercice 13 — Premier build",
+				"instructions": "Installez GnuCOBOL, créez HelloCompile.cob avec un DISPLAY personnalisé (votre prénom), compilez avec cobc -x et exécutez le binaire. Vérifiez cobc --version. Bonus : compilez aussi le programme du tutoriel 1.",
+				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. HelloCompile.\nPROCEDURE DIVISION.\n    DISPLAY 'Bonjour depuis GnuCOBOL !'.\n    STOP RUN.\n\n* Compilation :\n* cobc -x HelloCompile.cob -o HelloCompile\n* ./HelloCompile"
+			}
+		},
+		{
+			"id": 14,
+			"image": "exercices/exercice14/preview.png",
+			"title": "Déboguer un programme COBOL",
+			"description": "Identifiez et corrigez les erreurs PIC, END-IF, fichiers et types incompatibles.",
+			"codeExample": "IF WS-AGE < 18\n   MOVE 'Mineur' TO WS-STATUT\nELSE\n   MOVE 'Adulte' TO WS-STATUT\nEND-IF.",
+			"link": "/tutorial/14",
+			"exercise": {
+				"title": "Exercice 14 — Chasse aux bugs",
+				"instructions": "Reprenez DebugDemo. Introduisez volontairement 2 bugs (PIC trop court, END-IF manquant), compilez, lisez les messages d'erreur, corrigez, puis validez l'affichage Mineur/Adulte. Bonus : ajoutez un test FILE STATUS sur un OPEN fictif.",
+				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. DebugDemo.\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 WS-AGE PIC 99.\n01 WS-STATUT PIC X(10).\nPROCEDURE DIVISION.\n    ACCEPT WS-AGE.\n    IF WS-AGE < 18\n       MOVE 'Mineur' TO WS-STATUT\n    ELSE\n       MOVE 'Adulte' TO WS-STATUT\n    END-IF.\n    DISPLAY 'Statut : ' WS-STATUT.\n    STOP RUN."
+			}
+		},
+		{
+			"id": 15,
+			"image": "exercices/exercice15/preview.png",
+			"title": "COBOL + SQL (introduction)",
+			"description": "Lisez une table SQL avec EXEC SQL, variables hôtes et gestion du SQLCODE.",
+			"codeExample": "EXEC SQL\n   SELECT NOM INTO :WS-NOM FROM CLIENTS WHERE ID = :WS-ID\nEND-EXEC.",
+			"link": "/tutorial/15",
+			"exercise": {
+				"title": "Exercice 15 — SELECT embarqué",
+				"instructions": "Écrivez LectureSQL qui demande un ID, exécute un SELECT INTO sur CLIENTS, et affiche le nom si SQLCODE = 0, « aucun client » si 100, sinon le code d'erreur. Documentez le SGBD ciblé (DB2, Oracle...). Bonus : ajoutez un second SELECT sur une autre colonne.",
+				"codeExample": "EXEC SQL\n   SELECT NOM INTO :WS-NOM FROM CLIENTS WHERE ID = :WS-ID\nEND-EXEC.\nIF SQLCODE = 0\n   DISPLAY WS-NOM\nELSE\n   IF SQLCODE = 100\n      DISPLAY 'Aucun client'\n   ELSE\n      DISPLAY 'Erreur ' SQLCODE\n   END-IF\nEND-IF."
+			}
 		}
 	]
 }

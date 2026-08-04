@@ -10,5 +10,8 @@
 	{ "id": 9, "title": "Fichier indexé — recherche par clé", "link": "/tutorial/9" },
 	{ "id": 10, "title": "CRUD complet sur fichier indexé", "link": "/tutorial/10" },
 	{ "id": 11, "title": "Sous-programmes avec CALL", "link": "/tutorial/11" },
-	{ "id": 12, "title": "Rapport batch — totaux et fichier sortie", "link": "/tutorial/12" }
+	{ "id": 12, "title": "Rapport batch — totaux et fichier sortie", "link": "/tutorial/12" },
+	{ "id": 13, "title": "Installer GnuCOBOL et compiler", "link": "/tutorial/13" },
+	{ "id": 14, "title": "Déboguer un programme COBOL", "link": "/tutorial/14" },
+	{ "id": 15, "title": "COBOL + SQL (introduction)", "link": "/tutorial/15" }
 ]

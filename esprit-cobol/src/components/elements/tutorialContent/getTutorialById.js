@@ -10,6 +10,9 @@ import exercice9Md from "../../../pages/tutorials/exercice9/exercice9.md?raw";
 import exercice10Md from "../../../pages/tutorials/exercice10/exercice10.md?raw";
 import exercice11Md from "../../../pages/tutorials/exercice11/exercice11.md?raw";
 import exercice12Md from "../../../pages/tutorials/exercice12/exercice12.md?raw";
+import exercice13Md from "../../../pages/tutorials/exercice13/exercice13.md?raw";
+import exercice14Md from "../../../pages/tutorials/exercice14/exercice14.md?raw";
+import exercice15Md from "../../../pages/tutorials/exercice15/exercice15.md?raw";
 import tutorialsDb from "../../../../db.json";
 
 const markdownById = {
@@ -25,6 +28,9 @@ const markdownById = {
 	10: exercice10Md,
 	11: exercice11Md,
 	12: exercice12Md,
+	13: exercice13Md,
+	14: exercice14Md,
+	15: exercice15Md,
 };
 
 /**

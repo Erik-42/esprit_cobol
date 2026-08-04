@@ -12,6 +12,9 @@ const images = {
 	exercice10: "/assets/img/exercices/exercice10/preview.png",
 	exercice11: "/assets/img/exercices/exercice11/preview.png",
 	exercice12: "/assets/img/exercices/exercice12/preview.png",
+	exercice13: "/assets/img/exercices/exercice13/preview.png",
+	exercice14: "/assets/img/exercices/exercice14/preview.png",
+	exercice15: "/assets/img/exercices/exercice15/preview.png",
 };
 
 export default images;
