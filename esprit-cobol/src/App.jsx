@@ -15,6 +15,7 @@ const Logiciels = lazy(() => import("./pages/logiciels/logiciels"));
 const Tutorials = lazy(() => import("./pages/tutorials/Tutorials"));
 const Liens = lazy(() => import("./pages/liens/Liens"));
 const Contact = lazy(() => import("./pages/contact/Contact"));
+const Soutien = lazy(() => import("./pages/soutien/Soutien"));
 const Error404 = lazy(() => import("./pages/error404/Error404"));
 const TutorialDetails = lazy(
 	() => import("./pages/tutorialDetails/TutorialDetails")
@@ -39,6 +40,7 @@ function App() {
 							<Route path='/tutorial/:id' element={<TutorialDetails />} />
 							<Route path='/liens' element={<Liens />} />
 							<Route path='/contact' element={<Contact />} />
+							<Route path='/soutien' element={<Soutien />} />
 							<Route path='*' element={<Error404 />} />
 						</Routes>
 					</Suspense>

@@ -40,6 +40,11 @@ const Navbar = () => (
 					Contact
 				</Link>
 			</li>
+			<li className='navbar__item'>
+				<Link className='navbar__link' to='/soutien'>
+					Soutien
+				</Link>
+			</li>
 		</ul>
 	</nav>
 );

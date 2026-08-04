@@ -1,15 +1,84 @@
 .footer {
-	text-align: center;
-	padding: 10px;
+	position: relative;
+	padding: 12px 1.25rem;
 	background-color: var(--cobol-surface);
 	border-top: 2px solid var(--cobol-blue);
 	color: var(--cobol-text-muted);
-	min-height: 60px;
+	min-height: 72px;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
+	gap: 1rem;
+	box-sizing: border-box;
+
+	&__brand {
+		flex: 0 0 auto;
+		display: flex;
+		align-items: center;
+		z-index: 1;
+		border-radius: 6px;
+		transition: opacity 0.2s ease, transform 0.2s ease;
+
+		&:hover {
+			opacity: 0.85;
+			transform: scale(1.04);
+		}
+
+		&:focus-visible {
+			outline: 3px solid var(--cobol-green);
+			outline-offset: 3px;
+		}
+	}
+
+	&__logo {
+		display: block;
+		width: 48px;
+		height: auto;
+	}
 
 	&__text {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
 		margin: 0;
+		text-align: center;
+		line-height: 1.4;
+		pointer-events: none;
+	}
+
+	&__bmc {
+		flex: 0 0 auto;
+		display: flex;
+		align-items: center;
+		z-index: 1;
+
+		.bmc-button__image {
+			width: min(180px, 42vw);
+			height: auto;
+		}
+	}
+}
+
+@media (max-width: 600px) {
+	.footer {
+		flex-direction: column;
+		justify-content: center;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+
+		&__brand {
+			order: 0;
+		}
+
+		&__text {
+			position: static;
+			transform: none;
+			pointer-events: auto;
+			order: 1;
+		}
+
+		&__bmc {
+			order: 2;
+		}
 	}
 }
