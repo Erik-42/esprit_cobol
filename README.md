@@ -1,102 +1,64 @@
 <div align="center">
-</div>
-<a name="readme-top"></a>
-
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
   <h1>Esprit-COBOL</h1>
-  <a href="https://github.com/Erik-42">
-    <img src="./esprit-cobol//src/assets/img/code-complete.80474fa5.gif" alt="Logo Esprit-COBOL" width="300">
+  <p><strong>Apprendre le COBOL en français</strong></p>
+  <a href="https://erik-42.github.io/esprit_cobol/">
+    <img src="esprit-cobol/src/assets/logo/logo-cobol.png" alt="Esprit-COBOL" width="420">
   </a>
+  <br /><br />
+  <a href="https://erik-42.github.io/esprit_cobol/">
+ 
 </div>
 
-<!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Table of Contents</summary>
+  <summary>Sommaire</summary>
   <ol>
-    <li> <a href="#about-the-project">About The Project</a></li>
-    <li><a href="#built-with">Built With</a></li>
-    <li><a href="#testez-le-projet">Testez le projet</a></li>
-    <li><a href="#license">License</a></li>
+    <li><a href="#a-propos">À propos</a></li>
+    <li><a href="#ce-que-vous-trouverez">Ce que vous trouverez</a></li>
+    <li><a href="#decouvrir-le-site">Découvrir le site</a></li>
+    <li><a href="#soutenir-le-projet">Soutenir le projet</a></li>
+    <li><a href="#licence">Licence</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
 
-<!-- ABOUT THE PROJECT -->
+## À propos
 
-## About The Project
+**Esprit-COBOL** est un site d’apprentissage du COBOL entièrement en français.
 
-<div align="center">
+Le COBOL est un langage clair et structuré, encore très présent dans les banques, les assurances et les administrations. Esprit-COBOL vous aide à le découvrir pas à pas : historique, bases, instructions, logiciels et tutoriels pratiques.
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Issues][issues-shield]][issues-url]
-[![wakatime](https://wakatime.com/badge/github/Erik-42/esprit_cobol.svg)](https://wakatime.com/badge/github/Erik-42/esprit_cobol)
 
-Project
-[![wakatime](https://wakatime.com/badge/user/f84d00d8-fee3-4ca3-803d-3daa3c7053a5/project/a8dd128a-59b7-4d94-8afc-10df58fdce60.svg)](https://wakatime.com/badge/user/f84d00d8-fee3-4ca3-803d-3daa3c7053a5/project/a8dd128a-59b7-4d94-8afc-10df58fdce60)
 
-</div>
+## Ce que vous trouverez
 
-Traduction de différent éléments d'apprentissage du Cobol en français
+- **Histoire** — d’où vient le COBOL et pourquoi il reste d’actualité
+- **Bases** — structure d’un programme, variables, concepts essentiels
+- **Instructions** — les mots-clés et constructions utiles au quotidien
+- **Logiciels** — outils pour écrire et compiler du COBOL (GnuCOBOL, éditeurs, etc.)
+- **Tutoriels** — une quinzaine d’exercices progressifs (débutant → avancé), avec énoncé, correction à la demande, impression et export
+- **Liens** — ressources utiles pour aller plus loin
+- **Contact** — pour poser une question ou signaler une amélioration
+- **Soutien** — pour encourager le projet via Buy Me a Coffee
 
-Description du COBOL :
-COBOL est un langage standard facile à apprendre, qui peut être compilé et exécuté sur une grande variété d'ordinateurs. Il prend en charge un vocabulaire syntaxique étendu et présente un style de codage épuré. Il est principalement utilisé dans les systèmes commerciaux, financiers et administratifs des entreprises et des gouvernements. Ce langage est également utilisé comme solution à de nombreux problèmes de traitement de données.
+## Découvrir le site
 
-## Usage
+Rien à installer : ouvrez simplement la version en ligne :
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+**https://cobol.basillecorp.dev/**
 
-## Built with
+## Soutenir le projet
 
-<p> </p>
-<a href=https://github.com/Erik-42?tab=repositories&q=&type=&language=html&sort= > <img width ='32px' height='32px' src ='https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/html.svg'> </a>
-<a href=https://github.com/Erik-42?tab=repositories&q=&type=&language=css&sort= > <img width ='32px' height='32px' src ='https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/css.svg'> </a>
-<a href= https://github.com/Erik-42?tab=repositories&q=&type=&language=sass&sort= > <img width ='32px' height='32px' src ='https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/sass.svg'> </a>
-<a href=https://github.com/Erik-42?tab=repositories&q=&type=&language=javascript&sort= > <img width ='32px' height='32px' src ='https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/javascript.svg'> </a>
-<a href=https://github.com/Erik-42?tab=repositories&q=&type=&language=reactjs&sort= > <img width ='32px' height='32px' src ='https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/reactjs.svg'> </a>
-<a href= https://github.com/Erik-42?tab=repositories&q=&type=&language=github&sort= > <img width ='32px' height='32px' src ='https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/github.svg'> </a>
+Si Esprit-COBOL vous est utile, vous pouvez offrir un café :
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+[https://www.buymeacoffee.com/meseneriko](https://www.buymeacoffee.com/meseneriko)
 
-## Installation:
+<a href="https://www.buymeacoffee.com/meseneriko">
+  <img src="./esprit-cobol/src/assets/img/bmc/bmc_qr.png" alt="QR code Buy Me a Coffee" width="120">
+</a>
 
-### Dependencies:
+## Licence
 
-    "@eslint/js": "^9.17.0",
-    "@types/react": "^18.3.17",
-    "@types/react-dom": "^18.3.5",
-    "@vitejs/plugin-react-swc": "^3.5.0",
-    "eslint": "^9.17.0",
-    "eslint-plugin-react": "^7.37.2",
-    "eslint-plugin-react-hooks": "^5.0.0",
-    "eslint-plugin-react-refresh": "^0.4.16",
-    "globals": "^15.13.0",
-    "sass-embedded": "^1.83.0",
-    "vite": "^6.0.3"
-
-================================
-
-Si vous souhaitez exporter la structure du projet
-
-`node export-file-structure.js`
-
-================================
-
-## Testez le projet
-
-Page Github: https://erik-42.github.io/esprit_cobol/
-
-https://esprit-cobol.vercel.app/
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## License
-
-Distributed under the GPL-3.0 License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Distribué sous licence **GPL-3.0**. Voir le fichier `LICENSE.txt` pour plus de détails.
 
 ## Contact
 
@@ -112,44 +74,42 @@ Distributed under the GPL-3.0 License. See `LICENSE.txt` for more information.
 
 <a href = 'https://basillecorp.dev'> <img width = '32px' align= 'center' src="https://raw.githubusercontent.com/rahulbanerjee26/githubAboutMeGenerator/main/icons/portfolio.png"/> basillecorp.dev</a>
 
-Portfolio: https://bash-cv.vercel.app/
+Portfolio:<br/>
+https://bash-cv.vercel.app/
 
-<a href="https://www.figma.com/design/H17d3Plq2fxppmKcQXfB0p/Cv-Eric-Breteau?m=auto&t=enkiu3089axN0tBm-1">Mon CV <br/>sous Figma</a>
 
-Contactez moi: mesen.erik@gmail.com
+[https://buymeacoffee.com/meseneriko](https://buymeacoffee.com/meseneriko)
 
-</div>
+<a href="https://buymeacoffee.com/meseneriko">
+    <img src="esprit-cobol/src/assets/img/bmc/bmc_qr.png" alt="Buy My Coffee
+    " width="100" style="background-color:grey">
+</a>
+
+Contactez moi: [erik.mesen@basillecorp.dev](mailto:erik.mesen@basillecorp.dev)
+
+[<img src="esprit-cobol/src/assets/img/bmc/logo-Erik-42-souris-v1.jpg" alt="logo Erik-42" width="75">](https://bash-cv.vercel.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[product-screenshot]: ./images/screenshot.png
 [wakatime-shield]: https://wakatime.com/badge/user/f84d00d8-fee3-4ca3-803d-3daa3c7053a5.svg
 [wakatime-url]: https://wakatime.com/@f84d00d8-fee3-4ca3-803d-3daa3c7053a5
 [github badge-shield]: https://img.shields.io/badge/Github-Erik--42-155?style=for-the-badge&logo=github
 [github badge-url]: https://github.com/Erik-42
-[github repo-shield]: https://img.shields.io/badge/Repositories-63-blue
+[github repo-shield]: https://img.shields.io/badge/Repositories-68-blue
 [github repo-url]: https://github.com/Erik-42/Erik-42?tab=repositories
-[github repo file count (file type)-shield]: https://img.shields.io/github/directory-file-count/Erik-42/cobol_fr
-[github repo file count (file type)-url]: https://github.com/directory-file-count/Erik-42/cobol_fr
 [github followers-shield]: https://img.shields.io/github/followers/Erik-42
 [github followers-url]: https://github.com/followers/Erik-42
-[github all releases-shield]: https://github.com/Erik-42/esprit-cobol/total
-[github all releases-url]: https://github.com/Erik-42/esprit-cobol/releases
-[github repo size-shield]: https://img.shields.io/github/repo-size/Erik-42/cobol_fr
-[github repo size-url]: https://github.com/Erik-42/cobol_fr
-[contributors-shield]: https://img.shields.io/github/contributors/Erik-42/cobol_fr
-[contributors-url]: https://github.com/Erik-42/cobol_fr/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Erik-42/cobol_fr
-[forks-url]: https://github.com/Erik-42/cobol_fr/forks
+[contributors-shield]: https://img.shields.io/github/contributors/Erik-42/export-project-structure
+[contributors-url]: https://github.com/Erik-42/export-project-structure/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Erik-42/export-file-structure
+[forks-url]: https://github.com/Erik-42/export-file-structure/forks
+[issues-shield]: https://img.shields.io/github/issues-raw/Erik-42/export-file-structure
+[issues-url]: https://github.com/Erik-42/export-file-structure/issues
 [stars-shield]: https://img.shields.io/github/stars/Erik-42
 [stars-url]: https://github.com/Erik-42?tab=stars
-[issues-shield]: https://img.shields.io/github/issues-raw/Erik-42/cobol_fr
-[issues-url]: https://github.com/Erik-42/cobol_fr/issues
-[license-shield]: https://img.shields.io/github/license/Erik-42/cobol_fr
-[license-url]: https://github.com/Erik-42/cobol_fr/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/erik-mesen/
 [html-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
@@ -157,4 +117,3 @@ Contactez moi: mesen.erik@gmail.com
 [css-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [css-url]: https://www.w3.org/TR/CSS/#css
 [javascript-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[javascript-url]: https://www.ecma-international.org/publications-and-standards/standards/ecma-262/
