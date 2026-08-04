@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { getTutorialById } from "../../components/elements/tutorialContent/getTutorialById";
 import Button from "../../components/elements/button/button";
+import ExerciseCorrection from "../../components/elements/exerciseCorrection/ExerciseCorrection";
 import { useScrollToTop } from "../../components/elements/scrollToTop/useScrollToTop";
 import "./tutorialDetails.scss";
 
@@ -12,8 +13,13 @@ export default function TutorialDetails() {
 	const { id } = useParams();
 	const navigate = useNavigate();
 	const tutorial = getTutorialById(id);
+	const [showCorrection, setShowCorrection] = useState(false);
 
 	useScrollToTop(id);
+
+	useEffect(() => {
+		setShowCorrection(false);
+	}, [id]);
 
 	useEffect(() => {
 		if (!tutorial) {
@@ -80,18 +86,33 @@ export default function TutorialDetails() {
 							<p className='tutorial-details__exercise-instructions'>
 								{tutorial.exercise.instructions}
 							</p>
-							<SyntaxHighlighter language='cobol' style={darcula}>
-								{tutorial.exercise.codeExample}
-							</SyntaxHighlighter>
 						</div>
+
+						{showCorrection && (
+							<ExerciseCorrection
+								code={tutorial.exercise.codeExample}
+								explanation={tutorial.exercise.correctionExplanation}
+								renderCodeBlock={renderCodeBlock}
+							/>
+						)}
 					</div>
 				)}
 			</section>
 
 			<div className='tutorial-details__actions'>
 				<Link to='/tutorials'>
-					<Button label='Retour aux tutoriels' className='tutorial-details__back' />
+					<Button
+						label='Retour aux tutoriels'
+						className='tutorial-details__back'
+					/>
 				</Link>
+				{tutorial.exercise && (
+					<Button
+						label={showCorrection ? 'Masquer la correction' : 'Correction'}
+						className='tutorial-details__correction-btn'
+						onClick={() => setShowCorrection((prev) => !prev)}
+					/>
+				)}
 			</div>
 		</div>
 	);

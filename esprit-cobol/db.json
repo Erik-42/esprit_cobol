@@ -10,7 +10,8 @@
 			"exercise": {
 				"title": "Exercice 1 — Hello World",
 				"instructions": "Créez un programme COBOL nommé HelloWorld qui affiche le message « Hello, COBOL World! » puis termine l'exécution avec STOP RUN. Bonus : ajoutez une variable entière MY-COMPTEUR (PIC 9(4) VALUE 1) et affichez-la.",
-				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. HelloWorld.\n\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 MY-COMPTEUR PIC 9(4) VALUE 1.\n\nPROCEDURE DIVISION.\n    DISPLAY 'Hello, COBOL World!'.\n    DISPLAY 'Compteur : ' MY-COMPTEUR.\n    STOP RUN."
+				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. HelloWorld.\n\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 MY-COMPTEUR PIC 9(4) VALUE 1.\n\nPROCEDURE DIVISION.\n    DISPLAY 'Hello, COBOL World!'.\n    DISPLAY 'Compteur : ' MY-COMPTEUR.\n    STOP RUN.",
+				"correctionExplanation": "### Pourquoi cette solution ?\n\n1. **IDENTIFICATION DIVISION** identifie le programme `HelloWorld`.\n2. **WORKING-STORAGE** déclare `MY-COMPTEUR PIC 9(4)` : entier de 4 chiffres.\n3. **VALUE 1** initialise le compteur.\n4. **DISPLAY** affiche le message puis la valeur du compteur.\n5. **STOP RUN** termine proprement l'exécution.\n\n### Points clés\n- Sans `DATA DIVISION`, impossible de stocker une variable.\n- `PIC 9` = numérique ; `PIC X` = texte (voir tuto 2)."
 			}
 		},
 		{
@@ -23,7 +24,8 @@
 			"exercise": {
 				"title": "Exercice 2 — PIC X",
 				"instructions": "Créez un programme AlphaDemo qui déclare NOM-CLIENT (PIC X(30)) et VILLE (PIC X(20)), initialise ces valeurs, puis affiche « Client : … — Ville : … ». Utilisez uniquement des variables alphanumériques.",
-				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. AlphaDemo.\n\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 NOM-CLIENT PIC X(30) VALUE 'Dupont'.\n01 VILLE     PIC X(20) VALUE 'Paris'.\n\nPROCEDURE DIVISION.\n    DISPLAY 'Client : ' NOM-CLIENT.\n    DISPLAY 'Ville  : ' VILLE.\n    STOP RUN."
+				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. AlphaDemo.\n\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 NOM-CLIENT PIC X(30) VALUE 'Dupont'.\n01 VILLE     PIC X(20) VALUE 'Paris'.\n\nPROCEDURE DIVISION.\n    DISPLAY 'Client : ' NOM-CLIENT.\n    DISPLAY 'Ville  : ' VILLE.\n    STOP RUN.",
+				"correctionExplanation": "### Pourquoi cette solution ?\n\n1. `PIC X(30)` et `PIC X(20)` réservent de la place pour du **texte**.\n2. Les littéraux `'Dupont'` / `'Paris'` sont entre apostrophes.\n3. `DISPLAY` concatène un libellé et la variable.\n\n### Points clés\n- `PIC X` accepte lettres, chiffres et symboles.\n- Si la chaîne est plus courte que `(n)`, COBOL complète avec des espaces."
 			}
 		},
 		{
@@ -36,7 +38,8 @@
 			"exercise": {
 				"title": "Exercice 3 — PIC 9V99 et S9",
 				"instructions": "Créez un programme MontantDemo qui déclare MONTANT (PIC 9(5)V99) et SOLDE (PIC S9(5)V99). Initialisez un montant positif et un solde négatif, puis affichez-les. Observez la différence entre un numérique simple et un numérique signé.",
-				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. MontantDemo.\n\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 MONTANT PIC 9(5)V99 VALUE 1250.50.\n01 SOLDE   PIC S9(5)V99 VALUE -320.75.\n\nPROCEDURE DIVISION.\n    DISPLAY 'Montant : ' MONTANT.\n    DISPLAY 'Solde   : ' SOLDE.\n    STOP RUN."
+				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. MontantDemo.\n\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 MONTANT PIC 9(5)V99 VALUE 1250.50.\n01 SOLDE   PIC S9(5)V99 VALUE -320.75.\n\nPROCEDURE DIVISION.\n    DISPLAY 'Montant : ' MONTANT.\n    DISPLAY 'Solde   : ' SOLDE.\n    STOP RUN.",
+				"correctionExplanation": "### Pourquoi cette solution ?\n\n1. `PIC 9(5)V99` : 5 chiffres avant la virgule, 2 après (`V` = virgule implicite).\n2. `S9(...)` autorise un **signe** (solde négatif possible).\n3. Les montants métier se manipulent ainsi (banque, facturation).\n\n### Points clés\n- Ne pas confondre avec `PIC X` (texte).\n- `V` n'occupe pas un caractère visible : c'est une décimale logique."
 			}
 		},
 		{
@@ -49,7 +52,8 @@
 			"exercise": {
 				"title": "Exercice 4 — ACCEPT",
 				"instructions": "Créez un programme SaisieClient qui demande le nom (PIC X(30)) et l'âge (PIC 99) via ACCEPT, puis affiche une fiche récapitulative. Bonus : demandez aussi la ville (PIC X(20)) et ajoutez-la à la fiche.",
-				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. SaisieClient.\n\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 NOM-CLIENT PIC X(30).\n01 AGE-CLIENT PIC 99.\n01 VILLE     PIC X(20).\n\nPROCEDURE DIVISION.\n    DISPLAY 'Entrez le nom du client :'.\n    ACCEPT NOM-CLIENT.\n    DISPLAY 'Entrez age du client (00-99) :'.\n    ACCEPT AGE-CLIENT.\n    DISPLAY 'Entrez la ville :'.\n    ACCEPT VILLE.\n    DISPLAY '---------------------------'.\n    DISPLAY 'Fiche client'.\n    DISPLAY 'Nom   : ' NOM-CLIENT.\n    DISPLAY 'Age   : ' AGE-CLIENT.\n    DISPLAY 'Ville : ' VILLE.\n    STOP RUN."
+				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. SaisieClient.\n\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 NOM-CLIENT PIC X(30).\n01 AGE-CLIENT PIC 99.\n01 VILLE     PIC X(20).\n\nPROCEDURE DIVISION.\n    DISPLAY 'Entrez le nom du client :'.\n    ACCEPT NOM-CLIENT.\n    DISPLAY 'Entrez age du client (00-99) :'.\n    ACCEPT AGE-CLIENT.\n    DISPLAY 'Entrez la ville :'.\n    ACCEPT VILLE.\n    DISPLAY '---------------------------'.\n    DISPLAY 'Fiche client'.\n    DISPLAY 'Nom   : ' NOM-CLIENT.\n    DISPLAY 'Age   : ' AGE-CLIENT.\n    DISPLAY 'Ville : ' VILLE.\n    STOP RUN.",
+				"correctionExplanation": "### Pourquoi cette solution ?\n\n1. Les variables sont déclarées **sans VALUE** : elles seront remplies par la saisie.\n2. `DISPLAY` pose la question à l'utilisateur.\n3. `ACCEPT` lit le clavier dans la variable.\n4. La fiche récapitule les valeurs saisies.\n\n### Points clés\n- Toujours afficher une consigne avant `ACCEPT`.\n- Le bonus (ville) suit le même schéma `PIC X` + `ACCEPT`."
 			}
 		},
 		{
@@ -62,7 +66,8 @@
 			"exercise": {
 				"title": "Exercice 5 — TVA + IF",
 				"instructions": "Créez CalculTVA : saisissez un prix HT, calculez TVA à 20 % et TTC, puis affichez « Commande importante » si TTC > 1000, sinon « Commande standard ». Bonus : utilisez aussi SUBTRACT pour afficher une remise fictive de 10 sur le TTC.",
-				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. CalculTVA.\n\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 PRIX-HT     PIC 9(5)V99.\n01 TAUX-TVA    PIC 9V99 VALUE 0.20.\n01 MONTANT-TVA PIC 9(5)V99.\n01 PRIX-TTC    PIC 9(5)V99.\n01 PRIX-REMISE PIC 9(5)V99.\n\nPROCEDURE DIVISION.\n    DISPLAY 'Entrez le prix HT :'.\n    ACCEPT PRIX-HT.\n    MULTIPLY PRIX-HT BY TAUX-TVA GIVING MONTANT-TVA.\n    ADD PRIX-HT TO MONTANT-TVA GIVING PRIX-TTC.\n    SUBTRACT 10 FROM PRIX-TTC GIVING PRIX-REMISE.\n    IF PRIX-TTC > 1000\n       DISPLAY 'Commande importante'\n    ELSE\n       DISPLAY 'Commande standard'\n    END-IF.\n    DISPLAY 'TTC : ' PRIX-TTC.\n    DISPLAY 'TTC -10 : ' PRIX-REMISE.\n    STOP RUN."
+				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. CalculTVA.\n\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 PRIX-HT     PIC 9(5)V99.\n01 TAUX-TVA    PIC 9V99 VALUE 0.20.\n01 MONTANT-TVA PIC 9(5)V99.\n01 PRIX-TTC    PIC 9(5)V99.\n01 PRIX-REMISE PIC 9(5)V99.\n\nPROCEDURE DIVISION.\n    DISPLAY 'Entrez le prix HT :'.\n    ACCEPT PRIX-HT.\n    MULTIPLY PRIX-HT BY TAUX-TVA GIVING MONTANT-TVA.\n    ADD PRIX-HT TO MONTANT-TVA GIVING PRIX-TTC.\n    SUBTRACT 10 FROM PRIX-TTC GIVING PRIX-REMISE.\n    IF PRIX-TTC > 1000\n       DISPLAY 'Commande importante'\n    ELSE\n       DISPLAY 'Commande standard'\n    END-IF.\n    DISPLAY 'TTC : ' PRIX-TTC.\n    DISPLAY 'TTC -10 : ' PRIX-REMISE.\n    STOP RUN.",
+				"correctionExplanation": "### Pourquoi cette solution ?\n\n1. `MULTIPLY ... GIVING` calcule la TVA sans écraser le prix HT.\n2. `ADD ... GIVING` produit le TTC.\n3. `IF / ELSE / END-IF` classe la commande selon un seuil métier.\n4. Le bonus `SUBTRACT` illustre une remise.\n\n### Points clés\n- Fermer chaque `IF` avec `END-IF`.\n- `GIVING` évite d'écraser les opérandes sources."
 			}
 		},
 		{
@@ -75,7 +80,8 @@
 			"exercise": {
 				"title": "Exercice 6 — PERFORM",
 				"instructions": "Créez StructurePerform avec trois paragraphes : MAIN-LOGIC, SAISIE-CLIENT (ACCEPT nom + âge), AFFICHER-FICHE. MAIN-LOGIC doit uniquement faire des PERFORM puis STOP RUN. Bonus : ajoutez un paragraphe VALIDER-AGE qui affiche « Mineur » ou « Adulte ».",
-				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. StructurePerform.\n\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 NOM-CLIENT PIC X(30).\n01 AGE-CLIENT PIC 99.\n\nPROCEDURE DIVISION.\nMAIN-LOGIC.\n    PERFORM SAISIE-CLIENT.\n    PERFORM VALIDER-AGE.\n    PERFORM AFFICHER-FICHE.\n    STOP RUN.\n\nSAISIE-CLIENT.\n    DISPLAY 'Nom :'.\n    ACCEPT NOM-CLIENT.\n    DISPLAY 'Age :'.\n    ACCEPT AGE-CLIENT.\n\nVALIDER-AGE.\n    IF AGE-CLIENT < 18\n       DISPLAY 'Mineur'\n    ELSE\n       DISPLAY 'Adulte'\n    END-IF.\n\nAFFICHER-FICHE.\n    DISPLAY 'Nom : ' NOM-CLIENT.\n    DISPLAY 'Age : ' AGE-CLIENT."
+				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. StructurePerform.\n\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 NOM-CLIENT PIC X(30).\n01 AGE-CLIENT PIC 99.\n\nPROCEDURE DIVISION.\nMAIN-LOGIC.\n    PERFORM SAISIE-CLIENT.\n    PERFORM VALIDER-AGE.\n    PERFORM AFFICHER-FICHE.\n    STOP RUN.\n\nSAISIE-CLIENT.\n    DISPLAY 'Nom :'.\n    ACCEPT NOM-CLIENT.\n    DISPLAY 'Age :'.\n    ACCEPT AGE-CLIENT.\n\nVALIDER-AGE.\n    IF AGE-CLIENT < 18\n       DISPLAY 'Mineur'\n    ELSE\n       DISPLAY 'Adulte'\n    END-IF.\n\nAFFICHER-FICHE.\n    DISPLAY 'Nom : ' NOM-CLIENT.\n    DISPLAY 'Age : ' AGE-CLIENT.",
+				"correctionExplanation": "### Pourquoi cette solution ?\n\n1. `MAIN-LOGIC` orchestre uniquement des `PERFORM`.\n2. Chaque paragraphe a **une** responsabilité (saisie, validation, affichage).\n3. Le bonus `VALIDER-AGE` montre qu'on peut enchainer les PERFORM.\n\n### Points clés\n- Un programme lisible = flux court + paragraphes nommés.\n- `STOP RUN` reste dans le flux principal."
 			}
 		},
 		{
@@ -88,7 +94,8 @@
 			"exercise": {
 				"title": "Exercice 7 — Lecture fichier",
 				"instructions": "Écrivez LectureFichier qui ouvre clients.txt (LINE SEQUENTIAL), lit chaque enregistrement (NOM PIC X(30), AGE PIC 99) et l'affiche jusqu'à AT END, puis ferme le fichier. Préparez un fichier clients.txt de test avec 2 ou 3 lignes.",
-				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. LectureFichier.\n\nENVIRONMENT DIVISION.\nINPUT-OUTPUT SECTION.\nFILE-CONTROL.\n    SELECT FICHIER-CLIENT ASSIGN TO 'clients.txt'\n        ORGANIZATION IS LINE SEQUENTIAL.\n\nDATA DIVISION.\nFILE SECTION.\nFD FICHIER-CLIENT.\n01 ENREG-CLIENT.\n   05 NOM-CLIENT PIC X(30).\n   05 AGE-CLIENT PIC 99.\n\nWORKING-STORAGE SECTION.\n01 WS-EOF PIC X VALUE 'N'.\n\nPROCEDURE DIVISION.\n    OPEN INPUT FICHIER-CLIENT.\n    PERFORM UNTIL WS-EOF = 'O'\n       READ FICHIER-CLIENT\n          AT END MOVE 'O' TO WS-EOF\n          NOT AT END DISPLAY NOM-CLIENT ' ' AGE-CLIENT\n       END-READ\n    END-PERFORM.\n    CLOSE FICHIER-CLIENT.\n    STOP RUN."
+				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. LectureFichier.\n\nENVIRONMENT DIVISION.\nINPUT-OUTPUT SECTION.\nFILE-CONTROL.\n    SELECT FICHIER-CLIENT ASSIGN TO 'clients.txt'\n        ORGANIZATION IS LINE SEQUENTIAL.\n\nDATA DIVISION.\nFILE SECTION.\nFD FICHIER-CLIENT.\n01 ENREG-CLIENT.\n   05 NOM-CLIENT PIC X(30).\n   05 AGE-CLIENT PIC 99.\n\nWORKING-STORAGE SECTION.\n01 WS-EOF PIC X VALUE 'N'.\n\nPROCEDURE DIVISION.\n    OPEN INPUT FICHIER-CLIENT.\n    PERFORM UNTIL WS-EOF = 'O'\n       READ FICHIER-CLIENT\n          AT END MOVE 'O' TO WS-EOF\n          NOT AT END DISPLAY NOM-CLIENT ' ' AGE-CLIENT\n       END-READ\n    END-PERFORM.\n    CLOSE FICHIER-CLIENT.\n    STOP RUN.",
+				"correctionExplanation": "### Pourquoi cette solution ?\n\n1. `SELECT ... LINE SEQUENTIAL` lie le fichier logique au fichier physique.\n2. `FD` décrit la structure d'un enregistrement.\n3. Boucle `PERFORM UNTIL` + `READ ... AT END` parcourt tout le fichier.\n4. `CLOSE` libère la ressource.\n\n### Points clés\n- Oublier `OPEN` / `CLOSE` provoque des erreurs d'exécution.\n- Le flag `WS-EOF` évite une boucle infinie."
 			}
 		},
 		{
@@ -101,7 +108,8 @@
 			"exercise": {
 				"title": "Exercice 8 — Mini CRUD",
 				"instructions": "Créez GestionClients avec un menu : 1 créer (OPEN EXTEND + WRITE), 2 lister (boucle READ), 3 quitter. Utilisez EVALUATE pour le menu et PERFORM pour chaque action. Bonus : comptez le nombre de clients listés.",
-				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. GestionClients.\n\nENVIRONMENT DIVISION.\nINPUT-OUTPUT SECTION.\nFILE-CONTROL.\n    SELECT FICHIER-CLIENT ASSIGN TO 'clients.dat'\n        ORGANIZATION IS LINE SEQUENTIAL.\n\nDATA DIVISION.\nFILE SECTION.\nFD FICHIER-CLIENT.\n01 ENREG-CLIENT.\n   05 NOM-CLIENT PIC X(30).\n   05 AGE-CLIENT PIC 99.\n\nWORKING-STORAGE SECTION.\n01 WS-CHOIX PIC 9 VALUE 0.\n01 WS-EOF PIC X VALUE 'N'.\n01 WS-NOM PIC X(30).\n01 WS-AGE PIC 99.\n01 WS-NB PIC 99 VALUE 0.\n\nPROCEDURE DIVISION.\nMAIN-LOGIC.\n    PERFORM UNTIL WS-CHOIX = 3\n       DISPLAY '1-Creer 2-Lister 3-Quitter'\n       ACCEPT WS-CHOIX\n       EVALUATE WS-CHOIX\n          WHEN 1 PERFORM CREER-CLIENT\n          WHEN 2 PERFORM LISTER-CLIENTS\n          WHEN 3 DISPLAY 'Au revoir.'\n          WHEN OTHER DISPLAY 'Choix invalide'\n       END-EVALUATE\n    END-PERFORM\n    STOP RUN.\n\nCREER-CLIENT.\n    ACCEPT WS-NOM\n    ACCEPT WS-AGE\n    OPEN EXTEND FICHIER-CLIENT\n    MOVE WS-NOM TO NOM-CLIENT\n    MOVE WS-AGE TO AGE-CLIENT\n    WRITE ENREG-CLIENT\n    CLOSE FICHIER-CLIENT.\n\nLISTER-CLIENTS.\n    MOVE 0 TO WS-NB\n    MOVE 'N' TO WS-EOF\n    OPEN INPUT FICHIER-CLIENT\n    PERFORM UNTIL WS-EOF = 'O'\n       READ FICHIER-CLIENT\n          AT END MOVE 'O' TO WS-EOF\n          NOT AT END\n             ADD 1 TO WS-NB\n             DISPLAY NOM-CLIENT\n       END-READ\n    END-PERFORM\n    CLOSE FICHIER-CLIENT\n    DISPLAY 'Total : ' WS-NB."
+				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. GestionClients.\n\nENVIRONMENT DIVISION.\nINPUT-OUTPUT SECTION.\nFILE-CONTROL.\n    SELECT FICHIER-CLIENT ASSIGN TO 'clients.dat'\n        ORGANIZATION IS LINE SEQUENTIAL.\n\nDATA DIVISION.\nFILE SECTION.\nFD FICHIER-CLIENT.\n01 ENREG-CLIENT.\n   05 NOM-CLIENT PIC X(30).\n   05 AGE-CLIENT PIC 99.\n\nWORKING-STORAGE SECTION.\n01 WS-CHOIX PIC 9 VALUE 0.\n01 WS-EOF PIC X VALUE 'N'.\n01 WS-NOM PIC X(30).\n01 WS-AGE PIC 99.\n01 WS-NB PIC 99 VALUE 0.\n\nPROCEDURE DIVISION.\nMAIN-LOGIC.\n    PERFORM UNTIL WS-CHOIX = 3\n       DISPLAY '1-Creer 2-Lister 3-Quitter'\n       ACCEPT WS-CHOIX\n       EVALUATE WS-CHOIX\n          WHEN 1 PERFORM CREER-CLIENT\n          WHEN 2 PERFORM LISTER-CLIENTS\n          WHEN 3 DISPLAY 'Au revoir.'\n          WHEN OTHER DISPLAY 'Choix invalide'\n       END-EVALUATE\n    END-PERFORM\n    STOP RUN.\n\nCREER-CLIENT.\n    ACCEPT WS-NOM\n    ACCEPT WS-AGE\n    OPEN EXTEND FICHIER-CLIENT\n    MOVE WS-NOM TO NOM-CLIENT\n    MOVE WS-AGE TO AGE-CLIENT\n    WRITE ENREG-CLIENT\n    CLOSE FICHIER-CLIENT.\n\nLISTER-CLIENTS.\n    MOVE 0 TO WS-NB\n    MOVE 'N' TO WS-EOF\n    OPEN INPUT FICHIER-CLIENT\n    PERFORM UNTIL WS-EOF = 'O'\n       READ FICHIER-CLIENT\n          AT END MOVE 'O' TO WS-EOF\n          NOT AT END\n             ADD 1 TO WS-NB\n             DISPLAY NOM-CLIENT\n       END-READ\n    END-PERFORM\n    CLOSE FICHIER-CLIENT\n    DISPLAY 'Total : ' WS-NB.",
+				"correctionExplanation": "### Pourquoi cette solution ?\n\n1. Le menu utilise `EVALUATE` (plus clair que des IF imbriqués).\n2. `OPEN EXTEND` + `WRITE` ajoute un client sans écraser le fichier.\n3. Lister reprend la boucle `READ` du tuto 7.\n4. Le bonus compte les lignes avec `ADD 1 TO WS-NB`.\n\n### Points clés\n- Une action menu = un paragraphe `PERFORM`.\n- `EXTEND` = ajout en fin de fichier."
 			}
 		},
 		{
@@ -114,7 +122,8 @@
 			"exercise": {
 				"title": "Exercice 9 — Recherche indexée",
 				"instructions": "Écrivez RechercheIndexee : ouvrez un fichier INDEXED, demandez un ID (PIC 9(4)), lisez par clé et affichez le client ou « introuvable ». Gérez INVALID KEY et affichez FILE STATUS en cas d'erreur.",
-				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. RechercheIndexee.\nENVIRONMENT DIVISION.\nINPUT-OUTPUT SECTION.\nFILE-CONTROL.\n    SELECT FICHIER-CLIENT ASSIGN TO 'clients.idx'\n        ORGANIZATION IS INDEXED\n        ACCESS MODE IS DYNAMIC\n        RECORD KEY IS ID-CLIENT\n        FILE STATUS IS WS-STATUS.\nDATA DIVISION.\nFILE SECTION.\nFD FICHIER-CLIENT.\n01 ENREG-CLIENT.\n   05 ID-CLIENT PIC 9(4).\n   05 NOM-CLIENT PIC X(30).\n   05 AGE-CLIENT PIC 99.\nWORKING-STORAGE SECTION.\n01 WS-STATUS PIC XX.\n01 WS-ID PIC 9(4).\nPROCEDURE DIVISION.\n    OPEN INPUT FICHIER-CLIENT.\n    ACCEPT WS-ID.\n    MOVE WS-ID TO ID-CLIENT.\n    READ FICHIER-CLIENT KEY IS ID-CLIENT\n       INVALID KEY DISPLAY 'Introuvable ' WS-STATUS\n       NOT INVALID KEY DISPLAY NOM-CLIENT\n    END-READ.\n    CLOSE FICHIER-CLIENT.\n    STOP RUN."
+				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. RechercheIndexee.\nENVIRONMENT DIVISION.\nINPUT-OUTPUT SECTION.\nFILE-CONTROL.\n    SELECT FICHIER-CLIENT ASSIGN TO 'clients.idx'\n        ORGANIZATION IS INDEXED\n        ACCESS MODE IS DYNAMIC\n        RECORD KEY IS ID-CLIENT\n        FILE STATUS IS WS-STATUS.\nDATA DIVISION.\nFILE SECTION.\nFD FICHIER-CLIENT.\n01 ENREG-CLIENT.\n   05 ID-CLIENT PIC 9(4).\n   05 NOM-CLIENT PIC X(30).\n   05 AGE-CLIENT PIC 99.\nWORKING-STORAGE SECTION.\n01 WS-STATUS PIC XX.\n01 WS-ID PIC 9(4).\nPROCEDURE DIVISION.\n    OPEN INPUT FICHIER-CLIENT.\n    ACCEPT WS-ID.\n    MOVE WS-ID TO ID-CLIENT.\n    READ FICHIER-CLIENT KEY IS ID-CLIENT\n       INVALID KEY DISPLAY 'Introuvable ' WS-STATUS\n       NOT INVALID KEY DISPLAY NOM-CLIENT\n    END-READ.\n    CLOSE FICHIER-CLIENT.\n    STOP RUN.",
+				"correctionExplanation": "### Pourquoi cette solution ?\n\n1. `ORGANIZATION IS INDEXED` + `RECORD KEY` permettent un accès direct.\n2. On place la clé dans `ID-CLIENT` puis `READ ... KEY`.\n3. `INVALID KEY` gère l'absence d'enregistrement.\n4. `FILE STATUS` aide au diagnostic.\n\n### Points clés\n- Différent du séquentiel : pas besoin de tout parcourir.\n- Toujours tester `INVALID KEY`."
 			}
 		},
 		{
@@ -127,7 +136,8 @@
 			"exercise": {
 				"title": "Exercice 10 — CRUD indexé",
 				"instructions": "Créez CrudClients avec menu 1-5 : créer, lire, modifier (REWRITE), supprimer (DELETE), quitter. Ouvrez le fichier en I-O. Gérez INVALID KEY sur chaque opération.",
-				"codeExample": "OPEN I-O FICHIER-CLIENT.\nPERFORM UNTIL WS-CHOIX = 5\n   ACCEPT WS-CHOIX\n   EVALUATE WS-CHOIX\n      WHEN 1 PERFORM CREER\n      WHEN 2 PERFORM LIRE\n      WHEN 3 PERFORM MODIFIER\n      WHEN 4 PERFORM SUPPRIMER\n   END-EVALUATE\nEND-PERFORM.\nCLOSE FICHIER-CLIENT."
+				"codeExample": "OPEN I-O FICHIER-CLIENT.\nPERFORM UNTIL WS-CHOIX = 5\n   ACCEPT WS-CHOIX\n   EVALUATE WS-CHOIX\n      WHEN 1 PERFORM CREER\n      WHEN 2 PERFORM LIRE\n      WHEN 3 PERFORM MODIFIER\n      WHEN 4 PERFORM SUPPRIMER\n   END-EVALUATE\nEND-PERFORM.\nCLOSE FICHIER-CLIENT.",
+				"correctionExplanation": "### Pourquoi cette solution ?\n\n1. `OPEN I-O` autorise lecture **et** écriture.\n2. CRUD : `WRITE` / `READ` / `REWRITE` / `DELETE`.\n3. Modifier = lire, changer les champs, puis `REWRITE`.\n4. Chaque opération gère `INVALID KEY`.\n\n### Points clés\n- Sans `I-O`, `REWRITE`/`DELETE` échouent.\n- Le menu structure les 4 opérations métier."
 			}
 		},
 		{
@@ -140,7 +150,8 @@
 			"exercise": {
 				"title": "Exercice 11 — CALL",
 				"instructions": "Créez ProgPrincipal qui saisit nom/âge puis CALL 'VALIDER-CLIENT'. Le sous-programme utilise LINKAGE SECTION, valide nom non vide et âge, renvoie un message dans LK-MSG, puis GOBACK. Bonus : refusez un âge > 120.",
-				"codeExample": "CALL 'VALIDER-CLIENT' USING WS-NOM WS-AGE WS-MSG.\nDISPLAY WS-MSG.\n\n* Sous-programme VALIDER-CLIENT\nLINKAGE SECTION.\n01 LK-NOM PIC X(30).\n01 LK-AGE PIC 99.\n01 LK-MSG PIC X(40).\nPROCEDURE DIVISION USING LK-NOM LK-AGE LK-MSG.\n    IF LK-AGE > 120\n       MOVE 'Age invalide' TO LK-MSG\n    END-IF.\n    GOBACK."
+				"codeExample": "CALL 'VALIDER-CLIENT' USING WS-NOM WS-AGE WS-MSG.\nDISPLAY WS-MSG.\n\n* Sous-programme VALIDER-CLIENT\nLINKAGE SECTION.\n01 LK-NOM PIC X(30).\n01 LK-AGE PIC 99.\n01 LK-MSG PIC X(40).\nPROCEDURE DIVISION USING LK-NOM LK-AGE LK-MSG.\n    IF LK-AGE > 120\n       MOVE 'Age invalide' TO LK-MSG\n    END-IF.\n    GOBACK.",
+				"correctionExplanation": "### Pourquoi cette solution ?\n\n1. Le programme principal saisit et appelle `CALL ... USING`.\n2. Le sous-programme reçoit les params via `LINKAGE SECTION`.\n3. La validation métier est isolée (nom vide, âge).\n4. `GOBACK` rend la main à l'appelant.\n\n### Points clés\n- Ordre des arguments `USING` = ordre `LINKAGE`.\n- Un module = une responsabilité (testabilité)."
 			}
 		},
 		{
@@ -153,7 +164,8 @@
 			"exercise": {
 				"title": "Exercice 12 — Rapport batch",
 				"instructions": "Écrivez RapportBatch : lisez ventes.txt (code article + montant), écrivez chaque ligne dans rapport.txt, calculez le nombre de ventes et le total, ajoutez un pied de page. Affichez une confirmation console. Bonus : calculez aussi la moyenne.",
-				"codeExample": "OPEN INPUT FICHIER-IN.\nOPEN OUTPUT FICHIER-OUT.\nPERFORM UNTIL WS-EOF = 'O'\n   READ FICHIER-IN\n      AT END MOVE 'O' TO WS-EOF\n      NOT AT END\n         ADD 1 TO WS-NB\n         ADD MONTANT TO WS-TOTAL\n         WRITE LIGNE-RAPPORT\n   END-READ\nEND-PERFORM.\nDIVIDE WS-TOTAL BY WS-NB GIVING WS-MOYENNE.\nCLOSE FICHIER-IN FICHIER-OUT."
+				"codeExample": "OPEN INPUT FICHIER-IN.\nOPEN OUTPUT FICHIER-OUT.\nPERFORM UNTIL WS-EOF = 'O'\n   READ FICHIER-IN\n      AT END MOVE 'O' TO WS-EOF\n      NOT AT END\n         ADD 1 TO WS-NB\n         ADD MONTANT TO WS-TOTAL\n         WRITE LIGNE-RAPPORT\n   END-READ\nEND-PERFORM.\nDIVIDE WS-TOTAL BY WS-NB GIVING WS-MOYENNE.\nCLOSE FICHIER-IN FICHIER-OUT.",
+				"correctionExplanation": "### Pourquoi cette solution ?\n\n1. Deux fichiers : entrée (`INPUT`) et rapport (`OUTPUT`).\n2. À chaque vente : incrément compteur + cumul montant + écriture ligne.\n3. Pied de page avec totaux.\n4. Le bonus moyenne utilise `DIVIDE`.\n\n### Points clés\n- Schéma batch classique : lire → calculer → écrire.\n- Fermer les deux fichiers en fin de traitement."
 			}
 		},
 		{
@@ -166,7 +178,8 @@
 			"exercise": {
 				"title": "Exercice 13 — Premier build",
 				"instructions": "Installez GnuCOBOL, créez HelloCompile.cob avec un DISPLAY personnalisé (votre prénom), compilez avec cobc -x et exécutez le binaire. Vérifiez cobc --version. Bonus : compilez aussi le programme du tutoriel 1.",
-				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. HelloCompile.\nPROCEDURE DIVISION.\n    DISPLAY 'Bonjour depuis GnuCOBOL !'.\n    STOP RUN.\n\n* Compilation :\n* cobc -x HelloCompile.cob -o HelloCompile\n* ./HelloCompile"
+				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. HelloCompile.\nPROCEDURE DIVISION.\n    DISPLAY 'Bonjour depuis GnuCOBOL !'.\n    STOP RUN.\n\n* Compilation :\n* cobc -x HelloCompile.cob -o HelloCompile\n* ./HelloCompile",
+				"correctionExplanation": "### Pourquoi cette solution ?\n\n1. Le source `.cob` contient un programme minimal.\n2. `cobc -x` produit un exécutable.\n3. Lancer `./HelloCompile` vérifie la chaîne complète install → compile → run.\n\n### Points clés\n- `cobc --version` confirme l'installation.\n- Sans `-x`, GnuCOBOL peut produire un objet/module plutôt qu'un binaire autonome."
 			}
 		},
 		{
@@ -179,7 +192,8 @@
 			"exercise": {
 				"title": "Exercice 14 — Chasse aux bugs",
 				"instructions": "Reprenez DebugDemo. Introduisez volontairement 2 bugs (PIC trop court, END-IF manquant), compilez, lisez les messages d'erreur, corrigez, puis validez l'affichage Mineur/Adulte. Bonus : ajoutez un test FILE STATUS sur un OPEN fictif.",
-				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. DebugDemo.\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 WS-AGE PIC 99.\n01 WS-STATUT PIC X(10).\nPROCEDURE DIVISION.\n    ACCEPT WS-AGE.\n    IF WS-AGE < 18\n       MOVE 'Mineur' TO WS-STATUT\n    ELSE\n       MOVE 'Adulte' TO WS-STATUT\n    END-IF.\n    DISPLAY 'Statut : ' WS-STATUT.\n    STOP RUN."
+				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. DebugDemo.\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 WS-AGE PIC 99.\n01 WS-STATUT PIC X(10).\nPROCEDURE DIVISION.\n    ACCEPT WS-AGE.\n    IF WS-AGE < 18\n       MOVE 'Mineur' TO WS-STATUT\n    ELSE\n       MOVE 'Adulte' TO WS-STATUT\n    END-IF.\n    DISPLAY 'Statut : ' WS-STATUT.\n    STOP RUN.",
+				"correctionExplanation": "### Pourquoi cette solution ?\n\n1. `PIC X(10)` est assez large pour `'Mineur'` / `'Adulte'`.\n2. `END-IF` délimite clairement le branchement.\n3. La méthode : reproduire le bug → lire le message `cobc` → corriger → retester.\n\n### Points clés\n- Les erreurs PIC / END-IF / fichiers sont les plus fréquentes en débutant.\n- Des `DISPLAY` temporaires aident à tracer l'exécution."
 			}
 		},
 		{
@@ -192,7 +206,8 @@
 			"exercise": {
 				"title": "Exercice 15 — SELECT embarqué",
 				"instructions": "Écrivez LectureSQL qui demande un ID, exécute un SELECT INTO sur CLIENTS, et affiche le nom si SQLCODE = 0, « aucun client » si 100, sinon le code d'erreur. Documentez le SGBD ciblé (DB2, Oracle...). Bonus : ajoutez un second SELECT sur une autre colonne.",
-				"codeExample": "EXEC SQL\n   SELECT NOM INTO :WS-NOM FROM CLIENTS WHERE ID = :WS-ID\nEND-EXEC.\nIF SQLCODE = 0\n   DISPLAY WS-NOM\nELSE\n   IF SQLCODE = 100\n      DISPLAY 'Aucun client'\n   ELSE\n      DISPLAY 'Erreur ' SQLCODE\n   END-IF\nEND-IF."
+				"codeExample": "EXEC SQL\n   SELECT NOM INTO :WS-NOM FROM CLIENTS WHERE ID = :WS-ID\nEND-EXEC.\nIF SQLCODE = 0\n   DISPLAY WS-NOM\nELSE\n   IF SQLCODE = 100\n      DISPLAY 'Aucun client'\n   ELSE\n      DISPLAY 'Erreur ' SQLCODE\n   END-IF\nEND-IF.",
+				"correctionExplanation": "### Pourquoi cette solution ?\n\n1. `EXEC SQL ... END-EXEC` embarque la requête.\n2. `:WS-NOM` / `:WS-ID` sont des **variables hôtes**.\n3. `SQLCODE = 0` → OK ; `100` → aucune ligne ; autre → erreur.\n\n### Points clés\n- Toujours tester `SQLCODE` après un SELECT.\n- La syntaxe exacte dépend du SGBD / précompilateur (DB2, Oracle...)."
 			}
 		}
 	]

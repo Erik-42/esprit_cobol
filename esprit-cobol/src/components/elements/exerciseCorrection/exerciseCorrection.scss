@@ -1,0 +1,51 @@
+.exercise-correction {
+	margin-top: 1.5rem;
+	padding-top: 1.25rem;
+	border-top: 1px dashed var(--cobol-green);
+	text-align: left;
+
+	&__title {
+		margin: 0 0 1rem;
+		font-size: 1.25rem;
+		color: var(--cobol-green);
+	}
+
+	&__subtitle {
+		margin: 0 0 0.75rem;
+		font-size: 1.05rem;
+		color: var(--cobol-blue-light);
+	}
+
+	&__code {
+		margin-bottom: 1.25rem;
+	}
+
+	&__explanation {
+		margin-top: 0.5rem;
+	}
+
+	&__markdown {
+		color: var(--cobol-text);
+		line-height: 1.6;
+
+		h1,
+		h2,
+		h3,
+		h4 {
+			color: var(--cobol-blue-light);
+		}
+
+		ul,
+		ol {
+			padding-left: 1.25rem;
+		}
+
+		code {
+			color: var(--cobol-green);
+		}
+
+		pre {
+			overflow-x: auto;
+		}
+	}
+}
