@@ -1,31 +1,55 @@
+@use "./_variables.scss" as *;
+
 * {
-	// max-width: 1440px;
+	box-sizing: border-box;
 }
 
 html,
 body {
-	font-family: "Courier New", Courier, monospace;
+	font-family: $font-family;
 	margin: 0;
 	padding: 0;
-	background-color: #282c34;
-	color: #c9d1d9;
-	height: 100%;
+	min-height: 100%;
+	color: var(--cobol-text);
+	background-color: var(--cobol-navy);
+	background-image:
+		radial-gradient(
+			ellipse at top,
+			rgba(0, 92, 165, 0.22) 0%,
+			transparent 55%
+		),
+		linear-gradient(180deg, #0a1f33 0%, var(--cobol-navy) 45%, #050f1a 100%);
+	background-attachment: fixed;
 	display: flex;
 	flex-direction: column;
 }
+
 a {
 	text-decoration: none;
+	color: var(--cobol-green);
+	transition: color 0.2s ease;
+
+	&:hover {
+		color: var(--cobol-blue-light);
+	}
 }
+
+h1,
+h2,
+h3,
+h4 {
+	color: var(--cobol-blue-light);
+}
+
 .app-wrapper {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
 }
+
 .app-container {
 	flex: 1;
-	// min-height: 100%;
 	position: relative;
-	// top: 7rem;
 	margin: 6rem 0 0;
 	display: flex;
 	flex-direction: column;

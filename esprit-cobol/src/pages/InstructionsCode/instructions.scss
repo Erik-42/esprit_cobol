@@ -1,10 +1,13 @@
 .instructions-container {
 	padding: 20px;
-	font-family: Arial, sans-serif;
+	font-family: inherit;
 	width: 85%;
+
 	header h1 {
 		text-align: center;
 		margin-bottom: 20px;
+		color: var(--cobol-blue-light);
+		text-shadow: var(--cobol-glow-blue);
 	}
 
 	.instructions {
@@ -12,23 +15,29 @@
 		border-radius: 5px;
 		margin-bottom: 20px;
 		text-align: left;
+		background-color: var(--cobol-surface);
+		border: 1px solid var(--cobol-border);
+
 		h2 {
 			font-size: 1.5em;
 			margin-bottom: 10px;
+			color: var(--cobol-green);
 		}
 
 		h3 {
 			font-size: 1.2em;
-			color: #58a6ff;
+			color: var(--cobol-blue-light);
 		}
 
 		h4 {
 			font-size: 1.1em;
 			margin-top: 15px;
+			color: var(--cobol-green-dim);
 		}
 
 		p {
 			line-height: 1.6;
+			color: var(--cobol-text);
 		}
 	}
 

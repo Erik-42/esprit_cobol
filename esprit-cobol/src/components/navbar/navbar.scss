@@ -1,27 +1,33 @@
 .navbar {
-	background-color: rgb(46, 46, 46);
+	background-color: var(--cobol-surface);
+	border-bottom: 2px solid var(--cobol-blue);
 	padding: 1rem;
 	display: flex;
 	justify-content: center;
 	position: fixed;
 	width: 100%;
 	z-index: 1;
+	box-shadow: 0 4px 18px rgba(0, 92, 165, 0.25);
+
 	ul {
 		list-style: none;
 		margin: 0;
 		padding: 0;
 		display: flex;
 		flex-wrap: wrap;
-		text-shadow: 0 0 10px #58a6ff, 0 0 20px #58a6ff, 0 0 30px #58a6ff;
 
 		li {
 			margin-right: 1rem;
 
 			a {
 				text-decoration: none;
-				color: rgb(179, 255, 164);
+				color: var(--cobol-green);
+				text-shadow: var(--cobol-glow-green);
+
 				&:hover {
+					color: var(--cobol-blue-light);
 					text-decoration: underline;
+					text-shadow: var(--cobol-glow-blue);
 				}
 			}
 		}

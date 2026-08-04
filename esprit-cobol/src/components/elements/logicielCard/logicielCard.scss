@@ -1,0 +1,111 @@
+.logiciel-card {
+	display: grid;
+	grid-template-rows: subgrid;
+	grid-row: span 4;
+	gap: 12px;
+	background: var(--cobol-panel);
+	padding: 20px;
+	border: 1px solid var(--cobol-blue);
+	border-radius: 8px;
+	box-shadow: 0 4px 16px rgba(0, 92, 165, 0.2);
+	text-align: center;
+	box-sizing: border-box;
+
+	&__title {
+		margin: 0;
+		font-size: 1.5rem;
+		line-height: 1.25;
+		color: var(--cobol-blue-light);
+		align-self: start;
+	}
+
+	&__description {
+		margin: 0;
+		font-size: 1rem;
+		line-height: 1.5;
+		color: var(--cobol-text-muted);
+		align-self: start;
+	}
+
+	&__preview {
+		display: block;
+		width: 100%;
+		height: 160px;
+		border: 1px solid var(--cobol-border);
+		border-radius: 6px;
+		overflow: hidden;
+		background-color: var(--cobol-navy);
+		align-self: stretch;
+		transition: border-color 0.2s, box-shadow 0.2s;
+
+		&:hover {
+			border-color: var(--cobol-blue-light);
+			box-shadow: 0 0 14px rgba(0, 92, 165, 0.4);
+		}
+	}
+
+	&__preview-image {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: top center;
+	}
+
+	&__preview-fallback {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		color: var(--cobol-text-muted);
+		font-size: 0.9rem;
+	}
+
+	&__actions {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-end;
+		align-self: end;
+	}
+
+	&__download-link {
+		text-decoration: none;
+	}
+
+	&__download-btn {
+		margin-top: 0;
+	}
+}
+
+/* Fallback si subgrid non supporté : hauteurs fixes pour aligner les aperçus */
+@supports not (grid-template-rows: subgrid) {
+	.logiciel-card {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		gap: 12px;
+
+		&__title {
+			min-height: 3.75rem;
+		}
+
+		&__description {
+			min-height: 6rem;
+			max-height: 6rem;
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 4;
+		}
+
+		&__preview {
+			flex-shrink: 0;
+		}
+
+		&__actions {
+			margin-top: auto;
+		}
+	}
+}

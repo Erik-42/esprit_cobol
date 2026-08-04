@@ -1,3 +1,40 @@
-$primary-color: #ff6f61;
-$text-color: #f4f4f4;
+// Palette COBOL — bleu marque + vert terminal mainframe
+$cobol-blue: #005ca5;
+$cobol-blue-light: #2e8fd6;
+$cobol-blue-dark: #004a85;
+$cobol-green: #b3ffa4;
+$cobol-green-dim: #7dcc72;
+$cobol-navy: #071525;
+$cobol-surface: #0f2438;
+$cobol-panel: #132b42;
+$cobol-border: #1e4a6e;
+$text-primary: #e6f2ea;
+$text-muted: #8ba3b8;
+$text-on-accent: #041018;
+$error: #e85d4c;
+$success: #7dcc72;
+
+$primary-color: $cobol-blue;
+$accent-color: $cobol-green;
+$text-color: $text-primary;
 $font-family: "Courier New", Courier, monospace;
+
+:root {
+	--cobol-blue: #{$cobol-blue};
+	--cobol-blue-light: #{$cobol-blue-light};
+	--cobol-blue-dark: #{$cobol-blue-dark};
+	--cobol-green: #{$cobol-green};
+	--cobol-green-dim: #{$cobol-green-dim};
+	--cobol-navy: #{$cobol-navy};
+	--cobol-surface: #{$cobol-surface};
+	--cobol-panel: #{$cobol-panel};
+	--cobol-border: #{$cobol-border};
+	--cobol-text: #{$text-primary};
+	--cobol-text-muted: #{$text-muted};
+	--cobol-text-on-accent: #{$text-on-accent};
+	--cobol-error: #{$error};
+	--cobol-success: #{$success};
+	--cobol-glow-blue: 0 0 10px rgba(0, 92, 165, 0.55),
+		0 0 22px rgba(46, 143, 214, 0.35);
+	--cobol-glow-green: 0 0 8px rgba(179, 255, 164, 0.45);
+}

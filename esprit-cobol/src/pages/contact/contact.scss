@@ -15,14 +15,14 @@
 	&__title {
 		margin: 0 0 0.75rem;
 		font-size: 2.5rem;
-		color: #58a6ff;
-		text-shadow: 0 0 10px #58a6ff, 0 0 20px #58a6ff;
+		color: var(--cobol-blue-light);
+		text-shadow: var(--cobol-glow-blue);
 	}
 
 	&__intro {
 		margin: 0;
 		font-size: 1.1rem;
-		color: #8b949e;
+		color: var(--cobol-text-muted);
 		line-height: 1.5;
 	}
 

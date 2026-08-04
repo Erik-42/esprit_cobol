@@ -14,15 +14,15 @@
 	}
 
 	&__success {
-		border: 1px solid #3fb950;
-		background-color: rgba(63, 185, 80, 0.15);
-		color: #3fb950;
+		border: 1px solid var(--cobol-success);
+		background-color: rgba(125, 204, 114, 0.15);
+		color: var(--cobol-success);
 	}
 
 	&__submit-error {
-		border: 1px solid #f85149;
-		background-color: rgba(248, 81, 73, 0.15);
-		color: #f85149;
+		border: 1px solid var(--cobol-error);
+		background-color: rgba(232, 93, 76, 0.15);
+		color: var(--cobol-error);
 	}
 
 	&__field {
@@ -34,7 +34,7 @@
 
 	&__label {
 		font-size: 0.95rem;
-		color: #c9d1d9;
+		color: var(--cobol-text);
 	}
 
 	&__input,
@@ -44,20 +44,20 @@
 		padding: 0.75rem 0.9rem;
 		font-family: inherit;
 		font-size: 1rem;
-		color: #c9d1d9;
-		background-color: #21262d;
-		border: 1px solid #58a6ff;
+		color: var(--cobol-text);
+		background-color: var(--cobol-panel);
+		border: 1px solid var(--cobol-blue);
 		border-radius: 5px;
 		outline: none;
 		transition: border-color 0.2s, box-shadow 0.2s;
 
 		&:focus {
-			border-color: #1f6feb;
-			box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.25);
+			border-color: var(--cobol-blue-light);
+			box-shadow: 0 0 0 2px rgba(46, 143, 214, 0.3);
 		}
 
 		&--error {
-			border-color: #f85149;
+			border-color: var(--cobol-error);
 		}
 	}
 
@@ -68,7 +68,7 @@
 
 	&__error {
 		font-size: 0.85rem;
-		color: #f85149;
+		color: var(--cobol-error);
 	}
 
 	&__actions {
@@ -84,12 +84,13 @@
 
 	&__reset {
 		margin-top: 0;
-		color: #c9d1d9;
+		color: var(--cobol-green);
 		background-color: transparent;
-		border: 1px solid #58a6ff;
+		border: 1px solid var(--cobol-green);
 
 		&:hover {
-			background-color: #21262d;
+			background-color: var(--cobol-panel);
+			color: var(--cobol-text);
 		}
 	}
 }

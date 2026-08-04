@@ -1,7 +1,16 @@
 .tutorials-container {
 	padding: 20px;
-	font-family: Arial, sans-serif;
+	font-family: inherit;
 	width: 85%;
+
+	header h1 {
+		color: var(--cobol-blue-light);
+		text-shadow: var(--cobol-glow-blue);
+	}
+
+	header p {
+		color: var(--cobol-text-muted);
+	}
 }
 
 .tutorials-cards {
@@ -12,16 +21,17 @@
 }
 
 .tutorial-card {
-	background: #21262d;
-	border: 1px solid #ddd;
+	background: var(--cobol-panel);
+	border: 1px solid var(--cobol-blue);
 	border-radius: 8px;
 	overflow: hidden;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-	transition: transform 0.3s ease;
+	box-shadow: 0 4px 16px rgba(0, 92, 165, 0.2);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .tutorial-card:hover {
-	transform: translateY(-10px);
+	transform: translateY(-8px);
+	box-shadow: var(--cobol-glow-blue);
 }
 
 .tutorial-image {
@@ -37,27 +47,38 @@
 .tutorial-info h3 {
 	font-size: 1.2em;
 	margin-bottom: 10px;
-	color: #58a6ff;
+	color: var(--cobol-blue-light);
 }
 
 .tutorial-info p {
 	font-size: 1em;
 	margin-bottom: 15px;
-	color: #666;
+	color: var(--cobol-text-muted);
+}
+
+.tutorial-code-preview {
+	padding: 0.75rem;
+	margin-bottom: 1rem;
+	overflow-x: auto;
+	font-size: 0.85rem;
+	color: var(--cobol-green);
+	background-color: var(--cobol-navy);
+	border: 1px solid var(--cobol-border);
+	border-radius: 4px;
 }
 
 .view-btn {
-	background-color: #007bff;
-	color: white;
+	background-color: var(--cobol-blue);
+	color: var(--cobol-text-on-accent);
 	padding: 8px 16px;
-	border: none;
+	border: 1px solid var(--cobol-blue-light);
 	border-radius: 4px;
 	cursor: pointer;
 	text-decoration: none;
 }
 
 .view-btn:hover {
-	background-color: #0056b3;
+	background-color: var(--cobol-blue-dark);
 }
 
 .NavTutorialsBtn {

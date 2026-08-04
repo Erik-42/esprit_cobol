@@ -1,23 +1,21 @@
-/* Header */
 header {
 	text-align: center;
 	padding: 20px;
-	background-color: #161b22;
-	border-bottom: 2px solid #58a6ff;
+	background-color: var(--cobol-surface);
+	border-bottom: 2px solid var(--cobol-blue);
 }
 
 main h1 {
 	font-size: 3rem;
-	color: #58a6ff;
-	text-shadow: 0 0 10px #58a6ff, 0 0 20px #58a6ff, 0 0 30px #58a6ff;
+	color: var(--cobol-blue-light);
+	text-shadow: var(--cobol-glow-blue);
 }
 
 header p {
 	font-size: 1.2rem;
-	color: #8b949e;
+	color: var(--cobol-text-muted);
 }
 
-/* Section principale */
 main {
 	padding: 20px;
 	display: flex;
@@ -33,7 +31,8 @@ section {
 
 section h2 {
 	font-size: 2rem;
-	color: #58a6ff;
+	color: var(--cobol-green);
+	text-shadow: var(--cobol-glow-green);
 }
 
 ul {
@@ -42,27 +41,30 @@ ul {
 }
 
 ul li {
-	background-color: #21262d;
+	background-color: var(--cobol-panel);
 	margin: 5px 0;
 	padding: 10px;
-	border: 1px solid #58a6ff;
+	border: 1px solid var(--cobol-blue);
 	border-radius: 5px;
+	color: var(--cobol-text);
 }
 
-/* Bouton */
+.btnLearnMore,
 button {
 	margin-top: 20px;
 	padding: 10px 20px;
 	font-size: 1rem;
-	color: #0d1117;
-	background-color: #58a6ff;
-	border: none;
+	color: var(--cobol-text-on-accent);
+	background-color: var(--cobol-blue);
+	border: 1px solid var(--cobol-blue-light);
 	border-radius: 5px;
 	cursor: pointer;
-	transition: transform 0.3s, background-color 0.3s;
+	transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+	box-shadow: 0 0 12px rgba(0, 92, 165, 0.35);
 }
 
+.btnLearnMore:hover,
 button:hover {
-	transform: scale(1.1);
-	background-color: #1f6feb;
+	transform: scale(1.05);
+	background-color: var(--cobol-blue-light);
 }

@@ -1,12 +1,12 @@
 .exercice-container {
 	padding: 20px;
-	font-family: Arial, sans-serif;
+	font-family: inherit;
 	width: 85%;
 }
 
 .code-section {
-	background: #21262d;
-	border: 1px solid #ddd;
+	background: var(--cobol-panel);
+	border: 1px solid var(--cobol-blue);
 	padding: 20px;
 	border-radius: 8px;
 	margin-top: 20px;
@@ -14,7 +14,7 @@
 
 .code-section h3 {
 	font-size: 1.2em;
-	color: #58a6ff;
+	color: var(--cobol-blue-light);
 }
 
 .tutorial-article {
@@ -23,7 +23,7 @@
 
 .tutorial-article p {
 	font-size: 1.1em;
-	color: #666;
+	color: var(--cobol-text-muted);
 	line-height: 1.5;
 }
 
@@ -35,21 +35,22 @@
 
 .prevBtn,
 .nextBtn {
-	background-color: #007bff;
-	color: white;
+	background-color: var(--cobol-blue);
+	color: var(--cobol-text-on-accent);
 	padding: 8px 16px;
-	border: none;
+	border: 1px solid var(--cobol-blue-light);
 	border-radius: 4px;
 	cursor: pointer;
 }
 
 .prevBtn:hover,
 .nextBtn:hover {
-	background-color: #0056b3;
+	background-color: var(--cobol-blue-dark);
 }
 
 .prevBtn:disabled,
 .nextBtn:disabled {
-	background-color: #ddd;
+	background-color: var(--cobol-border);
+	color: var(--cobol-text-muted);
 	cursor: not-allowed;
 }

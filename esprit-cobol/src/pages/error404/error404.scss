@@ -21,7 +21,7 @@
 		margin: 0;
 		font-size: 0.95rem;
 		letter-spacing: 0.12em;
-		color: #f85149;
+		color: var(--cobol-error);
 		text-transform: uppercase;
 	}
 
@@ -29,15 +29,15 @@
 		margin: 0;
 		font-size: clamp(4rem, 12vw, 7rem);
 		line-height: 1;
-		color: #58a6ff;
-		text-shadow: 0 0 10px #58a6ff, 0 0 24px #58a6ff;
+		color: var(--cobol-blue-light);
+		text-shadow: var(--cobol-glow-blue);
 	}
 
 	&__subtitle {
 		margin: 0;
 		font-size: 1.35rem;
 		letter-spacing: 0.08em;
-		color: #c9d1d9;
+		color: var(--cobol-green);
 	}
 
 	&__program {
@@ -52,11 +52,11 @@
 		font-family: "Courier New", Courier, monospace;
 		font-size: 0.9rem;
 		line-height: 1.45;
-		color: #c9d1d9;
-		background-color: #161b22;
-		border: 1px solid #58a6ff;
+		color: var(--cobol-green);
+		background-color: var(--cobol-navy);
+		border: 1px solid var(--cobol-blue);
 		border-radius: 5px;
-		box-shadow: 0 0 18px rgba(88, 166, 255, 0.15);
+		box-shadow: var(--cobol-glow-blue);
 
 		code {
 			font-family: inherit;
@@ -76,7 +76,7 @@
 		max-width: 34rem;
 		font-size: 1rem;
 		line-height: 1.5;
-		color: #8b949e;
+		color: var(--cobol-text-muted);
 	}
 
 	&__button {
