@@ -1,97 +1,98 @@
-import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useParams, useNavigate, Link } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
-import tutorialsData from "../../../db.json"; // Nouveau chemin pour db.json
+import { getTutorialById } from "../../components/elements/tutorialContent/getTutorialById";
+import Button from "../../components/elements/button/button";
+import { useScrollToTop } from "../../components/elements/scrollToTop/useScrollToTop";
 import "./tutorialDetails.scss";
 
 export default function TutorialDetails() {
 	const { id } = useParams();
 	const navigate = useNavigate();
-	const [tutorial, setTutorial] = useState(null); // État pour stocker le tutoriel
-	const [exerciseData, setExerciseData] = useState(null);
-	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState(null);
+	const tutorial = getTutorialById(id);
 
-	// Charger le tutoriel correspondant à l'ID
+	useScrollToTop(id);
+
 	useEffect(() => {
-		const foundTutorial = tutorialsData.tutorials.find(
-			(item) => item.id === parseInt(id)
-		);
-
-		if (!foundTutorial) {
+		if (!tutorial) {
 			navigate("/not-found");
-		} else {
-			setTutorial(foundTutorial);
 		}
-	}, [id, navigate]);
-
-	// Charger les données de l'exercice
-	useEffect(() => {
-		if (!tutorial) return;
-
-		const fetchExerciseData = async () => {
-			try {
-				const response = await fetch(
-					`http://localhost:5000/tutorials?id=${id}`
-				);
-				if (!response.ok) {
-					throw new Error("Erreur lors du chargement de l'exercice.");
-				}
-				const data = await response.json();
-				setExerciseData(data[0]); // On suppose que l'ID correspond à un seul exercice
-			} catch (err) {
-				setError(err.message);
-			} finally {
-				setLoading(false);
-			}
-		};
-
-		fetchExerciseData();
-	}, [id, tutorial]);
+	}, [tutorial, navigate]);
 
 	if (!tutorial) {
 		return null;
 	}
 
+	const renderCodeBlock = {
+		code({ inline, className, children, ...props }) {
+			const match = /language-(\w+)/.exec(className || "");
+			return !inline && match ? (
+				<SyntaxHighlighter
+					style={darcula}
+					language={match[1]}
+					PreTag='div'
+					{...props}>
+					{String(children).replace(/\n$/, "")}
+				</SyntaxHighlighter>
+			) : (
+				<code className={className} {...props}>
+					{children}
+				</code>
+			);
+		},
+	};
+
 	return (
-		<div className='tutorial-details-container'>
-			<header>
-				<h1>{tutorial.title}</h1>
-				<p>{tutorial.description}</p>
+		<div className='tutorial-details'>
+			<header className='tutorial-details__header'>
+				<h1 className='tutorial-details__title'>{tutorial.title}</h1>
+				<p className='tutorial-details__description'>{tutorial.description}</p>
 			</header>
-			<section className='tutorial-content'>
-				<div className='code-example'>
-					<h3>Le code</h3>
+
+			<section className='tutorial-details__content'>
+				<div className='tutorial-details__block'>
+					<h2 className='tutorial-details__heading'>Le code</h2>
 					<SyntaxHighlighter language='cobol' style={darcula}>
-						{tutorial.codeExample}
+						{tutorial.detailedCode || tutorial.codeExample}
 					</SyntaxHighlighter>
 				</div>
-				<div className='code-explicite'>
-					<h3>L'explication</h3>
-					<SyntaxHighlighter language='cobol' style={darcula}>
-						{tutorial.codeExplicite}
-					</SyntaxHighlighter>
-				</div>
-				<div className='exercise-section'>
-					<h3>L'exercice</h3>
-					{loading ? (
-						<div>Chargement de l'exercice...</div>
-					) : error ? (
-						<div className='error-message'>{error}</div>
-					) : exerciseData ? (
-						<div className='exercise-content'>
-							<h4>{exerciseData.title}</h4>
-							<p>{exerciseData.instructions}</p>
+
+				{tutorial.explanation && (
+					<div className='tutorial-details__block'>
+						<h2 className='tutorial-details__heading'>L'explication</h2>
+						<div className='tutorial-details__markdown'>
+							<ReactMarkdown components={renderCodeBlock}>
+								{tutorial.explanation}
+							</ReactMarkdown>
+						</div>
+					</div>
+				)}
+
+				{tutorial.exercise && (
+					<div className='tutorial-details__block tutorial-details__block--exercise'>
+						<h2 className='tutorial-details__heading'>L'exercice</h2>
+						<div className='tutorial-details__exercise'>
+							<h3 className='tutorial-details__exercise-title'>
+								{tutorial.exercise.title}
+							</h3>
+							<p className='tutorial-details__exercise-instructions'>
+								{tutorial.exercise.instructions}
+							</p>
 							<SyntaxHighlighter language='cobol' style={darcula}>
-								{exerciseData.codeExample}
+								{tutorial.exercise.codeExample}
 							</SyntaxHighlighter>
 						</div>
-					) : (
-						<div>Exercice introuvable pour ce tutoriel.</div>
-					)}
-				</div>
+					</div>
+				)}
 			</section>
+
+			<div className='tutorial-details__actions'>
+				<Link to='/tutorials'>
+					<Button label='Retour aux tutoriels' className='tutorial-details__back' />
+				</Link>
+			</div>
 		</div>
 	);
 }

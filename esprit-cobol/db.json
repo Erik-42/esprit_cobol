@@ -6,8 +6,12 @@
 			"title": "Introduction au COBOL",
 			"description": "Apprenez les bases du COBOL dans ce tutoriel.",
 			"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. HelloWorld.\nPROCEDURE DIVISION.\n    DISPLAY 'Hello, COBOL World!'.\n    STOP RUN.",
-			"codeExplicite": "esprit-cobol/src/pages/tutorials/exercice1/exercice1.md",
-			"link": "/tutorial/exercice1"
+			"link": "/tutorial/1",
+			"exercise": {
+				"title": "Exercice 1 — Hello World",
+				"instructions": "Créez un programme COBOL nommé HelloWorld qui affiche le message « Hello, COBOL World! » puis termine l'exécution avec STOP RUN. Bonus : ajoutez une variable MY-VARIABLE (PIC 9(4) VALUE 100) et affichez sa valeur.",
+				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. HelloWorld.\n\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 MY-VARIABLE PIC 9(4) VALUE 100.\n\nPROCEDURE DIVISION.\n    DISPLAY 'Hello, COBOL World!'.\n    DISPLAY 'Variable value: ' MY-VARIABLE.\n    STOP RUN."
+			}
 		},
 		{
 			"id": 2,
@@ -15,8 +19,12 @@
 			"title": "Introduction aux variables COBOL",
 			"description": "Découvrez comment déclarer et utiliser des variables en COBOL.",
 			"codeExample": "DATA DIVISION.\nWORKING-STORAGE SECTION.\n01 MY-VARIABLE PIC 9(4) VALUE 100.",
-			"codeExplicite": "esprit-cobol/src/pages/tutorials/exercice1/exercice1.md",
-			"link": "/tutorial/exercice2"
+			"link": "/tutorial/2",
+			"exercise": {
+				"title": "Exercice 2 — Variables",
+				"instructions": "Déclarez une variable numérique MY-VARIABLE de 4 chiffres initialisée à 100 dans la WORKING-STORAGE SECTION. Affichez ensuite un message contenant cette variable dans la PROCEDURE DIVISION.",
+				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. VariablesDemo.\n\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 MY-VARIABLE PIC 9(4) VALUE 100.\n\nPROCEDURE DIVISION.\n    DISPLAY 'Hello, COBOL World!'.\n    DISPLAY 'Variable value: ' MY-VARIABLE.\n    STOP RUN."
+			}
 		},
 		{
 			"id": 3,
@@ -24,8 +32,12 @@
 			"title": "Variables et types de données en COBOL",
 			"description": "Découvrez comment déclarer et utiliser des variables en COBOL.",
 			"codeExample": "DATA DIVISION.\nWORKING-STORAGE SECTION.\n01 MY-VARIABLE PIC 9(4) VALUE 100.",
-			"codeExplicite": "esprit-cobol/src/pages/tutorials/exercice1/exercice1.md",
-			"link": "/tutorial/exercice3"
+			"link": "/tutorial/3",
+			"exercise": {
+				"title": "Exercice 3 — Types de données",
+				"instructions": "Reprenez le programme HelloWorld et expliquez chaque clause PIC / VALUE. Vérifiez que la sortie affiche bien « Hello, COBOL World! » puis « Variable value: 100 ».",
+				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. HelloWorld.\n\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 MY-VARIABLE PIC 9(4) VALUE 100.\n\nPROCEDURE DIVISION.\n    DISPLAY 'Hello, COBOL World!'.\n    DISPLAY 'Variable value: ' MY-VARIABLE.\n    STOP RUN."
+			}
 		}
 	]
 }
