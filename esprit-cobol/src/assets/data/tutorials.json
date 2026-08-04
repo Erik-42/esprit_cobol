@@ -1,26 +1,50 @@
 [
 	{
 		"id": 1,
-		"image": "../img/exercices/exercice1/perform_add.gif",
 		"title": "Introduction au COBOL",
 		"description": "Écrivez votre premier programme COBOL : Hello World et affichage console.",
-		"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. HelloWorld.\nPROCEDURE DIVISION.\n    DISPLAY 'Hello, COBOL World!'.\n    STOP RUN.",
 		"link": "/tutorial/1"
 	},
 	{
 		"id": 2,
-		"image": "../exercices/exercice2/mom_03-01.png",
 		"title": "Variables alphanumériques (PIC X)",
 		"description": "Déclarez et manipulez du texte avec PIC X : noms, adresses et chaînes de caractères.",
-		"codeExample": "DATA DIVISION.\nWORKING-STORAGE SECTION.\n01 NOM-CLIENT PIC X(30) VALUE 'Dupont'.\n01 VILLE     PIC X(20) VALUE 'Paris'.",
 		"link": "/tutorial/2"
 	},
 	{
 		"id": 3,
-		"image": "../exercices/exercice3/mom_03-02-1.png",
 		"title": "Variables numériques décimales (PIC 9V99)",
 		"description": "Travaillez les montants et soldes avec décimales implicites (V) et valeurs signées (S).",
-		"codeExample": "DATA DIVISION.\nWORKING-STORAGE SECTION.\n01 MONTANT  PIC 9(5)V99 VALUE 1250.50.\n01 SOLDE    PIC S9(5)V99 VALUE -320.75.",
 		"link": "/tutorial/3"
+	},
+	{
+		"id": 4,
+		"title": "Saisie utilisateur avec ACCEPT",
+		"description": "Rendez votre programme interactif : saisissez un nom et un âge au clavier, puis affichez une fiche client.",
+		"link": "/tutorial/4"
+	},
+	{
+		"id": 5,
+		"title": "Calculs métier et conditions IF",
+		"description": "Calculez une TVA avec MULTIPLY/ADD et classez la commande avec IF / ELSE.",
+		"link": "/tutorial/5"
+	},
+	{
+		"id": 6,
+		"title": "Structurer le code avec PERFORM",
+		"description": "Découpez votre programme en paragraphes clairs et orchestrez-les avec PERFORM.",
+		"link": "/tutorial/6"
+	},
+	{
+		"id": 7,
+		"title": "Fichier séquentiel OPEN / READ / CLOSE",
+		"description": "Lisez un fichier clients ligne par ligne — le cœur historique du COBOL batch.",
+		"link": "/tutorial/7"
+	},
+	{
+		"id": 8,
+		"title": "Mini-gestion de clients (menu + fichier)",
+		"description": "Menu CREATE / LIST avec EVALUATE, PERFORM, WRITE et READ sur un fichier clients.",
+		"link": "/tutorial/8"
 	}
 ]

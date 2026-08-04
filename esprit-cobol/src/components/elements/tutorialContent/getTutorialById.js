@@ -1,12 +1,22 @@
 import exercice1Md from "../../../pages/tutorials/exercice1/exercice1.md?raw";
 import exercice2Md from "../../../pages/tutorials/exercice2/exercice2.md?raw";
 import exercice3Md from "../../../pages/tutorials/exercice3/exercice3.md?raw";
+import exercice4Md from "../../../pages/tutorials/exercice4/exercice4.md?raw";
+import exercice5Md from "../../../pages/tutorials/exercice5/exercice5.md?raw";
+import exercice6Md from "../../../pages/tutorials/exercice6/exercice6.md?raw";
+import exercice7Md from "../../../pages/tutorials/exercice7/exercice7.md?raw";
+import exercice8Md from "../../../pages/tutorials/exercice8/exercice8.md?raw";
 import tutorialsDb from "../../../../db.json";
 
 const markdownById = {
 	1: exercice1Md,
 	2: exercice2Md,
 	3: exercice3Md,
+	4: exercice4Md,
+	5: exercice5Md,
+	6: exercice6Md,
+	7: exercice7Md,
+	8: exercice8Md,
 };
 
 /**

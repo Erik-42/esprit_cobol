@@ -38,6 +38,71 @@
 				"instructions": "Créez un programme MontantDemo qui déclare MONTANT (PIC 9(5)V99) et SOLDE (PIC S9(5)V99). Initialisez un montant positif et un solde négatif, puis affichez-les. Observez la différence entre un numérique simple et un numérique signé.",
 				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. MontantDemo.\n\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 MONTANT PIC 9(5)V99 VALUE 1250.50.\n01 SOLDE   PIC S9(5)V99 VALUE -320.75.\n\nPROCEDURE DIVISION.\n    DISPLAY 'Montant : ' MONTANT.\n    DISPLAY 'Solde   : ' SOLDE.\n    STOP RUN."
 			}
+		},
+		{
+			"id": 4,
+			"image": "exercices/exercice4/accept_demo.png",
+			"title": "Saisie utilisateur avec ACCEPT",
+			"description": "Rendez votre programme interactif : saisissez un nom et un âge au clavier, puis affichez une fiche client.",
+			"codeExample": "DISPLAY 'Entrez le nom du client :'.\nACCEPT NOM-CLIENT.\nDISPLAY 'Entrez age du client :'.\nACCEPT AGE-CLIENT.",
+			"link": "/tutorial/4",
+			"exercise": {
+				"title": "Exercice 4 — ACCEPT",
+				"instructions": "Créez un programme SaisieClient qui demande le nom (PIC X(30)) et l'âge (PIC 99) via ACCEPT, puis affiche une fiche récapitulative. Bonus : demandez aussi la ville (PIC X(20)) et ajoutez-la à la fiche.",
+				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. SaisieClient.\n\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 NOM-CLIENT PIC X(30).\n01 AGE-CLIENT PIC 99.\n01 VILLE     PIC X(20).\n\nPROCEDURE DIVISION.\n    DISPLAY 'Entrez le nom du client :'.\n    ACCEPT NOM-CLIENT.\n    DISPLAY 'Entrez age du client (00-99) :'.\n    ACCEPT AGE-CLIENT.\n    DISPLAY 'Entrez la ville :'.\n    ACCEPT VILLE.\n    DISPLAY '---------------------------'.\n    DISPLAY 'Fiche client'.\n    DISPLAY 'Nom   : ' NOM-CLIENT.\n    DISPLAY 'Age   : ' AGE-CLIENT.\n    DISPLAY 'Ville : ' VILLE.\n    STOP RUN."
+			}
+		},
+		{
+			"id": 5,
+			"image": "exercices/exercice5/preview.png",
+			"title": "Calculs métier et conditions IF",
+			"description": "Calculez une TVA avec MULTIPLY/ADD et classez la commande avec IF / ELSE.",
+			"codeExample": "MULTIPLY PRIX-HT BY TAUX-TVA GIVING MONTANT-TVA.\nADD PRIX-HT TO MONTANT-TVA GIVING PRIX-TTC.\nIF PRIX-TTC > 1000 ...",
+			"link": "/tutorial/5",
+			"exercise": {
+				"title": "Exercice 5 — TVA + IF",
+				"instructions": "Créez CalculTVA : saisissez un prix HT, calculez TVA à 20 % et TTC, puis affichez « Commande importante » si TTC > 1000, sinon « Commande standard ». Bonus : utilisez aussi SUBTRACT pour afficher une remise fictive de 10 sur le TTC.",
+				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. CalculTVA.\n\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 PRIX-HT     PIC 9(5)V99.\n01 TAUX-TVA    PIC 9V99 VALUE 0.20.\n01 MONTANT-TVA PIC 9(5)V99.\n01 PRIX-TTC    PIC 9(5)V99.\n01 PRIX-REMISE PIC 9(5)V99.\n\nPROCEDURE DIVISION.\n    DISPLAY 'Entrez le prix HT :'.\n    ACCEPT PRIX-HT.\n    MULTIPLY PRIX-HT BY TAUX-TVA GIVING MONTANT-TVA.\n    ADD PRIX-HT TO MONTANT-TVA GIVING PRIX-TTC.\n    SUBTRACT 10 FROM PRIX-TTC GIVING PRIX-REMISE.\n    IF PRIX-TTC > 1000\n       DISPLAY 'Commande importante'\n    ELSE\n       DISPLAY 'Commande standard'\n    END-IF.\n    DISPLAY 'TTC : ' PRIX-TTC.\n    DISPLAY 'TTC -10 : ' PRIX-REMISE.\n    STOP RUN."
+			}
+		},
+		{
+			"id": 6,
+			"image": "exercices/exercice6/preview.png",
+			"title": "Structurer le code avec PERFORM",
+			"description": "Découpez votre programme en paragraphes clairs et orchestrez-les avec PERFORM.",
+			"codeExample": "MAIN-LOGIC.\n    PERFORM SAISIE-CLIENT.\n    PERFORM AFFICHER-FICHE.\n    STOP RUN.",
+			"link": "/tutorial/6",
+			"exercise": {
+				"title": "Exercice 6 — PERFORM",
+				"instructions": "Créez StructurePerform avec trois paragraphes : MAIN-LOGIC, SAISIE-CLIENT (ACCEPT nom + âge), AFFICHER-FICHE. MAIN-LOGIC doit uniquement faire des PERFORM puis STOP RUN. Bonus : ajoutez un paragraphe VALIDER-AGE qui affiche « Mineur » ou « Adulte ».",
+				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. StructurePerform.\n\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 NOM-CLIENT PIC X(30).\n01 AGE-CLIENT PIC 99.\n\nPROCEDURE DIVISION.\nMAIN-LOGIC.\n    PERFORM SAISIE-CLIENT.\n    PERFORM VALIDER-AGE.\n    PERFORM AFFICHER-FICHE.\n    STOP RUN.\n\nSAISIE-CLIENT.\n    DISPLAY 'Nom :'.\n    ACCEPT NOM-CLIENT.\n    DISPLAY 'Age :'.\n    ACCEPT AGE-CLIENT.\n\nVALIDER-AGE.\n    IF AGE-CLIENT < 18\n       DISPLAY 'Mineur'\n    ELSE\n       DISPLAY 'Adulte'\n    END-IF.\n\nAFFICHER-FICHE.\n    DISPLAY 'Nom : ' NOM-CLIENT.\n    DISPLAY 'Age : ' AGE-CLIENT."
+			}
+		},
+		{
+			"id": 7,
+			"image": "exercices/exercice7/preview.png",
+			"title": "Fichier séquentiel OPEN / READ / CLOSE",
+			"description": "Lisez un fichier clients ligne par ligne — le cœur historique du COBOL batch.",
+			"codeExample": "OPEN INPUT FICHIER-CLIENT.\nREAD FICHIER-CLIENT AT END ...\nCLOSE FICHIER-CLIENT.",
+			"link": "/tutorial/7",
+			"exercise": {
+				"title": "Exercice 7 — Lecture fichier",
+				"instructions": "Écrivez LectureFichier qui ouvre clients.txt (LINE SEQUENTIAL), lit chaque enregistrement (NOM PIC X(30), AGE PIC 99) et l'affiche jusqu'à AT END, puis ferme le fichier. Préparez un fichier clients.txt de test avec 2 ou 3 lignes.",
+				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. LectureFichier.\n\nENVIRONMENT DIVISION.\nINPUT-OUTPUT SECTION.\nFILE-CONTROL.\n    SELECT FICHIER-CLIENT ASSIGN TO 'clients.txt'\n        ORGANIZATION IS LINE SEQUENTIAL.\n\nDATA DIVISION.\nFILE SECTION.\nFD FICHIER-CLIENT.\n01 ENREG-CLIENT.\n   05 NOM-CLIENT PIC X(30).\n   05 AGE-CLIENT PIC 99.\n\nWORKING-STORAGE SECTION.\n01 WS-EOF PIC X VALUE 'N'.\n\nPROCEDURE DIVISION.\n    OPEN INPUT FICHIER-CLIENT.\n    PERFORM UNTIL WS-EOF = 'O'\n       READ FICHIER-CLIENT\n          AT END MOVE 'O' TO WS-EOF\n          NOT AT END DISPLAY NOM-CLIENT ' ' AGE-CLIENT\n       END-READ\n    END-PERFORM.\n    CLOSE FICHIER-CLIENT.\n    STOP RUN."
+			}
+		},
+		{
+			"id": 8,
+			"image": "exercices/exercice8/preview.png",
+			"title": "Mini-gestion de clients (menu + fichier)",
+			"description": "Menu CREATE / LIST avec EVALUATE, PERFORM, WRITE et READ sur un fichier clients.",
+			"codeExample": "EVALUATE WS-CHOIX\n   WHEN 1 PERFORM CREER-CLIENT\n   WHEN 2 PERFORM LISTER-CLIENTS\nEND-EVALUATE.",
+			"link": "/tutorial/8",
+			"exercise": {
+				"title": "Exercice 8 — Mini CRUD",
+				"instructions": "Créez GestionClients avec un menu : 1 créer (OPEN EXTEND + WRITE), 2 lister (boucle READ), 3 quitter. Utilisez EVALUATE pour le menu et PERFORM pour chaque action. Bonus : comptez le nombre de clients listés.",
+				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. GestionClients.\n\nENVIRONMENT DIVISION.\nINPUT-OUTPUT SECTION.\nFILE-CONTROL.\n    SELECT FICHIER-CLIENT ASSIGN TO 'clients.dat'\n        ORGANIZATION IS LINE SEQUENTIAL.\n\nDATA DIVISION.\nFILE SECTION.\nFD FICHIER-CLIENT.\n01 ENREG-CLIENT.\n   05 NOM-CLIENT PIC X(30).\n   05 AGE-CLIENT PIC 99.\n\nWORKING-STORAGE SECTION.\n01 WS-CHOIX PIC 9 VALUE 0.\n01 WS-EOF PIC X VALUE 'N'.\n01 WS-NOM PIC X(30).\n01 WS-AGE PIC 99.\n01 WS-NB PIC 99 VALUE 0.\n\nPROCEDURE DIVISION.\nMAIN-LOGIC.\n    PERFORM UNTIL WS-CHOIX = 3\n       DISPLAY '1-Creer 2-Lister 3-Quitter'\n       ACCEPT WS-CHOIX\n       EVALUATE WS-CHOIX\n          WHEN 1 PERFORM CREER-CLIENT\n          WHEN 2 PERFORM LISTER-CLIENTS\n          WHEN 3 DISPLAY 'Au revoir.'\n          WHEN OTHER DISPLAY 'Choix invalide'\n       END-EVALUATE\n    END-PERFORM\n    STOP RUN.\n\nCREER-CLIENT.\n    ACCEPT WS-NOM\n    ACCEPT WS-AGE\n    OPEN EXTEND FICHIER-CLIENT\n    MOVE WS-NOM TO NOM-CLIENT\n    MOVE WS-AGE TO AGE-CLIENT\n    WRITE ENREG-CLIENT\n    CLOSE FICHIER-CLIENT.\n\nLISTER-CLIENTS.\n    MOVE 0 TO WS-NB\n    MOVE 'N' TO WS-EOF\n    OPEN INPUT FICHIER-CLIENT\n    PERFORM UNTIL WS-EOF = 'O'\n       READ FICHIER-CLIENT\n          AT END MOVE 'O' TO WS-EOF\n          NOT AT END\n             ADD 1 TO WS-NB\n             DISPLAY NOM-CLIENT\n       END-READ\n    END-PERFORM\n    CLOSE FICHIER-CLIENT\n    DISPLAY 'Total : ' WS-NB."
+			}
 		}
 	]
 }
