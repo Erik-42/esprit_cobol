@@ -2,82 +2,83 @@
 
 ```cobol
 IDENTIFICATION DIVISION.
-PROGRAM-ID. HelloWorld.
+PROGRAM-ID. MontantDemo.
 
 DATA DIVISION.
 WORKING-STORAGE SECTION.
-01 MY-VARIABLE PIC 9(4) VALUE 100.
+01 MONTANT PIC 9(5)V99 VALUE 1250.50.
+01 SOLDE   PIC S9(5)V99 VALUE -320.75.
 
 PROCEDURE DIVISION.
-    DISPLAY 'Hello, COBOL World!'.
-    DISPLAY 'Variable value: ' MY-VARIABLE.
+    DISPLAY 'Montant : ' MONTANT.
+    DISPLAY 'Solde   : ' SOLDE.
     STOP RUN.
 ```
 
 <!-- L'expliquation -->
 
-# Explication détaillée du code COBOL 3
+# Variables numériques décimales — PIC 9V99 et S9
+
+---
+
+## **Objectif du tutoriel**
+
+Manipuler des **montants** et des **soldes** : décimales implicites avec `V`, et valeurs négatives avec `S`.  
+C’est le cœur des applications COBOL métier (banque, facturation, stocks).
 
 ---
 
 ## **IDENTIFICATION DIVISION**
 
-C'est la section où vous identifiez le programme. Elle contient des informations essentielles comme le nom du programme.
-
-- **`PROGRAM-ID. HelloWorld.`**
-  - Cette ligne spécifie le nom du programme. Ici, le programme s'appelle `HelloWorld`.
+- **`PROGRAM-ID. MontantDemo.`**  
+  Programme dédié aux montants numériques.
 
 ---
 
-## **DATA DIVISION**
+## **DATA DIVISION — WORKING-STORAGE SECTION**
 
-Cette division est utilisée pour déclarer les données et les variables nécessaires à l'exécution du programme.
+### `01 MONTANT PIC 9(5)V99 VALUE 1250.50.`
 
-- **`WORKING-STORAGE SECTION.`**
+- **`PIC 9(5)V99`** :
+  - `9(5)` = jusqu’à 5 chiffres avant la virgule ;
+  - `V` = **virgule décimale implicite** (non stockée comme caractère) ;
+  - `99` = 2 chiffres après la virgule.
+- **`VALUE 1250.50`** : initialisation du montant.
 
-  - Cette section contient des variables temporaires utilisées par le programme.
+### `01 SOLDE PIC S9(5)V99 VALUE -320.75.`
 
-- **`01 MY-VARIABLE PIC 9(4) VALUE 100.`**
-  - **`01`** : Indique le niveau hiérarchique de la variable. Le niveau 01 correspond à une variable principale.
-  - **`MY-VARIABLE`** : Nom de la variable. Vous pouvez utiliser ce nom pour référencer cette donnée.
-  - **`PIC 9(4)`** : Le mot-clé `PIC` (Picture) définit le type et la structure de la variable.
-    - **`9(4)`** : Spécifie un entier de 4 chiffres. Seules des valeurs numériques (0 à 9) peuvent être stockées.
-  - **`VALUE 100`** : Attribue une valeur initiale de `100` à la variable `MY-VARIABLE`.
+- **`S`** devant `9` = nombre **signé** (positif ou négatif).
+- Idéal pour un solde de compte qui peut être débiteur.
+- **`VALUE -320.75`** : solde négatif.
+
+> Différence clé avec le tutoriel 2 : ici on ne stocke pas du texte (`PIC X`), mais des quantités calculables (`PIC 9` / `S9`).
 
 ---
 
 ## **PROCEDURE DIVISION**
 
-C'est ici que la logique du programme est écrite. C'est la section "exécutable" du code.
-
-- **`DISPLAY 'Hello, COBOL World!'.`**
-
-  - Cette commande affiche le texte `Hello, COBOL World!` sur la sortie standard (souvent la console ou l'écran).
-
-- **`DISPLAY 'Variable value: ' MY-VARIABLE.`**
-
-  - Cette commande affiche une combinaison de texte et la valeur de la variable `MY-VARIABLE`.
-    - Le résultat sera :
-      ```
-      Variable value: 100
-      ```
-
-- **`STOP RUN.`**
-  - Cette commande termine l'exécution du programme.
+- Affichage du montant (toujours positif dans cet exemple).
+- Affichage du solde (peut être négatif grâce à `S`).
+- **`STOP RUN.`** termine l’exécution.
 
 ---
 
-## **Résumé du fonctionnement**
+## **Points à retenir**
 
-1. Le programme est identifié avec le nom `HelloWorld`.
-2. Une variable nommée `MY-VARIABLE` est déclarée avec une taille de 4 chiffres et une valeur initiale de `100`.
-3. Lors de l'exécution :
-   - Le texte **"Hello, COBOL World!"** est affiché.
-   - Ensuite, **"Variable value: 100"** est affiché en combinant un texte statique et la valeur de la variable `MY-VARIABLE`.
-4. Le programme se termine proprement avec **`STOP RUN.`**
+| Clause | Rôle |
+|--------|------|
+| `PIC 9(n)` | Entier de `n` chiffres |
+| `V` | Décimale implicite |
+| `PIC 9(n)V99` | Montant avec 2 décimales |
+| `S` | Autorise le signe − / + |
 
 ---
 
 ## **Sortie attendue**
 
-Lors de l'exécution, la sortie affichée sera :
+```
+Montant : 1250.50
+Solde   : -320.75
+```
+
+(le format exact d’affichage peut varier selon le compilateur)

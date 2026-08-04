@@ -4,39 +4,39 @@
 			"id": 1,
 			"image": "exercices/exercice1/perform_add.gif",
 			"title": "Introduction au COBOL",
-			"description": "Apprenez les bases du COBOL dans ce tutoriel.",
+			"description": "Écrivez votre premier programme COBOL : Hello World et affichage console.",
 			"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. HelloWorld.\nPROCEDURE DIVISION.\n    DISPLAY 'Hello, COBOL World!'.\n    STOP RUN.",
 			"link": "/tutorial/1",
 			"exercise": {
 				"title": "Exercice 1 — Hello World",
-				"instructions": "Créez un programme COBOL nommé HelloWorld qui affiche le message « Hello, COBOL World! » puis termine l'exécution avec STOP RUN. Bonus : ajoutez une variable MY-VARIABLE (PIC 9(4) VALUE 100) et affichez sa valeur.",
-				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. HelloWorld.\n\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 MY-VARIABLE PIC 9(4) VALUE 100.\n\nPROCEDURE DIVISION.\n    DISPLAY 'Hello, COBOL World!'.\n    DISPLAY 'Variable value: ' MY-VARIABLE.\n    STOP RUN."
+				"instructions": "Créez un programme COBOL nommé HelloWorld qui affiche le message « Hello, COBOL World! » puis termine l'exécution avec STOP RUN. Bonus : ajoutez une variable entière MY-COMPTEUR (PIC 9(4) VALUE 1) et affichez-la.",
+				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. HelloWorld.\n\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 MY-COMPTEUR PIC 9(4) VALUE 1.\n\nPROCEDURE DIVISION.\n    DISPLAY 'Hello, COBOL World!'.\n    DISPLAY 'Compteur : ' MY-COMPTEUR.\n    STOP RUN."
 			}
 		},
 		{
 			"id": 2,
 			"image": "exercices/exercice2/mom_03-01.png",
-			"title": "Introduction aux variables COBOL",
-			"description": "Découvrez comment déclarer et utiliser des variables en COBOL.",
-			"codeExample": "DATA DIVISION.\nWORKING-STORAGE SECTION.\n01 MY-VARIABLE PIC 9(4) VALUE 100.",
+			"title": "Variables alphanumériques (PIC X)",
+			"description": "Déclarez et manipulez du texte avec PIC X : noms, adresses et chaînes de caractères.",
+			"codeExample": "DATA DIVISION.\nWORKING-STORAGE SECTION.\n01 NOM-CLIENT PIC X(30) VALUE 'Dupont'.\n01 VILLE     PIC X(20) VALUE 'Paris'.",
 			"link": "/tutorial/2",
 			"exercise": {
-				"title": "Exercice 2 — Variables",
-				"instructions": "Déclarez une variable numérique MY-VARIABLE de 4 chiffres initialisée à 100 dans la WORKING-STORAGE SECTION. Affichez ensuite un message contenant cette variable dans la PROCEDURE DIVISION.",
-				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. VariablesDemo.\n\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 MY-VARIABLE PIC 9(4) VALUE 100.\n\nPROCEDURE DIVISION.\n    DISPLAY 'Hello, COBOL World!'.\n    DISPLAY 'Variable value: ' MY-VARIABLE.\n    STOP RUN."
+				"title": "Exercice 2 — PIC X",
+				"instructions": "Créez un programme AlphaDemo qui déclare NOM-CLIENT (PIC X(30)) et VILLE (PIC X(20)), initialise ces valeurs, puis affiche « Client : … — Ville : … ». Utilisez uniquement des variables alphanumériques.",
+				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. AlphaDemo.\n\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 NOM-CLIENT PIC X(30) VALUE 'Dupont'.\n01 VILLE     PIC X(20) VALUE 'Paris'.\n\nPROCEDURE DIVISION.\n    DISPLAY 'Client : ' NOM-CLIENT.\n    DISPLAY 'Ville  : ' VILLE.\n    STOP RUN."
 			}
 		},
 		{
 			"id": 3,
 			"image": "exercices/exercice3/mom_03-02-1.png",
-			"title": "Variables et types de données en COBOL",
-			"description": "Découvrez comment déclarer et utiliser des variables en COBOL.",
-			"codeExample": "DATA DIVISION.\nWORKING-STORAGE SECTION.\n01 MY-VARIABLE PIC 9(4) VALUE 100.",
+			"title": "Variables numériques décimales (PIC 9V99)",
+			"description": "Travaillez les montants et soldes avec décimales implicites (V) et valeurs signées (S).",
+			"codeExample": "DATA DIVISION.\nWORKING-STORAGE SECTION.\n01 MONTANT  PIC 9(5)V99 VALUE 1250.50.\n01 SOLDE    PIC S9(5)V99 VALUE -320.75.",
 			"link": "/tutorial/3",
 			"exercise": {
-				"title": "Exercice 3 — Types de données",
-				"instructions": "Reprenez le programme HelloWorld et expliquez chaque clause PIC / VALUE. Vérifiez que la sortie affiche bien « Hello, COBOL World! » puis « Variable value: 100 ».",
-				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. HelloWorld.\n\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 MY-VARIABLE PIC 9(4) VALUE 100.\n\nPROCEDURE DIVISION.\n    DISPLAY 'Hello, COBOL World!'.\n    DISPLAY 'Variable value: ' MY-VARIABLE.\n    STOP RUN."
+				"title": "Exercice 3 — PIC 9V99 et S9",
+				"instructions": "Créez un programme MontantDemo qui déclare MONTANT (PIC 9(5)V99) et SOLDE (PIC S9(5)V99). Initialisez un montant positif et un solde négatif, puis affichez-les. Observez la différence entre un numérique simple et un numérique signé.",
+				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. MontantDemo.\n\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 MONTANT PIC 9(5)V99 VALUE 1250.50.\n01 SOLDE   PIC S9(5)V99 VALUE -320.75.\n\nPROCEDURE DIVISION.\n    DISPLAY 'Montant : ' MONTANT.\n    DISPLAY 'Solde   : ' SOLDE.\n    STOP RUN."
 			}
 		}
 	]

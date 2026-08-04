@@ -3,24 +3,24 @@
 		"id": 1,
 		"image": "../img/exercices/exercice1/perform_add.gif",
 		"title": "Introduction au COBOL",
-		"description": "Apprenez les bases du COBOL dans ce tutoriel.",
+		"description": "Écrivez votre premier programme COBOL : Hello World et affichage console.",
 		"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. HelloWorld.\nPROCEDURE DIVISION.\n    DISPLAY 'Hello, COBOL World!'.\n    STOP RUN.",
-		"link": "/tutorial/exercice1"
+		"link": "/tutorial/1"
 	},
 	{
 		"id": 2,
 		"image": "../exercices/exercice2/mom_03-01.png",
-		"title": "Introduction aux variables COBOL",
-		"description": "Découvrez comment déclarer et utiliser des variables en COBOL.",
-		"codeExample": "DATA DIVISION.\nWORKING-STORAGE SECTION.\n01 MY-VARIABLE PIC 9(4) VALUE 100.",
-		"link": "/tutorial/exercice2"
+		"title": "Variables alphanumériques (PIC X)",
+		"description": "Déclarez et manipulez du texte avec PIC X : noms, adresses et chaînes de caractères.",
+		"codeExample": "DATA DIVISION.\nWORKING-STORAGE SECTION.\n01 NOM-CLIENT PIC X(30) VALUE 'Dupont'.\n01 VILLE     PIC X(20) VALUE 'Paris'.",
+		"link": "/tutorial/2"
 	},
 	{
 		"id": 3,
 		"image": "../exercices/exercice3/mom_03-02-1.png",
-		"title": "Variables et types de données en COBOL",
-		"description": "Découvrez comment déclarer et utiliser des variables en COBOL.",
-		"codeExample": "DATA DIVISION.\nWORKING-STORAGE SECTION.\n01 MY-VARIABLE PIC 9(4) VALUE 100.",
-		"link": "/tutorial/exercice3"
+		"title": "Variables numériques décimales (PIC 9V99)",
+		"description": "Travaillez les montants et soldes avec décimales implicites (V) et valeurs signées (S).",
+		"codeExample": "DATA DIVISION.\nWORKING-STORAGE SECTION.\n01 MONTANT  PIC 9(5)V99 VALUE 1250.50.\n01 SOLDE    PIC S9(5)V99 VALUE -320.75.",
+		"link": "/tutorial/3"
 	}
 ]

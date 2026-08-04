@@ -2,82 +2,82 @@
 
 ```cobol
 IDENTIFICATION DIVISION.
-PROGRAM-ID. HelloWorld.
+PROGRAM-ID. AlphaDemo.
 
 DATA DIVISION.
 WORKING-STORAGE SECTION.
-01 MY-VARIABLE PIC 9(4) VALUE 100.
+01 NOM-CLIENT PIC X(30) VALUE 'Dupont'.
+01 VILLE     PIC X(20) VALUE 'Paris'.
 
 PROCEDURE DIVISION.
-    DISPLAY 'Hello, COBOL World!'.
-    DISPLAY 'Variable value: ' MY-VARIABLE.
+    DISPLAY 'Client : ' NOM-CLIENT.
+    DISPLAY 'Ville  : ' VILLE.
     STOP RUN.
 ```
 
 <!-- L'expliquation -->
 
-# Explication détaillée du code COBOL 2
+# Variables alphanumériques — PIC X
+
+---
+
+## **Objectif du tutoriel**
+
+Apprendre à stocker et afficher du **texte** en COBOL grâce à la clause `PIC X`.  
+Contrairement à `PIC 9` (chiffres uniquement), `PIC X` accepte lettres, chiffres et symboles.
 
 ---
 
 ## **IDENTIFICATION DIVISION**
 
-C'est la section où vous identifiez le programme. Elle contient des informations essentielles comme le nom du programme.
-
-- **`PROGRAM-ID. HelloWorld.`**
-  - Cette ligne spécifie le nom du programme. Ici, le programme s'appelle `HelloWorld`.
+- **`PROGRAM-ID. AlphaDemo.`**  
+  Nom du programme : `AlphaDemo` (démo alphanumérique).
 
 ---
 
-## **DATA DIVISION**
+## **DATA DIVISION — WORKING-STORAGE SECTION**
 
-Cette division est utilisée pour déclarer les données et les variables nécessaires à l'exécution du programme.
+### `01 NOM-CLIENT PIC X(30) VALUE 'Dupont'.`
 
-- **`WORKING-STORAGE SECTION.`**
+- **`01`** : niveau principal de la variable.
+- **`NOM-CLIENT`** : nom lisible de la donnée.
+- **`PIC X(30)`** :
+  - `X` = caractère alphanumérique ;
+  - `(30)` = longueur maximale de 30 caractères.
+- **`VALUE 'Dupont'`** : valeur initiale (chaîne entre apostrophes).
 
-  - Cette section contient des variables temporaires utilisées par le programme.
+### `01 VILLE PIC X(20) VALUE 'Paris'.`
 
-- **`01 MY-VARIABLE PIC 9(4) VALUE 100.`**
-  - **`01`** : Indique le niveau hiérarchique de la variable. Le niveau 01 correspond à une variable principale.
-  - **`MY-VARIABLE`** : Nom de la variable. Vous pouvez utiliser ce nom pour référencer cette donnée.
-  - **`PIC 9(4)`** : Le mot-clé `PIC` (Picture) définit le type et la structure de la variable.
-    - **`9(4)`** : Spécifie un entier de 4 chiffres. Seules des valeurs numériques (0 à 9) peuvent être stockées.
-  - **`VALUE 100`** : Attribue une valeur initiale de `100` à la variable `MY-VARIABLE`.
+Même principe : chaîne de 20 caractères maximum, initialisée à `Paris`.
+
+> Si la valeur est plus courte que la taille déclarée, COBOL complète à droite avec des espaces.
 
 ---
 
 ## **PROCEDURE DIVISION**
 
-C'est ici que la logique du programme est écrite. C'est la section "exécutable" du code.
-
-- **`DISPLAY 'Hello, COBOL World!'.`**
-
-  - Cette commande affiche le texte `Hello, COBOL World!` sur la sortie standard (souvent la console ou l'écran).
-
-- **`DISPLAY 'Variable value: ' MY-VARIABLE.`**
-
-  - Cette commande affiche une combinaison de texte et la valeur de la variable `MY-VARIABLE`.
-    - Le résultat sera :
-      ```
-      Variable value: 100
-      ```
-
-- **`STOP RUN.`**
-  - Cette commande termine l'exécution du programme.
+- **`DISPLAY 'Client : ' NOM-CLIENT.`**  
+  Affiche un libellé suivi du contenu de la variable texte.
+- **`DISPLAY 'Ville  : ' VILLE.`**  
+  Affiche la ville.
+- **`STOP RUN.`**  
+  Fin du programme.
 
 ---
 
-## **Résumé du fonctionnement**
+## **Résumé**
 
-1. Le programme est identifié avec le nom `HelloWorld`.
-2. Une variable nommée `MY-VARIABLE` est déclarée avec une taille de 4 chiffres et une valeur initiale de `100`.
-3. Lors de l'exécution :
-   - Le texte **"Hello, COBOL World!"** est affiché.
-   - Ensuite, **"Variable value: 100"** est affiché en combinant un texte statique et la valeur de la variable `MY-VARIABLE`.
-4. Le programme se termine proprement avec **`STOP RUN.`**
+1. `PIC X(n)` sert aux noms, adresses, codes alphanumériques, messages.
+2. Les littéraux texte s’écrivent entre apostrophes : `'Dupont'`.
+3. La longueur `(n)` fixe l’espace réservé en mémoire.
 
 ---
 
 ## **Sortie attendue**
 
-Lors de l'exécution, la sortie affichée sera :
+```
+Client : Dupont
+Ville  : Paris
+```
+
+(les espaces de fin éventuels peuvent apparaître selon le compilateur)
