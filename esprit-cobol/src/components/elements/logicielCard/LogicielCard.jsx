@@ -25,7 +25,10 @@ const LogicielCard = ({ name, description, link, image }) => {
 						className='logiciel-card__preview-image'
 						src={image}
 						alt={`Aperçu du site ${name}`}
+						width={640}
+						height={400}
 						loading='lazy'
+						decoding='async'
 						onError={() => setImageFailed(true)}
 					/>
 				)}

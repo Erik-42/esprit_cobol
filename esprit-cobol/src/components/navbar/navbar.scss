@@ -9,27 +9,33 @@
 	z-index: 1;
 	box-shadow: 0 4px 18px rgba(0, 92, 165, 0.25);
 
-	ul {
+	&__list {
 		list-style: none;
 		margin: 0;
 		padding: 0;
 		display: flex;
 		flex-wrap: wrap;
+	}
 
-		li {
-			margin-right: 1rem;
+	&__item {
+		margin-right: 1rem;
+	}
 
-			a {
-				text-decoration: none;
-				color: var(--cobol-green);
-				text-shadow: var(--cobol-glow-green);
+	&__link {
+		text-decoration: none;
+		color: var(--cobol-green);
+		text-shadow: var(--cobol-glow-green);
 
-				&:hover {
-					color: var(--cobol-blue-light);
-					text-decoration: underline;
-					text-shadow: var(--cobol-glow-blue);
-				}
-			}
+		&:hover {
+			color: var(--cobol-blue-light);
+			text-decoration: underline;
+			text-shadow: var(--cobol-glow-blue);
+		}
+
+		&:focus-visible {
+			outline: 3px solid var(--cobol-green);
+			outline-offset: 3px;
+			border-radius: 2px;
 		}
 	}
 }

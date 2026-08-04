@@ -3,28 +3,42 @@ import { Link } from "react-router-dom";
 import "./navbar.scss";
 
 const Navbar = () => (
-	<nav className='navbar'>
-		<ul>
-			<li>
-				<Link to='/'>Accueil</Link>
+	<nav className='navbar' aria-label='Navigation principale'>
+		<ul className='navbar__list'>
+			<li className='navbar__item'>
+				<Link className='navbar__link' to='/'>
+					Accueil
+				</Link>
 			</li>
-			<li>
-				<Link to='/history'>Le COBOL c'est quoi ?</Link>
+			<li className='navbar__item'>
+				<Link className='navbar__link' to='/history'>
+					Le COBOL c'est quoi ?
+				</Link>
 			</li>
-			<li>
-				<Link to='/bases'>Les bases</Link>
+			<li className='navbar__item'>
+				<Link className='navbar__link' to='/bases'>
+					Les bases
+				</Link>
 			</li>
-			<li>
-				<Link to='/instructions'>Les instructions</Link>
+			<li className='navbar__item'>
+				<Link className='navbar__link' to='/instructions'>
+					Les instructions
+				</Link>
 			</li>
-			<li>
-				<Link to='/logiciels'>Les logiciels</Link>
+			<li className='navbar__item'>
+				<Link className='navbar__link' to='/logiciels'>
+					Les logiciels
+				</Link>
 			</li>
-			<li>
-				<Link to='/tutorials'>Tutoriels</Link>
+			<li className='navbar__item'>
+				<Link className='navbar__link' to='/tutorials'>
+					Tutoriels
+				</Link>
 			</li>
-			<li>
-				<Link to='/contact'>Contact</Link>
+			<li className='navbar__item'>
+				<Link className='navbar__link' to='/contact'>
+					Contact
+				</Link>
 			</li>
 		</ul>
 	</nav>

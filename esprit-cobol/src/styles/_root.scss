@@ -19,7 +19,6 @@ body {
 			transparent 55%
 		),
 		linear-gradient(180deg, #0a1f33 0%, var(--cobol-navy) 45%, #050f1a 100%);
-	background-attachment: fixed;
 	display: flex;
 	flex-direction: column;
 }
@@ -32,6 +31,17 @@ a {
 	&:hover {
 		color: var(--cobol-blue-light);
 	}
+
+	&:focus-visible {
+		outline: 3px solid var(--cobol-green);
+		outline-offset: 2px;
+	}
+}
+
+button:focus-visible,
+.customBtn:focus-visible {
+	outline: 3px solid var(--cobol-green);
+	outline-offset: 2px;
 }
 
 h1,
@@ -55,4 +65,5 @@ h4 {
 	flex-direction: column;
 	align-items: center;
 	gap: 1rem;
+	outline: none;
 }

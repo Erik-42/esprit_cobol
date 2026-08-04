@@ -1,0 +1,19 @@
+.skip-link {
+	position: absolute;
+	top: -100%;
+	left: 1rem;
+	z-index: 1000;
+	padding: 0.75rem 1rem;
+	color: var(--cobol-text-on-accent);
+	background-color: var(--cobol-blue);
+	border: 2px solid var(--cobol-green);
+	border-radius: 4px;
+	text-decoration: none;
+	font-weight: bold;
+
+	&:focus {
+		top: 1rem;
+		outline: 3px solid var(--cobol-green);
+		outline-offset: 2px;
+	}
+}

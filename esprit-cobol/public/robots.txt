@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://esprit-cobol.vercel.app/sitemap.xml

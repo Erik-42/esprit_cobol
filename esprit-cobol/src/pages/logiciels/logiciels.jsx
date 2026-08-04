@@ -8,35 +8,35 @@ const logiciels = [
 		description:
 			"Un compilateur COBOL open source qui convertit le code COBOL en code C. Idéal pour les développeurs souhaitant une solution gratuite.",
 		link: "https://gnucobol.sourceforge.io/",
-		image: "/assets/img/logiciels/gnucobol.png",
+		image: "/assets/img/logiciels/gnucobol.webp",
 	},
 	{
 		name: "OpenCobolIDE",
 		description:
 			"Un environnement de développement intégré (IDE) léger et facile à utiliser pour GnuCOBOL.",
 		link: "https://launchpad.net/cobcide",
-		image: "/assets/img/logiciels/opencobolide.png",
+		image: "/assets/img/logiciels/opencobolide.webp",
 	},
 	{
 		name: "IBM Enterprise COBOL",
 		description:
 			"Compilateur COBOL d'entreprise utilisé pour les environnements mainframe, offrant des performances et une compatibilité exceptionnelles.",
 		link: "https://www.ibm.com/products/cobol-compiler",
-		image: "/assets/img/logiciels/ibm-cobol.png",
+		image: "/assets/img/logiciels/ibm-cobol.webp",
 	},
 	{
 		name: "Micro Focus Visual COBOL",
 		description:
 			"Une solution professionnelle pour le développement COBOL moderne, intégrée à Visual Studio et Eclipse.",
 		link: "https://www.microfocus.com/en-us/products/visual-cobol/overview",
-		image: "/assets/img/logiciels/microfocus.png",
+		image: "/assets/img/logiciels/microfocus.webp",
 	},
 	{
 		name: "COBOL Extension for VS Code",
 		description:
 			"Une extension pour Visual Studio Code offrant des fonctionnalités comme la coloration syntaxique et la complétion de code pour le langage COBOL.",
 		link: "https://marketplace.visualstudio.com/items?itemName=bitlang.cobol",
-		image: "/assets/img/logiciels/vscode-cobol.png",
+		image: "/assets/img/logiciels/vscode-cobol.webp",
 	},
 ];
 
