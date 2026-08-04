@@ -1,0 +1,27 @@
+.tutorial-export-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	justify-content: center;
+
+	&__print,
+	&__export {
+		margin-top: 0;
+	}
+
+	&__print {
+		background-color: var(--cobol-blue-dark);
+		border-color: var(--cobol-blue-light);
+	}
+
+	&__export {
+		background-color: transparent;
+		color: var(--cobol-blue-light);
+		border: 1px solid var(--cobol-blue-light);
+
+		&:hover {
+			background-color: var(--cobol-panel);
+			color: var(--cobol-text);
+		}
+	}
+}

@@ -103,3 +103,49 @@
 		}
 	}
 }
+
+@media print {
+	.no-print,
+	.navbar,
+	.footer,
+	.skip-link,
+	.exercise-correction {
+		display: none !important;
+	}
+
+	.app-container {
+		margin: 0 !important;
+	}
+
+	.tutorial-details {
+		max-width: 100%;
+		padding: 0;
+		color: #000;
+
+		&__title,
+		&__heading,
+		&__exercise-title {
+			color: #000;
+			text-shadow: none;
+		}
+
+		&__description,
+		&__exercise-instructions,
+		&__markdown {
+			color: #222;
+		}
+
+		&__block {
+			background: transparent;
+			border: 1px solid #ccc;
+			box-shadow: none;
+			break-inside: avoid;
+		}
+
+		pre,
+		code {
+			white-space: pre-wrap;
+			word-break: break-word;
+		}
+	}
+}

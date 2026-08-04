@@ -6,6 +6,7 @@ import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { getTutorialById } from "../../components/elements/tutorialContent/getTutorialById";
 import Button from "../../components/elements/button/button";
 import ExerciseCorrection from "../../components/elements/exerciseCorrection/ExerciseCorrection";
+import TutorialExportActions from "../../components/elements/tutorialExport/TutorialExportActions";
 import { useScrollToTop } from "../../components/elements/scrollToTop/useScrollToTop";
 import "./tutorialDetails.scss";
 
@@ -89,26 +90,29 @@ export default function TutorialDetails() {
 						</div>
 
 						{showCorrection && (
-							<ExerciseCorrection
-								code={tutorial.exercise.codeExample}
-								explanation={tutorial.exercise.correctionExplanation}
-								renderCodeBlock={renderCodeBlock}
-							/>
+							<div className='no-print'>
+								<ExerciseCorrection
+									code={tutorial.exercise.codeExample}
+									explanation={tutorial.exercise.correctionExplanation}
+									renderCodeBlock={renderCodeBlock}
+								/>
+							</div>
 						)}
 					</div>
 				)}
 			</section>
 
-			<div className='tutorial-details__actions'>
+			<div className='tutorial-details__actions no-print'>
 				<Link to='/tutorials'>
 					<Button
 						label='Retour aux tutoriels'
 						className='tutorial-details__back'
 					/>
 				</Link>
+				<TutorialExportActions tutorial={tutorial} />
 				{tutorial.exercise && (
 					<Button
-						label={showCorrection ? 'Masquer la correction' : 'Correction'}
+						label={showCorrection ? "Masquer la correction" : "Correction"}
 						className='tutorial-details__correction-btn'
 						onClick={() => setShowCorrection((prev) => !prev)}
 					/>
