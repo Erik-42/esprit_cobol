@@ -15,10 +15,12 @@ import Error404 from "./pages/error404/Error404";
 // import Exercice3 from "./pages/tutorials/exercice1/exercice3";
 import "./styles/main.scss";
 import TutorialDetails from "./pages/tutorialDetails/TutorialDetails";
+import ScrollToTop from "./components/elements/scrollToTop/ScrollToTop";
 
 function App() {
 	return (
 		<Router>
+			<ScrollToTop />
 			<div className='app-wrapper'>
 				<Navbar />
 				<div className='app-container'>

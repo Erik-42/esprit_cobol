@@ -4,10 +4,12 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "./exercice2.scss";
 import Button from "../../../components/elements/button/button";
+import { useScrollToTop } from "../../../components/elements/scrollToTop/useScrollToTop";
 import tutorialsData from "../../../assets/data/tutorials.json"; // Si vous utilisez un fichier JSON pour les tutoriels
 
 export default function Exercice2() {
 	const [currentIndex, setCurrentIndex] = useState(0);
+	useScrollToTop(currentIndex);
 
 	// Fonction pour naviguer vers le tutoriel suivant
 	const handleNext = () => {

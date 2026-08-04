@@ -5,9 +5,11 @@ import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "./instructions.scss";
 import instructionsData from "../../assets/data/instructions.json";
 import Button from "../../components/elements/button/button";
+import { useScrollToTop } from "../../components/elements/scrollToTop/useScrollToTop";
 
 export default function Instructions() {
 	const [currentIndex, setCurrentIndex] = useState(0);
+	useScrollToTop(currentIndex);
 
 	const handleNext = () => {
 		if (currentIndex < instructionsData.length - 1) {

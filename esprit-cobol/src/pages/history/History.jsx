@@ -5,9 +5,11 @@ import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "./history.scss";
 import historyData from "../../assets/data/history.json";
 import Button from "../../components/elements/button/button";
+import { useScrollToTop } from "../../components/elements/scrollToTop/useScrollToTop";
 
 export default function History() {
 	const [currentIndex, setCurrentIndex] = useState(0);
+	useScrollToTop(currentIndex);
 
 	const handleNext = () => {
 		if (currentIndex < historyData.length - 1) {

@@ -5,9 +5,11 @@ import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "./bases.scss";
 import baseData from "../../assets/data/bases.json";
 import Button from "../../components/elements/button/button";
+import { useScrollToTop } from "../../components/elements/scrollToTop/useScrollToTop";
 
 export default function Bases() {
 	const [currentIndex, setCurrentIndex] = useState(0);
+	useScrollToTop(currentIndex);
 
 	const handleNext = () => {
 		if (currentIndex < baseData.length - 1) {
