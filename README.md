@@ -50,7 +50,8 @@ Rien à installer : ouvrez simplement la version en ligne :
 
 Si Esprit-COBOL vous est utile, vous pouvez offrir un café :
 
-[https://www.buymeacoffee.com/meseneriko](https://www.buymeacoffee.com/meseneriko)
+
+https://buymeacoffee.com/meseneriko/bienvenue-dcouvrez-l-aventure-derrire-cobol-basillecorp-dev
 
 <a href="https://www.buymeacoffee.com/meseneriko">
   <img src="./esprit-cobol/src/assets/img/bmc/bmc_qr.png" alt="QR code Buy Me a Coffee" width="120">
