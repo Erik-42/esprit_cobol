@@ -103,6 +103,58 @@
 				"instructions": "Créez GestionClients avec un menu : 1 créer (OPEN EXTEND + WRITE), 2 lister (boucle READ), 3 quitter. Utilisez EVALUATE pour le menu et PERFORM pour chaque action. Bonus : comptez le nombre de clients listés.",
 				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. GestionClients.\n\nENVIRONMENT DIVISION.\nINPUT-OUTPUT SECTION.\nFILE-CONTROL.\n    SELECT FICHIER-CLIENT ASSIGN TO 'clients.dat'\n        ORGANIZATION IS LINE SEQUENTIAL.\n\nDATA DIVISION.\nFILE SECTION.\nFD FICHIER-CLIENT.\n01 ENREG-CLIENT.\n   05 NOM-CLIENT PIC X(30).\n   05 AGE-CLIENT PIC 99.\n\nWORKING-STORAGE SECTION.\n01 WS-CHOIX PIC 9 VALUE 0.\n01 WS-EOF PIC X VALUE 'N'.\n01 WS-NOM PIC X(30).\n01 WS-AGE PIC 99.\n01 WS-NB PIC 99 VALUE 0.\n\nPROCEDURE DIVISION.\nMAIN-LOGIC.\n    PERFORM UNTIL WS-CHOIX = 3\n       DISPLAY '1-Creer 2-Lister 3-Quitter'\n       ACCEPT WS-CHOIX\n       EVALUATE WS-CHOIX\n          WHEN 1 PERFORM CREER-CLIENT\n          WHEN 2 PERFORM LISTER-CLIENTS\n          WHEN 3 DISPLAY 'Au revoir.'\n          WHEN OTHER DISPLAY 'Choix invalide'\n       END-EVALUATE\n    END-PERFORM\n    STOP RUN.\n\nCREER-CLIENT.\n    ACCEPT WS-NOM\n    ACCEPT WS-AGE\n    OPEN EXTEND FICHIER-CLIENT\n    MOVE WS-NOM TO NOM-CLIENT\n    MOVE WS-AGE TO AGE-CLIENT\n    WRITE ENREG-CLIENT\n    CLOSE FICHIER-CLIENT.\n\nLISTER-CLIENTS.\n    MOVE 0 TO WS-NB\n    MOVE 'N' TO WS-EOF\n    OPEN INPUT FICHIER-CLIENT\n    PERFORM UNTIL WS-EOF = 'O'\n       READ FICHIER-CLIENT\n          AT END MOVE 'O' TO WS-EOF\n          NOT AT END\n             ADD 1 TO WS-NB\n             DISPLAY NOM-CLIENT\n       END-READ\n    END-PERFORM\n    CLOSE FICHIER-CLIENT\n    DISPLAY 'Total : ' WS-NB."
 			}
+		},
+		{
+			"id": 9,
+			"image": "exercices/exercice9/preview.png",
+			"title": "Fichier indexé — recherche par clé",
+			"description": "Accédez directement à un client via RECORD KEY, INVALID KEY et FILE STATUS.",
+			"codeExample": "READ FICHIER-CLIENT\n   KEY IS ID-CLIENT\n   INVALID KEY DISPLAY 'Introuvable'\nEND-READ.",
+			"link": "/tutorial/9",
+			"exercise": {
+				"title": "Exercice 9 — Recherche indexée",
+				"instructions": "Écrivez RechercheIndexee : ouvrez un fichier INDEXED, demandez un ID (PIC 9(4)), lisez par clé et affichez le client ou « introuvable ». Gérez INVALID KEY et affichez FILE STATUS en cas d'erreur.",
+				"codeExample": "IDENTIFICATION DIVISION.\nPROGRAM-ID. RechercheIndexee.\nENVIRONMENT DIVISION.\nINPUT-OUTPUT SECTION.\nFILE-CONTROL.\n    SELECT FICHIER-CLIENT ASSIGN TO 'clients.idx'\n        ORGANIZATION IS INDEXED\n        ACCESS MODE IS DYNAMIC\n        RECORD KEY IS ID-CLIENT\n        FILE STATUS IS WS-STATUS.\nDATA DIVISION.\nFILE SECTION.\nFD FICHIER-CLIENT.\n01 ENREG-CLIENT.\n   05 ID-CLIENT PIC 9(4).\n   05 NOM-CLIENT PIC X(30).\n   05 AGE-CLIENT PIC 99.\nWORKING-STORAGE SECTION.\n01 WS-STATUS PIC XX.\n01 WS-ID PIC 9(4).\nPROCEDURE DIVISION.\n    OPEN INPUT FICHIER-CLIENT.\n    ACCEPT WS-ID.\n    MOVE WS-ID TO ID-CLIENT.\n    READ FICHIER-CLIENT KEY IS ID-CLIENT\n       INVALID KEY DISPLAY 'Introuvable ' WS-STATUS\n       NOT INVALID KEY DISPLAY NOM-CLIENT\n    END-READ.\n    CLOSE FICHIER-CLIENT.\n    STOP RUN."
+			}
+		},
+		{
+			"id": 10,
+			"image": "exercices/exercice10/preview.png",
+			"title": "CRUD complet sur fichier indexé",
+			"description": "Menu Create / Read / Update / Delete avec WRITE, READ, REWRITE et DELETE.",
+			"codeExample": "WRITE ENREG-CLIENT\nREWRITE ENREG-CLIENT\nDELETE FICHIER-CLIENT RECORD",
+			"link": "/tutorial/10",
+			"exercise": {
+				"title": "Exercice 10 — CRUD indexé",
+				"instructions": "Créez CrudClients avec menu 1-5 : créer, lire, modifier (REWRITE), supprimer (DELETE), quitter. Ouvrez le fichier en I-O. Gérez INVALID KEY sur chaque opération.",
+				"codeExample": "OPEN I-O FICHIER-CLIENT.\nPERFORM UNTIL WS-CHOIX = 5\n   ACCEPT WS-CHOIX\n   EVALUATE WS-CHOIX\n      WHEN 1 PERFORM CREER\n      WHEN 2 PERFORM LIRE\n      WHEN 3 PERFORM MODIFIER\n      WHEN 4 PERFORM SUPPRIMER\n   END-EVALUATE\nEND-PERFORM.\nCLOSE FICHIER-CLIENT."
+			}
+		},
+		{
+			"id": 11,
+			"image": "exercices/exercice11/preview.png",
+			"title": "Sous-programmes avec CALL",
+			"description": "Séparez validation et traitement : CALL, LINKAGE SECTION et GOBACK.",
+			"codeExample": "CALL 'VALIDER-CLIENT' USING WS-NOM WS-AGE WS-MSG.",
+			"link": "/tutorial/11",
+			"exercise": {
+				"title": "Exercice 11 — CALL",
+				"instructions": "Créez ProgPrincipal qui saisit nom/âge puis CALL 'VALIDER-CLIENT'. Le sous-programme utilise LINKAGE SECTION, valide nom non vide et âge, renvoie un message dans LK-MSG, puis GOBACK. Bonus : refusez un âge > 120.",
+				"codeExample": "CALL 'VALIDER-CLIENT' USING WS-NOM WS-AGE WS-MSG.\nDISPLAY WS-MSG.\n\n* Sous-programme VALIDER-CLIENT\nLINKAGE SECTION.\n01 LK-NOM PIC X(30).\n01 LK-AGE PIC 99.\n01 LK-MSG PIC X(40).\nPROCEDURE DIVISION USING LK-NOM LK-AGE LK-MSG.\n    IF LK-AGE > 120\n       MOVE 'Age invalide' TO LK-MSG\n    END-IF.\n    GOBACK."
+			}
+		},
+		{
+			"id": 12,
+			"image": "exercices/exercice12/preview.png",
+			"title": "Rapport batch — totaux et fichier sortie",
+			"description": "Lisez des ventes, cumulez les montants et générez un rapport.txt.",
+			"codeExample": "OPEN INPUT FICHIER-IN\nOPEN OUTPUT FICHIER-OUT\nADD MONTANT TO WS-TOTAL\nWRITE LIGNE-RAPPORT",
+			"link": "/tutorial/12",
+			"exercise": {
+				"title": "Exercice 12 — Rapport batch",
+				"instructions": "Écrivez RapportBatch : lisez ventes.txt (code article + montant), écrivez chaque ligne dans rapport.txt, calculez le nombre de ventes et le total, ajoutez un pied de page. Affichez une confirmation console. Bonus : calculez aussi la moyenne.",
+				"codeExample": "OPEN INPUT FICHIER-IN.\nOPEN OUTPUT FICHIER-OUT.\nPERFORM UNTIL WS-EOF = 'O'\n   READ FICHIER-IN\n      AT END MOVE 'O' TO WS-EOF\n      NOT AT END\n         ADD 1 TO WS-NB\n         ADD MONTANT TO WS-TOTAL\n         WRITE LIGNE-RAPPORT\n   END-READ\nEND-PERFORM.\nDIVIDE WS-TOTAL BY WS-NB GIVING WS-MOYENNE.\nCLOSE FICHIER-IN FICHIER-OUT."
+			}
 		}
 	]
 }

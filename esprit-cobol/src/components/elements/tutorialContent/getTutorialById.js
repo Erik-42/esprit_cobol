@@ -6,6 +6,10 @@ import exercice5Md from "../../../pages/tutorials/exercice5/exercice5.md?raw";
 import exercice6Md from "../../../pages/tutorials/exercice6/exercice6.md?raw";
 import exercice7Md from "../../../pages/tutorials/exercice7/exercice7.md?raw";
 import exercice8Md from "../../../pages/tutorials/exercice8/exercice8.md?raw";
+import exercice9Md from "../../../pages/tutorials/exercice9/exercice9.md?raw";
+import exercice10Md from "../../../pages/tutorials/exercice10/exercice10.md?raw";
+import exercice11Md from "../../../pages/tutorials/exercice11/exercice11.md?raw";
+import exercice12Md from "../../../pages/tutorials/exercice12/exercice12.md?raw";
 import tutorialsDb from "../../../../db.json";
 
 const markdownById = {
@@ -17,6 +21,10 @@ const markdownById = {
 	6: exercice6Md,
 	7: exercice7Md,
 	8: exercice8Md,
+	9: exercice9Md,
+	10: exercice10Md,
+	11: exercice11Md,
+	12: exercice12Md,
 };
 
 /**

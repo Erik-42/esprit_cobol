@@ -1,50 +1,14 @@
 [
-	{
-		"id": 1,
-		"title": "Introduction au COBOL",
-		"description": "Écrivez votre premier programme COBOL : Hello World et affichage console.",
-		"link": "/tutorial/1"
-	},
-	{
-		"id": 2,
-		"title": "Variables alphanumériques (PIC X)",
-		"description": "Déclarez et manipulez du texte avec PIC X : noms, adresses et chaînes de caractères.",
-		"link": "/tutorial/2"
-	},
-	{
-		"id": 3,
-		"title": "Variables numériques décimales (PIC 9V99)",
-		"description": "Travaillez les montants et soldes avec décimales implicites (V) et valeurs signées (S).",
-		"link": "/tutorial/3"
-	},
-	{
-		"id": 4,
-		"title": "Saisie utilisateur avec ACCEPT",
-		"description": "Rendez votre programme interactif : saisissez un nom et un âge au clavier, puis affichez une fiche client.",
-		"link": "/tutorial/4"
-	},
-	{
-		"id": 5,
-		"title": "Calculs métier et conditions IF",
-		"description": "Calculez une TVA avec MULTIPLY/ADD et classez la commande avec IF / ELSE.",
-		"link": "/tutorial/5"
-	},
-	{
-		"id": 6,
-		"title": "Structurer le code avec PERFORM",
-		"description": "Découpez votre programme en paragraphes clairs et orchestrez-les avec PERFORM.",
-		"link": "/tutorial/6"
-	},
-	{
-		"id": 7,
-		"title": "Fichier séquentiel OPEN / READ / CLOSE",
-		"description": "Lisez un fichier clients ligne par ligne — le cœur historique du COBOL batch.",
-		"link": "/tutorial/7"
-	},
-	{
-		"id": 8,
-		"title": "Mini-gestion de clients (menu + fichier)",
-		"description": "Menu CREATE / LIST avec EVALUATE, PERFORM, WRITE et READ sur un fichier clients.",
-		"link": "/tutorial/8"
-	}
+	{ "id": 1, "title": "Introduction au COBOL", "link": "/tutorial/1" },
+	{ "id": 2, "title": "Variables alphanumériques (PIC X)", "link": "/tutorial/2" },
+	{ "id": 3, "title": "Variables numériques décimales (PIC 9V99)", "link": "/tutorial/3" },
+	{ "id": 4, "title": "Saisie utilisateur avec ACCEPT", "link": "/tutorial/4" },
+	{ "id": 5, "title": "Calculs métier et conditions IF", "link": "/tutorial/5" },
+	{ "id": 6, "title": "Structurer le code avec PERFORM", "link": "/tutorial/6" },
+	{ "id": 7, "title": "Fichier séquentiel OPEN / READ / CLOSE", "link": "/tutorial/7" },
+	{ "id": 8, "title": "Mini-gestion de clients (menu + fichier)", "link": "/tutorial/8" },
+	{ "id": 9, "title": "Fichier indexé — recherche par clé", "link": "/tutorial/9" },
+	{ "id": 10, "title": "CRUD complet sur fichier indexé", "link": "/tutorial/10" },
+	{ "id": 11, "title": "Sous-programmes avec CALL", "link": "/tutorial/11" },
+	{ "id": 12, "title": "Rapport batch — totaux et fichier sortie", "link": "/tutorial/12" }
 ]
